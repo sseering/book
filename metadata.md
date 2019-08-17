@@ -19,6 +19,7 @@ Values that flow through a pipeline in Nu often have a set of addition informati
 
 Let's run the `open` command again, but this time, we'll look at the tags it gives back:
 
+```
 > open Cargo.toml | tags
 ----------+------------------------------------------
  span     | origin 
