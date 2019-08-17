@@ -1,2 +1,2 @@
-# handbook
-The work-in-progress handbook for nushell
+# Nu book
+The work-in-progress book for nushell
