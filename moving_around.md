@@ -71,6 +71,8 @@ We can copy an item from one location to another.
 
 We can remove an item.
 
+The three commands also can use the glob capabilities we saw earlier with `ls`.
+
 ```
 > mkdir new_directory
 ```
