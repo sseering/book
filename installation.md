@@ -63,9 +63,19 @@ Once we are ready, we press 1 and then enter.  After this point, we can follow t
 
 If you'd rather not install Rust via "rustup", you can also install it via other methods (eg from a package in a Linux distro). Just be sure to install a recent nightly version of the toolchain.
 
-### Installing openssl
+## Dependencies
 
-On macOS, using [homebrew](https://brew.sh/), you will need to install the "openssl" formula:
+### Debian/Ubuntu
+
+You will need to install the "libx11-dev" and "libxcb-composite0-dev" packages:
+
+```
+apt install libxcb-composite0-dev libx11-dev
+```
+
+### macOS
+
+Using [homebrew](https://brew.sh/), you will need to install the "openssl" formula:
 
 ```
 brew install openssl
