@@ -43,6 +43,38 @@ Nu also uses modern globs as well, which allow you access to deeper directories.
 
 ## Changing the current directory
 
-``
+```
 > cd new_directory
-``
+```
+
+To change from the current directory to a new one, we use the `cd` command. Just as in other shells, we can use either the name of the directory, or if we want to go up a directory we can use the `..` shortcut.
+
+## Filesystem commands
+
+Nu also provides some basic filesystem commands that works crossplatform. 
+
+```
+> mv item location
+```
+
+We can move an item from one place to another using the `mv` command.
+
+```
+> cp item location
+```
+
+We can copy an item from one location to another.
+
+```
+> rm item
+```
+
+We can remove an item.
+
+```
+> mkdir new_directory
+```
+
+Finally, we can create a new directory using the `mkdir` command.
+
+
