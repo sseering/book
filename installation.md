@@ -74,3 +74,39 @@ brew install openssl
 ## Installing from [crates.io](https://crates.io)
 
 Once we have the depencies Nu needs, we can install it using the `cargo` command that comes with the Rust compiler.
+
+```
+> cargo install nu
+```
+
+That's it!  The cargo tool will do the work of downloading Nu and its source dependencies, building it, and installing it into the cargo bin path so that we can run it.
+
+Once installed, we can run Nu using the `nu` command:
+
+```
+$ nu
+/home/jonathan/Source> 
+```
+
+## Building from source
+
+We can build our own Nu from github without downloading the latest release. This gives us immediate access to the latest Nu features and bugfixes.
+
+```
+> git clone https://github.com/nushell/nushell.git
+```
+
+Git will clone the main nushell repo for us. From there, we can build and run Nu:
+
+```
+> cd nushell
+nushell> cargo build && cargo run
+```
+
+You can also build and run Nu in release mode:
+
+```
+nushell> cargo build --release && cargo run --release
+```
+
+**Note:** If you are working with both debug and release builds, be sure to run `cargo clean` when you switch between them. Because Nu will look for plugins in both debug and release directories, it may pick up versions of the plugin you don't intend to use.
