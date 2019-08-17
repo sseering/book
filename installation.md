@@ -24,7 +24,7 @@ Current installation options:
 3) Cancel installation
 ```
 
-Selection option #2 to customize the installation, 
+Select option #2 to customize the installation, 
 
 ```
 Default host triple?
@@ -57,7 +57,7 @@ Current installation options:
 3) Cancel installation
 ```
 
-You can see that our default toolchain has now changed to the nightly toolchain. If this sounds a bit risky, don't worry. The Rust compiler is run through a full battery of tests. The nightly compiler is often reliable despite being on the cutting edge.
+You can see that our default toolchain has now changed to the nightly toolchain. If this sounds a bit risky, don't worry. The Rust compiler is run through a full battery of tests. The nightly compiler is often as reliable as the stable version.
 
 Once we are ready, we press 1 and then enter.  After this point, we can follow the instructions "rustup" gives us and we should have a working Rust compiler on our system.
 
@@ -65,7 +65,7 @@ If you'd rather not install Rust via "rustup", you can also install it via other
 
 ### Installing openssl
 
-Using [homebrew](https://brew.sh/), you will need to install the "openssl" formula:
+On macOS, using [homebrew](https://brew.sh/), you will need to install the "openssl" formula:
 
 ```
 brew install openssl
