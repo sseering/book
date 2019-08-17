@@ -8,3 +8,4 @@ Currently available are:
 * [Moving around](moving_around.md) - Moving around in nushell
 * [Loading data](loading_data.md) - Loading data and using it
 * [Metadata](metadata.md) - An explanation of nushell's metadata system
+* [Plugins](plugins.md) - Enhancing nushell with more features using plugins
