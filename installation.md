@@ -90,7 +90,7 @@ $ nu
 
 ## Building from source
 
-We can build our own Nu from github without downloading the latest release. This gives us immediate access to the latest Nu features and bugfixes.
+We can also build our own Nu from source directly from github. This gives us immediate access to the latest Nu features and bugfixes.
 
 ```
 > git clone https://github.com/nushell/nushell.git
