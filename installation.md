@@ -109,4 +109,6 @@ You can also build and run Nu in release mode:
 nushell> cargo build --release && cargo run --release
 ```
 
+People familiar with Rust may wonder why we do both a "build" and a "run" step if "run" does a build by default. This is to get around a shortcoming of the new `default-run` option in Cargo, and ensure that all plugins are built, though this may not be required in the future.
+
 **Note:** If you are working with both debug and release builds, be sure to run `cargo clean` when you switch between them. Because Nu will look for plugins in both debug and release directories, it may pick up versions of the plugin you don't intend to use.
