@@ -4,7 +4,7 @@ The best way currently to get Nu up and running is to install either from [crate
 
 ## Getting Ready
 
-Before we can install Nu, we need to make sure our system has the necessary requirements. Currently, this means making sure we have the OpenSSL library available so that the commands that work with URLs can work with secure HTTP as well.
+Before we can install Nu, we need to make sure our system has the necessary requirements. Currently, this means making sure we have both the Rust toolchain and the OpenSSL library installed.
 
 ### Installing Rust
 
