@@ -82,8 +82,10 @@ What if we wanted to show the processes that were actively using the CPU? Just l
 
 ```
 ps | where cpu > 0
-OMG FIX ME
 ```
+NOTE: OMG [FIXME](https://github.com/nushell/nushell/issues/301)
+
+
 So far, we've seen using `ls` and `ps` to list files and processes. Nu also offers other commands that can create tables of useful information. Next, let's explore `date` and `sys`.
 
 Running `date` gives us information about the current day and time:
