@@ -6,6 +6,7 @@ Currently available are:
 * [Installation](installation.md) - Installing nushell
 * [Introduction](introduction.md) - Getting started
 * [Moving around](moving_around.md) - Moving around in nushell
+* [Types of data](types_of_data.md) - Types of data in nushell
 * [Loading data](loading_data.md) - Loading data and using it
 * [Metadata](metadata.md) - An explanation of nushell's metadata system
 * [Shells](shells_in_shells.md) - Working with multiple locations
