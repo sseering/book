@@ -179,6 +179,3 @@ The one way to tell these apart looking at the table is the characteristic `valu
 
 The `get` command can go one step further and take a path to data deeper in the table. This simplifies working with more complex data, like the structures you might find in a .json file.
 
-## Changing the table data
-
-
