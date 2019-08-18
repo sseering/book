@@ -1,6 +1,6 @@
 # The pipeline
 
-One of the core designs of Nu is the pipeline, a design idea that tracks its roots back decades to some of the original philosophy behind Unix. Just as Nu extends from the single string data type of Unix, Nu also extends the idea of the pipeline to include more data types.
+One of the core designs of Nu is the pipeline, a design idea that tracks its roots back decades to some of the original philosophy behind Unix. Just as Nu extends from the single string data type of Unix, Nu also extends the idea of the pipeline to include more than just text.
 
 ## Basics
 
