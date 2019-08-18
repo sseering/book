@@ -100,4 +100,85 @@ You can also `skip` rows that you don't want.  Let's skip the first two of the 5
 
 We've narrowed it to three rows we care about.
 
-Let's look look at a few other commands for selecting data.  You may have wondered why the rows of the table are numbers. This acts as a handy 
+Let's look look at a few other commands for selecting data.  You may have wondered why the rows of the table are numbers. This acts as a handy way to get to a single row.  Let's sort our table by the file name and then pick one of the rows using its row number:
+
+```
+> ls | sort-by name
+---+---------------+------+----------+---------+------------+------------
+ # | name          | type | readonly | size    | accessed   | modified 
+---+---------------+------+----------+---------+------------+------------
+ 0 | add.rs        | File |          | 2.7 KB  | 2 days ago | 2 days ago 
+ 1 | binaryview.rs | File |          | 13.0 KB | a day ago  | a day ago 
+ 2 | edit.rs       | File |          | 2.7 KB  | 2 days ago | 2 days ago 
+ 3 | inc.rs        | File |          | 11.8 KB | 2 days ago | 2 days ago 
+ 4 | skip.rs       | File |          | 1.7 KB  | 2 days ago | 2 days ago 
+ 5 | str.rs        | File |          | 21.4 KB | 2 days ago | 2 days ago 
+ 6 | sum.rs        | File |          | 3.0 KB  | 2 days ago | 2 days ago 
+ 7 | sys.rs        | File |          | 9.2 KB  | 2 days ago | 2 days ago 
+ 8 | textview.rs   | File |          | 9.4 KB  | 2 days ago | 2 days ago 
+ 9 | tree.rs       | File |          | 3.0 KB  | 2 days ago | 2 days ago 
+---+---------------+------+----------+---------+------------+------------
+/home/jonathan/Source/nushell/src/plugins(master)> ls | sort-by name | nth 5
+--------+------+----------+---------+------------+------------
+ name   | type | readonly | size    | accessed   | modified 
+--------+------+----------+---------+------------+------------
+ str.rs | File |          | 21.4 KB | 2 days ago | 2 days ago 
+--------+------+----------+---------+------------+------------
+```
+
+## Getting data out of a table
+
+So far, we've worked with tables by trimming the table down to only what we need. Someimes we may want to go a step further and only look at the values in the cells themselves rather than taking a whole column. Let's say, for example, we wanted to only get a list of the names of the files. For this, we use the `get` command:
+
+```
+> ls | get name
+---+---------------
+ # | value 
+---+---------------
+ 0 | add.rs 
+ 1 | sum.rs 
+ 2 | inc.rs 
+ 3 | str.rs 
+ 4 | skip.rs 
+ 5 | textview.rs 
+ 6 | binaryview.rs 
+ 7 | edit.rs 
+ 8 | tree.rs 
+ 9 | sys.rs 
+---+---------------
+```
+
+We now have the values for each of the filenames.
+
+This might look like the `pick` command we saw earlier, so let's put that here as well to compare the two:
+
+```
+> ls | pick name
+---+---------------
+ # | name 
+---+---------------
+ 0 | add.rs 
+ 1 | sum.rs 
+ 2 | inc.rs 
+ 3 | str.rs 
+ 4 | skip.rs 
+ 5 | textview.rs 
+ 6 | binaryview.rs 
+ 7 | edit.rs 
+ 8 | tree.rs 
+ 9 | sys.rs 
+---+---------------
+```
+
+These look very similar! Let's see if we can spell out the difference between these two commands to make it clear:
+
+* `pick` - creates a new table which includes only the columns specified
+* `get` - returns the values inside the column specified
+
+The one way to tell these apart looking at the table is the characteristic `value` column name, which lets us know that this is going to be a list of values we can work with.
+
+The `get` command can go one step further and take a path to data deeper in the table. This simplifies working with more complex data, like the structures you might find in a .json file.
+
+## Changing the table data
+
+
