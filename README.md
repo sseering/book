@@ -8,6 +8,7 @@ Currently available are:
 * [Moving around](moving_around.md) - Moving around in nushell
 * [Types of data](types_of_data.md) - Types of data in nushell
 * [Loading data](loading_data.md) - Loading data and using it
+* [Pipeline](pipeline.md) - How the pipeline works
 * [Metadata](metadata.md) - An explanation of nushell's metadata system
 * [Shells](shells_in_shells.md) - Working with multiple locations
 * [Escaping commands](escaping.md) - Escaping to native commands of the same name 
