@@ -8,7 +8,7 @@ Early shells allows you to move around your filesystem and run commands, and mod
 > ls
 ```
 
-As we've seen in other chapters, `ls` is a command for viewing the contents of a path. Nu shell will return the contents as a table that we can use.
+As we've seen in other chapters, `ls` is a command for viewing the contents of a path. Nu will return the contents as a table that we can use.
 
 The `ls` command also takes an optional argument, to change what you'd like to view.  For example, we can list the files that end in ".txt"
 
@@ -22,7 +22,7 @@ The `ls` command also takes an optional argument, to change what you'd like to v
 ---+--------------+------+----------+---------+--------------+--------------
 ```
 
-The asterisk (\*) in the above is sometimes called a wildcard or a glob. It lets us match anything. You could read the glob "\*.txt" as "match any filename, so long as it ends with '.txt' "
+The asterisk (\*) in the above optional argument "\*.txt" is sometimes called a wildcard or a glob. It lets us match anything. You could read the glob "\*.txt" as "match any filename, so long as it ends with '.txt' "
 
 Nu also uses modern globs as well, which allow you access to deeper directories.
 
@@ -53,30 +53,29 @@ To change from the current directory to a new one, we use the `cd` command. Just
 
 Nu also provides some basic filesystem commands that works crossplatform. 
 
+We can move an item from one place to another using the `mv` command:
+
 ```
 > mv item location
 ```
 
-We can move an item from one place to another using the `mv` command.
+We can copy an item from one location to another:
 
 ```
 > cp item location
 ```
 
-We can copy an item from one location to another.
+We can remove an item:
 
 ```
 > rm item
 ```
 
-We can remove an item.
-
 The three commands also can use the glob capabilities we saw earlier with `ls`.
+
+Finally, we can create a new directory using the `mkdir` command:
 
 ```
 > mkdir new_directory
 ```
-
-Finally, we can create a new directory using the `mkdir` command.
-
 
