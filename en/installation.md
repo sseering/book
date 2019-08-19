@@ -83,7 +83,7 @@ brew install openssl
 
 ## Installing from [crates.io](https://crates.io)
 
-Once we have the depencies Nu needs, we can install it using the `cargo` command that comes with the Rust compiler.
+Once we have the dependencies Nu needs, we can install it using the `cargo` command that comes with the Rust compiler.
 
 ```
 > cargo install nu
