@@ -1,8 +1,8 @@
-# Working with tables
+# Trabajando con tablas
 
-One of the common ways of seeing data in Nu is through a table. Nu comes with a number of commands for working with tables to make it convenient to find what you're looking for, and for narrowing the data to just what you need.
+Una de las maneras comunes de mirar datos en Nu es a través de una tabla. Nu viene con una serie de comandos que trabajan con tablas para que pueda ser más conveniente encontrar lo que estás buscando y para limitar los datos a solo lo que necesites.
 
-To start off, let's get a table that we can use:
+Para empezar, consigamos una tabla que podamos usar:
 
 ```
 > ls
@@ -22,9 +22,9 @@ To start off, let's get a table that we can use:
 ---+---------------+------+----------+---------+------------+------------
 ```
 
-## Sorting the data
+## Ordenando los datos
 
-We can sort a table by calling the `sort-by` command and telling it which columns we want to use in the sort. Let's say we wanted to sort our table by the size of the file:
+Podemos ordenar la tabla llamando el comando `sort-by` e indicándole qué columnas queremos usar al ordenar. Digamos que deseamos ordenar nuestra tabla por tamaño de archivo:
 
 ```
 > ls | sort-by size
@@ -44,11 +44,11 @@ We can sort a table by calling the `sort-by` command and telling it which column
 ---+---------------+------+----------+---------+------------+------------
 ```
 
-We can sort a table by any column that can be compared. For example, we could also have sorted the above using the "name", "accessed", or "modified" columns.
+Podemos ordenar una tabla con cualquier columna que pueda ser comparada. Por ejemplo, también pudimos haber ordenador usando las columnas "name", "accessed", o "modified".
 
-# Selecting the data you want
+# Seleccionando los datos que quieres
 
-We can select data from a table by choosing to select specific columns or specific rows.  Let's pick a few columns from our table to use:
+Podemos seleccionar datos de una tabla seleccionando columnas o filas específicas. Escojamos algunas columnas de nuestra tabla para usar:
 
 ```
 > ls | pick name size
@@ -68,7 +68,7 @@ We can select data from a table by choosing to select specific columns or specif
 ---+---------------+---------
 ```
 
-This helps to create a table that's more focused on what we need.  Next, let's say we want to only look at the 5 smallest files in this directory:
+Esto ayuda a crear una table más enfocada para lo que necesitamos. Siguiente, digamos que queremos ver los 5 archivos más livianos de este directorio:
 
 ```
 > ls | sort-by size | first 5
@@ -83,9 +83,9 @@ This helps to create a table that's more focused on what we need.  Next, let's s
 ---+---------+------+----------+--------+------------+------------
 ```
 
-You'll notice we first sort the table by size to get to the smallest file, and then we use the `first 5` to return the first 5 rows of the table.
+Notarás que primero ordenamos la tabla por tamaño para llegar hasta el archivo más pequeño y luego usamos `first 5` que nos devuelve las primeras 5 filas de la tabla.
 
-You can also `skip` rows that you don't want.  Let's skip the first two of the 5 rows we returned above:
+También puedes saltarte filas con `skip` que no deseas. Saltemos las primeras dos de las 5 filas que obtuvimos arriba:
 
 ```
 > ls | sort-by size | first 5 | skip 2
@@ -98,9 +98,9 @@ You can also `skip` rows that you don't want.  Let's skip the first two of the 5
 ---+---------+------+----------+--------+------------+------------
 ```
 
-We've narrowed it to three rows we care about.
+Hemos reducido a tres filas que nos interesa.
 
-Let's look look at a few other commands for selecting data.  You may have wondered why the rows of the table are numbers. This acts as a handy way to get to a single row.  Let's sort our table by the file name and then pick one of the rows with the `n-th` command using its row number:
+Veamos algunos otros comandos para seleccionar datos. Es posible que te hayas preguntado por qué las filas de la tabla son números. Esto actúa como una forma práctica de llegar a una sola fila. Ordenemos nuestra tabla por el nombre del archivo y luego escojamos una de las filas con el comando `n-th` usando el número de fila:
 
 ```
 > ls | sort-by name
@@ -127,9 +127,9 @@ Let's look look at a few other commands for selecting data.  You may have wonder
 --------+------+----------+---------+------------+------------
 ```
 
-## Getting data out of a table
+## Obteniendo datos de una tabla
 
-So far, we've worked with tables by trimming the table down to only what we need. Sometimes we may want to go a step further and only look at the values in the cells themselves rather than taking a whole column. Let's say, for example, we wanted to only get a list of the names of the files. For this, we use the `get` command:
+Hasta ahora hemos trabajado con tablas reduciendo la tabla a solo lo que necesitamos. A veces es posible que queramos ir un paso más allá y solo mirar los valores en las celdas en lugar the tomar una columna completa. Digamos, por ejemplo, que queramos obtener una lista de los nombres de los archivos. Para esto usamos el comando `get`:
 
 ```
 > ls | get name
@@ -149,9 +149,9 @@ So far, we've worked with tables by trimming the table down to only what we need
 ---+---------------
 ```
 
-We now have the values for each of the filenames.
+Ahora tenemos los valores de cada nombre de los archivos.
 
-This might look like the `pick` command we saw earlier, so let's put that here as well to compare the two:
+Puede parecerse al comando `pick` que vimos previamente, probemos `pick` para comparar los dos:
 
 ```
 > ls | pick name
@@ -171,12 +171,11 @@ This might look like the `pick` command we saw earlier, so let's put that here a
 ---+---------------
 ```
 
-These look very similar! Let's see if we can spell out the difference between these two commands to make it clear:
+¡Se ven muy similares! Veamos si podemos explicar la diferencia entre estos dos comandos para aclarar:
 
-* `pick` - creates a new table which includes only the columns specified
-* `get` - returns the values inside the column specified
+* `pick` - crea una tabla donde incluye únicamente las columnas indicadas
+* `get` - devuelve los valores dentro de la columna indicada
 
-The one way to tell these apart looking at the table is the characteristic `value` column name, which lets us know that this is going to be a list of values we can work with.
+La manera de distinguirlas mirando la tabla de forma característica es con el nombre de columna `value` que nos permite saber que será una lista de valores con la que podemos trabajar.
 
-The `get` command can go one step further and take a path to data deeper in the table. This simplifies working with more complex data, like the structures you might find in a .json file.
-
+El comando `get` puede ir más allá y tomar una ruta para datos más profundos en la tabla. Esto simplifica trabajar con datos más complejos como las estructuras que podrías encontrar en archivos .json.
