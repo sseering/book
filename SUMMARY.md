@@ -1,4 +1,4 @@
-* [English](en/README.md)
+* [English](en/README.md) 
   * [Installation](en/installation.md) - Installing nushell
   * [Introduction](en/introduction.md) - Getting started
   * [Moving around](en/moving_around.md) - Moving around in nushell
