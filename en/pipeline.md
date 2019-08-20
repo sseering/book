@@ -49,4 +49,3 @@ And the pipeline:
 ```
 
 Are one and the same.
-
