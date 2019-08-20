@@ -51,7 +51,7 @@ Siempre puedes cerrar Nu incluso si tienes múltiples shells activas usando el c
 
 Nu también puede crear shells de otras cosas aparte de las rutas del sistema de archivos. Digamos por ejemplo que estás trabajando con un gran conjunto de datos y no deseas perderte dentro del mismo.
 
-Para ver cómo funciona haremos el siguiente ejercicio. Actualmente en Nu tenemos enumerados los complementos desarrollados (plugins) en "Cargo.toml" digamos que también acabamos de crear un nuevo complemento en el directorio src/plugins llamado "doc.rs" y nos interesa saber que se encuentre enumerado también en "Cargo.toml" para que se instale al construir Nu.
+Para ver cómo funciona haremos el siguiente ejercicio. Actualmente en Nu tenemos enumerados los [complementos](plugins.md) desarrollados (plugins) en "Cargo.toml" digamos que también acabamos de crear un nuevo complemento en el directorio src/plugins llamado "doc.rs" y nos interesa saber que se encuentre enumerado también en "Cargo.toml" para que se instale al compilar Nu.
 
 Entraremos al archivo "Cargo.toml" del código fuente de Nu:
 

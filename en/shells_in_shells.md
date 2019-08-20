@@ -51,7 +51,7 @@ You can always quit Nu, even if multiple shells are active by passing the `--now
 
 Nu can also create shells from other things aside from paths in a filesystem. Let's say, for example, you're working with a large data set and don't want to lose your place inside of it.
 
-To see how this works, let's do the following exercise. Currently, we list the Nu plugins we have developed in the "Cargo.toml" file. Let's say we just created a new plugin in the src/plugins directory called "doc.rs", and we're interested to know if is listed in the "Cargo.toml" as well so that it can be compiled and installed correctly for Nu.
+To see how this works, let's do the following exercise. Currently, we list the [Nu plugins](plugins.md) we have developed in the "Cargo.toml" file. Let's say we just created a new plugin in the src/plugins directory called "doc.rs", and we're interested to know if is listed in the "Cargo.toml" as well so that it can be compiled and installed correctly for Nu.
 
 Let's `enter` the file "Cargo.toml" from Nu's source code:
 
