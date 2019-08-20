@@ -12,7 +12,7 @@ Like many programming languages, Nu models data using a set of simple and struct
 
 ### Integers
 
-Integers are whole (or round) numbers. Examples include 1, 5, and 100.
+Integers (or round) numbers. Examples include 1, 5, and 100.
 
 ### Floats
 

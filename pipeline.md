@@ -30,11 +30,11 @@ Data coming from an external command into Nu will collect into a single string, 
 
 `external_command_1 | external_command_2`
 
-Nu works with data piped between two external commands in the same way other shells, like Bash, would. The `stdout` of external_command_1 is connected to the `stdin` of external_command_2. This lets data flow naturally between the two commands.
+Nu works with data piped between two external commands in the same way other shells, like Bash would. The `stdout` of external_command_1 is connected to the `stdin` of external_command_2. This lets data flow naturally between the two commands.
 
 ## Behind the scenes
 
-You may have wondered how we see a table if `ls` is an input and not an output. Nu adds this output for us automatically using another command called `autoview`. The `autoview` command is appended to any pipeline that doesn't have an output, allow us to see the result.
+You may have wondered how we see a table if `ls` is an input and not an output. Nu adds this output for us automatically using another command called `autoview`. The `autoview` command is appended to any pipeline that doesn't have an output allowing us to see the result.
 
 In effect, the command:
 
