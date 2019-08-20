@@ -12,3 +12,13 @@
   * [Plugins](plugins.md) - Enhancing nushell with more features using plugins
 * [Español](es/README.md)
   * [Instalacion](es/instalacion.md)
+  * [Introduccion](es/introduccion.md)
+  * [Explorando](es/explorando.md)
+  * [Tipos de datos](es/tipos_de_datos.md)
+  * [Cargando datos](es/cargando_datos.md)
+  * [Trabajando con tablas](es/trabajando_con_tablas.md)
+  * [Pipeline](es/pipeline.md)
+  * [Metadatos](es/metadatos.md)
+  * [Shells en shells](es/shells_en_shells.md)
+  * [Escapando](es/escapando.md)
+  * [Plugins](es/plugins.md)
