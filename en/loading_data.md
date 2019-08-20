@@ -74,7 +74,7 @@ The first thing we want to do when bringing in the file is to work with it a lin
 ---+------------------------------
 ```
 
-We can see that we're working with the lines because we're back into a table. Our next step is to see if we can split up the rows into something a little more useful. For that, we'll use the `split-column` command. Split-column, as the name implies, gives us a way to split a delimited string into columns. We tell it what the delimiter is, and it does the rest:
+We can see that we're working with the lines because we're back into a table. Our next step is to see if we can split up the rows into something a little more useful. For that, we'll use the `split-column` command. `split-column`, as the name implies, gives us a way to split a delimited string into columns. We tell it what the delimiter is, and it does the rest:
 
 ```
 > open people.txt | lines | split-column "|"
@@ -172,11 +172,11 @@ There is a `from-` command for each of the structed data text formats that Nu ca
 
 ## Opening in raw mode
 
-While it's helpful to be able to open a file and immediate work with a table of its data, this is not always what you want to do. To get to the underlying text, the `open` command can take an optional flag 
+While it's helpful to be able to open a file and immediate work with a table of its data, this is not always what you want to do. To get to the underlying text, the `open` command can take an optional flag:
 
 ```
 > open Cargo.toml --raw
-[package]                                                                                                                   name = "nu"
+[package]                                                                                        name = "nu"
 version = "0.1.3"
 authors = ["Yehuda Katz <wycats@gmail.com>", "Jonathan Turner <jonathan.d.turner@gmail.com>"]
 description = "A shell for the GitHub era"
@@ -185,7 +185,7 @@ license = "MIT"
 
 ## Opening URLs
 
-In addition to loading files from your filesystem, you can also give the `open` command a URL. This will fetch the contents of the URL from the internet and return it to you.
+In addition to loading files from your filesystem, you can also give the `open` command a URL. This will fetch the contents of the URL from the internet and return it to you:
 
 ```
 > open https://www.jonathanturner.org/feed.xml
