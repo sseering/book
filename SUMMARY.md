@@ -11,14 +11,14 @@
   * [Escaping commands](escaping.md) - Escaping to native commands of the same name 
   * [Plugins](plugins.md) - Enhancing nushell with more features using plugins
 * [Español](es/README.md)
-  * [Instalacion](es/instalacion.md)
-  * [Introduccion](es/introduccion.md)
-  * [Explorando](es/explorando.md)
-  * [Tipos de datos](es/tipos_de_datos.md)
-  * [Cargando datos](es/cargando_datos.md)
-  * [Trabajando con tablas](es/trabajando_con_tablas.md)
-  * [Pipeline](es/pipeline.md)
-  * [Metadatos](es/metadatos.md)
-  * [Shells en shells](es/shells_en_shells.md)
-  * [Escapando](es/escapando.md)
-  * [Plugins](es/plugins.md)
+  * [Instalación](es/instalacion.md) - Instalando nushell
+  * [Introducción](es/introduccion.md) - Empezando
+  * [Explorando](es/explorando.md) - Explorando en nushell
+  * [Tipos de datos](es/tipos_de_datos.md) - Tipos de datos en nushell
+  * [Cargando datos](es/cargando_datos.md) - Cargando datos y usándola
+  * [Trabajando con tablas](es/trabajando_con_tablas.md) - Trabajando con tablas nushell
+  * [Pipeline](es/pipeline.md) - Cómo funciona el pipeline
+  * [Metadatos](es/metadatos.md) - Una explicación del sistema de metadatos en nushell
+  * [Shells en shells](es/shells_en_shells.md) - Trabajando con múltiples ubicaciones
+  * [Escapando](es/escapando.md) - Escapando a comandos nativos de mismo nombre
+  * [Plugins](es/plugins.md) - Mejorando nushell con más funcionalidades usando complementos
