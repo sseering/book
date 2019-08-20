@@ -1,4 +1,3 @@
-* [Español](es/)
 * [Installation](installation.md) - Installing nushell
 * [Introduction](introduction.md) - Getting started
 * [Moving around](moving_around.md) - Moving around in nushell
@@ -10,3 +9,4 @@
 * [Shells](shells_in_shells.md) - Working with multiple locations
 * [Escaping commands](escaping.md) - Escaping to native commands of the same name 
 * [Plugins](plugins.md) - Enhancing nushell with more features using plugins
+* [Español](es/README.md)
