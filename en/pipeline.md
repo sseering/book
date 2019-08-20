@@ -18,7 +18,7 @@ The last command, `save "Cargo_new.toml"`, is an output (sometimes called a "sin
 
 ## Working with external commands
 
-Nu commands communicate with each other using the Nu data types (see [data types](data_types.md)), but what about commands outside of Nu?  Let's look at some examples of working with external commands:
+Nu commands communicate with each other using the Nu data types (see [types of data](types_of_data.md)), but what about commands outside of Nu?  Let's look at some examples of working with external commands:
 
 `internal_command | external_command`
 
