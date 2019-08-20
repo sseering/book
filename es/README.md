@@ -7,7 +7,7 @@ Actualmente disponible hay:
 * [Instalación](instalacion.md) - Instalando nushell
 * [Introducción](introduccion.md) - Empezando
 * [Explorando](explorando.md) - Explorando en nushell
-* [Tipos de datos](tipos_de_datos.md) - Types de datos en nushell
+* [Tipos de datos](tipos_de_datos.md) - Tipos de datos en nushell
 * [Cargando datos](cargando_datos.md) - Cargando datos y usándola
 * [Trabajando con tablas](trabajando_con_tablas.md) - Trabajando con tablas nushell
 * [Pipeline](pipeline.md) - Cómo funciona el pipeline
