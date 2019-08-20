@@ -10,10 +10,10 @@
   * [Shells](shells_in_shells.md) - Working with multiple locations
   * [Escaping commands](escaping.md) - Escaping to native commands of the same name 
   * [Plugins](plugins.md) - Enhancing nushell with more features using plugins
-* Español
-  * [Instalación](/es/instalacion.md) - Instalando nushell
-  * [Introducción](/es/introduccion.md) - Empezando
-  * [Explorando](/es/explorando.md) - Explorando en nushell
+* [Español](es/README.md
+  * [Instalación](es/instalacion.md) - Instalando nushell
+  * [Introducción](es/introduccion.md) - Empezando
+  * [Explorando](es/explorando.md) - Explorando en nushell
   * [Tipos de datos](es/tipos_de_datos.md) - Tipos de datos en nushell
   * [Cargando datos](es/cargando_datos.md) - Cargando datos y usándola
   * [Trabajando con tablas](es/trabajando_con_tablas.md) - Trabajando con tablas nushell
