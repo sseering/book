@@ -1,3 +1,4 @@
+* [Español](es/)
 * [Installation](installation.md) - Installing nushell
 * [Introduction](introduction.md) - Getting started
 * [Moving around](moving_around.md) - Moving around in nushell
