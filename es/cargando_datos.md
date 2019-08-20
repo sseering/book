@@ -2,7 +2,7 @@
 
 Hemos visto como puedes usar comandos como `ls`, `ps`, `date`, y `sys` para cargar información sobre los archivos, procesos, hora de fecha, y del mismo sistema. Cada comando nos entrega una tabla de información que podemos explorar. Hay otras maneras de cargar datos en una tabla de datos para trabajar.
 
-## Abrir archivos
+## Abriendo archivos
 
 Una de las funciones más destacadas de Nu para trabajar con datos es el comando `open`. Es una multi-herramienta que puede trabajar con varios formatos de datos. Para ver qué significa esto intentemos abrir un archivo en formato json:
 
@@ -171,7 +171,7 @@ El archivo "Cargo.lock" es un archivo en formato .toml pero la extensión del ar
 
 Hay el comando `from-` para cada dato estructurado de formatos de texto que Nu puede abrir y entender.
 
-## Abrir en modo crudo
+## Abriendo en modo crudo
 
 Mientras es útil poder abrir un archivo e inmediatamente trabajar con una tabla de sus datos, esto no siempre es lo que deseas hacer. Para llegar al texto subyacente, el comando `open` puede tomar una bandera opcional:
 
@@ -185,7 +185,7 @@ description = "A shell for the GitHub era"
 license = "MIT"
 ```
 
-## Abrir URLs
+## Abriendo URLs
 
 Además de cargar archivos desde tu archivos de sistema, también puedes proporcionar al comando `open` una URL. Esto cargará el contenido de la URL por internet y devolvértela:
 
