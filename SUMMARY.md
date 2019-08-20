@@ -1,15 +1,15 @@
-* [English](README.md)
-  * [Installation](installation.md) - Installing nushell
-  * [Introduction](introduction.md) - Getting started
-  * [Moving around](moving_around.md) - Moving around in nushell
-  * [Types of data](types_of_data.md) - Types of data in nushell
-  * [Loading data](loading_data.md) - Loading data and using it
-  * [Working with tables](working_with_tables.md) - Working with nushell tables
-  * [Pipeline](pipeline.md) - How the pipeline works
-  * [Metadata](metadata.md) - An explanation of nushell's metadata system
-  * [Shells](shells_in_shells.md) - Working with multiple locations
-  * [Escaping commands](escaping.md) - Escaping to native commands of the same name 
-  * [Plugins](plugins.md) - Enhancing nushell with more features using plugins
+* [English](en/README.md)
+  * [Installation](en/installation.md) - Installing nushell
+  * [Introduction](en/introduction.md) - Getting started
+  * [Moving around](en/moving_around.md) - Moving around in nushell
+  * [Types of data](en/types_of_data.md) - Types of data in nushell
+  * [Loading data](en/loading_data.md) - Loading data and using it
+  * [Working with tables](en/working_with_tables.md) - Working with nushell tables
+  * [Pipeline](en/pipeline.md) - How the pipeline works
+  * [Metadata](en/metadata.md) - An explanation of nushell's metadata system
+  * [Shells](en/shells_in_shells.md) - Working with multiple locations
+  * [Escaping commands](en/escaping.md) - Escaping to native commands of the same name 
+  * [Plugins](en/plugins.md) - Enhancing nushell with more features using plugins
 * [Español](es/README.md)
   * [Instalación](es/instalacion.md) - Instalando nushell
   * [Introducción](es/introduccion.md) - Empezando
