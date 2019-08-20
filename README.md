@@ -3,7 +3,7 @@ The work-in-progress book for nushell
 
 Currently available are:
 
-* [installation](installation.md) - Installing nushell
+* [Installation](installation.md) - Installing nushell
 * [Introduction](introduction.md) - Getting started
 * [Moving around](moving_around.md) - Moving around in nushell
 * [Types of data](types_of_data.md) - Types of data in nushell
