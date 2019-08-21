@@ -83,10 +83,15 @@ Es posible que estés familiarizado con el comando `ps` si has utlizado Linux. C
 ¿Qué tal si quisiéramos mostrar los procesos que activamente usan el CPU? Así como hicimos con el comando `ls` previamente, también podemos trabajar con la tabla que nos devuelve `ps`:
 
 ```
-ps | where cpu > 0
+> ps | where cpu > 10
+---+-------+----------+-------+-----------------------------
+ # | pid   | status   | cpu   | name 
+---+-------+----------+-------+-----------------------------
+ 0 | 1992  | Sleeping | 44.52 | /usr/bin/gnome-shell 
+ 1 | 1069  | Sleeping | 16.15 |  
+ 2 | 24116 | Sleeping | 13.70 | /opt/google/chrome/chrome 
+ 3 | 21976 | Sleeping | 12.67 | /usr/share/discord/Discord
 ```
-NOTA: OMG [ARREGLAME](https://github.com/nushell/nushell/issues/301)
-
 
 Hasta ahora, hemos visto el uso de `ls` y `ps` para enumerar archivos y procesos. Nu también ofrece otros comandos que pueden crear tablas de información de utilidad. Exploremos a continuación `date` y `sys`.
 
