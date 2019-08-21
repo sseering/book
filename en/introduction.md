@@ -81,7 +81,7 @@ You may be familiar with the `ps` command if you've used Linux. With it, we can 
 What if we wanted to show the processes that were actively using the CPU? Just like we did with the `ls` command earlier, we can also work with the table that the `ps` command gives back to us:
 
 ```
-ps | where cpu > 10
+> ps | where cpu > 10
 ---+-------+----------+-------+-----------------------------
  # | pid   | status   | cpu   | name 
 ---+-------+----------+-------+-----------------------------
