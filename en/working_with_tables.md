@@ -255,7 +255,7 @@ And now, let's update the edition to point at the next edition we hope to suppor
 ---------
 ```
 
-### Increment
+### Incrementing values
 
 There's one more command that Nu supports that will help us work with numbers and versions: `inc`. 
 
