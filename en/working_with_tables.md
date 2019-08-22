@@ -46,7 +46,7 @@ We can sort a table by calling the `sort-by` command and telling it which column
 
 We can sort a table by any column that can be compared. For example, we could also have sorted the above using the "name", "accessed", or "modified" columns.
 
-# Selecting the data you want
+## Selecting the data you want
 
 We can select data from a table by choosing to select specific columns or specific rows.  Let's pick a few columns from our table to use:
 
