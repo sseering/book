@@ -179,3 +179,112 @@ Puede parecerse al comando `pick` que vimos previamente, probemos `pick` para co
 La manera de distinguirlas mirando la tabla de forma característica es con el nombre de columna `value` que nos permite saber que será una lista de valores con la que podemos trabajar.
 
 El comando `get` puede ir más allá y tomar una ruta para datos más profundos en la tabla. Esto simplifica trabajar con datos más complejos como las estructuras que podrías encontrar en archivos .json.
+
+## Cambiando datos de una tabla
+
+Además de seleccionar datos de una tabla, también podemos actualizar lo que contiene una tabla. Es posible que queramos agregar nuevas columnas o editar el contenido de una celda. En Nu, en lugar la misma tabla, cada uno de los comandos en la sección devolvera una nueva tabla en la tubería.
+
+### Agregando una nueva columna
+
+Podemos utilizar el comando `add` para agregar una nueva columna a la tabla. Veamos un ejemplo:
+
+```
+> open rustfmt.toml
+---------
+ edition 
+---------
+ 2018 
+---------
+```
+
+Agreguemos una columna llamada "next_edition" con el valor 2021:
+
+```
+> open rustfmt.toml | add next_edition 2021
+---------+--------------
+ edition | next_edition 
+---------+--------------
+ 2018    | 2021 
+---------+--------------
+```
+
+Observa que si abrimos el archivo original el contenido permanece igual:
+
+```
+> open rustfmt.toml
+---------
+ edition 
+---------
+ 2018 
+---------
+```
+
+Los cambios en Nu son cambios funcionales, lo que significa que funcionan en los valores mismos en vez de causar cambios permanentes. Esto nos permite realizar diferentes tipos de trabajo en nuestra tubería hasta que estemos listos para grabar los resultados con cualquier cambio que nos gustaría si así decidimos. Aquí podríamos grabar los resultados usando el comando `save`:
+
+```
+> open rustfmt.toml | add next_edition 2021 | save rustfmt2.toml
+/home/jonathan/Source/nushell(master)> open rustfmt2.toml
+---------+--------------
+ edition | next_edition 
+---------+--------------
+ 2018    | 2021 
+---------+--------------
+```
+
+### Editando una columna
+
+Similarmente al comando `add`, también podemos usar el comando `edit` para cambiar el contenido de una columna a un nuevo valor. Abramos el mismo archivo para verlo en acción:
+
+```
+open rustfmt.toml
+---------
+ edition 
+---------
+ 2018 
+---------
+```
+
+y ahora, actualizemos la edición y que apunte a la siguiente edición que esperamos soportar:
+
+```
+> open rustfmt.toml | edit edition 2021
+---------
+ edition 
+---------
+ 2021 
+---------
+```
+
+### Incrementando valores
+
+Hay un comando más en Nu que nos ayudará a trabajar con números y versiones: `inc`.
+
+```
+> open rustfmt.toml
+---------
+ edition 
+---------
+ 2018 
+---------
+> open rustfmt.toml | inc edition
+---------
+ edition 
+---------
+ 2019 
+---------
+```
+
+Como el valor en "edition" es un número, podemos usar `inc` para actualizarlo. `inc` realmente brilla cuando trabajamos con versiones:
+
+```
+> open Cargo.toml | get package.version
+0.1.3
+> open Cargo.toml | inc package.version --minor | get package.version
+0.2.0
+```
+
+Cuando trabajamos con versiones podemos usar banderas e indicar cómo incrementar la versión:
+
+* **--major** - incrementar major  (0.1.3 -> 1.0.0)
+* **--minor** - incrementar minor  (0.1.3 -> 0.2.0)
+* **--patch** - incrementar patch  (0.1.3 -> 0.1.4)
