@@ -219,7 +219,8 @@ Notice that we if open the original file, the contents have stayed the same:
 ---------
 ```
 
-Changes in Nu are functional changes, meaning that they work on the values themselves rather than trying to cause a permanennt change. This lets us do many different types of work in our pipeline and only when we're ready to write out the result. Here we could write out the result using the `save` command:
+Changes in Nu are functional changes, meaning that they work on the values themselves rather than trying to cause a permanent change. This lets us do many different types of work in our 
+pipeline until we're ready to write out the result with any changes we'd like if we choose to. Here we could write out the result using the `save` command:
 
 ```
 > open rustfmt.toml | add next_edition 2021 | save rustfmt2.toml
