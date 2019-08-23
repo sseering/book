@@ -67,10 +67,16 @@ Si prefieres no instalar Rust mediante "rustup", también puedes instalar a trav
 
 ### Debian/Ubuntu
 
-Vas a necesitar instalar los paquetes "libssl-dev", "libx11-dev", y "libxcb-composite0-dev":
+Vas a necesitar instalar "libssl-dev":
 
 ```
-apt install libssl-dev libx11-dev libxcb-composite0-dev 
+apt install libssl-dev
+```
+
+Usuarios de Linux que desean usar las funcionalidades opcionales `rawkey` o `clipboard` necesitarán instalar los paquetes "libx11-dev" y "libxcb-composite0-dev":
+
+```
+apt install libx11-dev libxcb-composite0-dev 
 ```
 
 ### macOS
