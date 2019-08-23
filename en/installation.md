@@ -67,7 +67,7 @@ If you'd rather not install Rust via "rustup", you can also install it via other
 
 ### Debian/Ubuntu
 
-You will need to install the "libx11-dev" and "libxcb-composite0-dev" packages:
+Linux users who wish to use the `rawkey` or `clipboard` optional features will need to install the "libx11-dev" and "libxcb-composite0-dev" packages:
 
 ```
 apt install libxcb-composite0-dev libx11-dev
