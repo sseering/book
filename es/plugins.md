@@ -2,7 +2,7 @@
 
 Se puede ampliar la funcionalidad de Nu a través de complementos. Los complementos pueden realizar muchas de las mismas operaciones que los comandos integrados de Nu con el beneficio adicional de que se pueden agregar separado de Nu.
 
-Para agregar un complemento simplemente compílalo y colóca el binario en el PATH. Los complementos de Nu empiezan con "nu_plugin_" de manera que Nu pueda encontrarlos entre otros binarios en su PATH.
+Para agregar un complemento simplemente compílalo y colóca el binario en el PATH. Los complementos de Nu empiezan con `nu_plugin_` de manera que Nu pueda encontrarlos entre otros binarios en su PATH.
 
 **Nota:** en el futuro los complementos pueden que tengan un lugar específico que deban ser puestos para Nu encontrarlos.
 
