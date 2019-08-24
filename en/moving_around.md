@@ -1,6 +1,6 @@
 # Moving around your system
 
-Early shells allows you to move around your filesystem and run commands, and modern shells like Nu allow you to do the same. Let's take a look at some of the common commands you might use when interacting with your system.
+Early shells allow you to move around your filesystem and run commands, and modern shells like Nu allow you to do the same. Let's take a look at some of the common commands you might use when interacting with your system.
 
 ## Viewing directory contents
 
