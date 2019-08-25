@@ -46,7 +46,7 @@ Structured data builds from the simple data. For example, instead of a single in
 
 ### Objects
 
-The object data type represents what you would see in one row of data in the table. It has different elements of data, and each elment of data is given a column name.
+The object data type represents what you would see in one row of data in the table. It has different elements of data, and each element of data is given a column name.
 
 ### Binary data
 
