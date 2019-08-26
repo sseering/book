@@ -2,6 +2,10 @@
 
 The best way currently to get Nu up and running is to install either from [crates.io](https://crates.io) or to build it from source. 
 
+## Installing on macOS using homebrew
+
+If you use [homebrew](https://brew.sh/) for macOS, you can install a prebuilt binary using `brew install nushell`.
+
 ## Getting Ready
 
 Before we can install Nu, we need to make sure our system has the necessary requirements. Currently, this means making sure we have both the Rust toolchain and local dependencies installed.
