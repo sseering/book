@@ -2,9 +2,9 @@
 
 The best way currently to get Nu up and running is to install either from [crates.io](https://crates.io) or to build it from source. 
 
-## Installing on macOS using homebrew
+## Installing on macOS using Homebrew
 
-If you use [homebrew](https://brew.sh/) for macOS, you can install a prebuilt binary using `brew install nushell`.
+If you use [Homebrew](https://brew.sh/) for macOS, you can install a prebuilt binary using `brew install nushell`.
 
 ## Getting Ready
 
@@ -85,7 +85,7 @@ apt install libxcb-composite0-dev libx11-dev
 
 ### macOS
 
-Using [homebrew](https://brew.sh/), you will need to install the "openssl" and "cmake" using: 
+Using [Homebrew](https://brew.sh/), you will need to install the "openssl" and "cmake" using: 
 
 ```
 brew install openssl cmake
