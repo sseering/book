@@ -81,10 +81,10 @@ apt install libxcb-composite0-dev libx11-dev
 
 ### macOS
 
-Using [homebrew](https://brew.sh/), you will need to install the "openssl" formula:
+Using [homebrew](https://brew.sh/), you will need to install the "openssl" and "cmake" using: 
 
 ```
-brew install openssl
+brew install openssl cmake
 ```
 
 ## Installing from [crates.io](https://crates.io)
