@@ -1,6 +1,10 @@
 # Instalando Nu
 
-La mejor manera actualmente para poner en marcha Nu es instalándolo a través de [crates.io](https://crates.io) o compilarlo desde la fuente.
+La mejor manera actualmente para poner en marcha Nu es instalándolo a través de [crates.io](https://crates.io), descargando desde [nuestra página](https://github.com/nushell/nushell/releases), o compilarlo desde la fuente.
+
+## Binarios
+
+Puedes descargar Nu compilado desde [nuestra página](https://github.com/nushell/nushell/releases). Alternativamente, si usas [Homebrew](https://brew.sh/) para macOS, puedes instalar el binario ejecutando `brew install nushell`.
 
 ## Preparación
 
