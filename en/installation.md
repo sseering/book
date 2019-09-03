@@ -71,10 +71,10 @@ If you'd rather not install Rust via "rustup", you can also install it via other
 
 ### Debian/Ubuntu
 
-You will need to install the "libssl-dev" package:
+You will need to install the "pkg-config" and "libssl-dev" package:
 
 ```
-apt install libssl-dev
+apt install pkg-config libssl-dev
 ```
 
 Linux users who wish to use the `rawkey` or `clipboard` optional features will need to install the "libx11-dev" and "libxcb-composite0-dev" packages:
