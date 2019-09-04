@@ -71,10 +71,10 @@ Current installation options:
 
 ### Debian/Ubuntu
 
-"libssl-dev"パッケージをインストールしてください。
+"pkg-config"と"libssl-dev"パッケージをインストールしてください。
 
 ```
-apt install libssl-dev
+apt install pkg-config libssl-dev
 ```
 
 `rawkey`や`clipboard`機能を使用するLinuxユーザーは"libx11-dev"および"libxcb-composite0-dev"パッケージをインストールする必要があります。
