@@ -120,7 +120,7 @@ Git will clone the main nushell repo for us. From there, we can build and run Nu
 
 ```
 > cd nushell
-nushell> cargo build && cargo run
+nushell> cargo build --all-features && cargo run --all-features
 ```
 
 You can also build and run Nu in release mode:
