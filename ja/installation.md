@@ -1,10 +1,46 @@
 # Nuのインストール
 
 今のところNuをインストールするもっともよい方法は、[crates.io](https://crates.io)からインストールするか、ビルド済のバイナリーを[リリースページ](https://github.com/nushell/nushell/releases)からダウンロードするか、ソースからビルドすることです。
+Dockerを利用してビルド済のコンテナをプルしてくる方法もあります。
 
 ## ビルド済みのバイナリー
 
 ビルド済のNuは[リリースページ](https://github.com/nushell/nushell/releases)からダウンロードできます。もし、[Homebrew](https://brew.sh/) for macOSを利用しているなら、`brew install nushell`を実行して、バイナリーをインストールできます。
+
+## ビルド済のDockerコンテナ
+
+ビルド済のDockerコンテナをプルしたい場合はQuay.io上で[nushell organization](https://quay.io/organization/nushell)のためのタグを閲覧できます。
+コンテナのプルは以下のように行います。
+
+```bash
+$ docker pull quay.io/nushell/nu
+$ docker pull quay.io/nushell/nu-base
+```
+
+"nu-base"と"nu"のどちらにもバイナリーが含まれますが、nu-baseには`/code`内にソースコードと全ての依存関係も含まれています。
+
+オプションで提供されている[dockerfiles provided](https://github.com/nushell/nushell/tree/master/docker)を利用してローカルにコンテナをビルドすることもできます。
+ベースイメージをビルドするには:
+
+```bash
+$ docker build -f docker/Dockerfile.nu-base -t nushell/nu-base .
+```
+
+そして、小さなコンテナをビルドするには(マルチステージビルドを利用):
+
+```bash
+$ docker build -f docker/Dockerfile -t nushell/nu .
+```
+
+どちらの方法でも、次のようにコンテナを実行できます:
+
+```bash
+$ docker run -it nushell/nu-base
+$ docker run -it nushell/nu
+/> exit
+```
+
+サイズを重要視する場合は、２番目のコンテナのほうが少し小さくなります。
 
 ## 事前準備
 
