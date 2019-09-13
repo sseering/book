@@ -1,10 +1,45 @@
 # Instalando Nu
 
-La mejor manera actualmente para poner en marcha Nu es instalándolo a través de [crates.io](https://crates.io), descargando desde [nuestra página](https://github.com/nushell/nushell/releases), o compilarlo desde la fuente.
+La mejor manera actualmente para poner en marcha Nu es instalándolo a través de [crates.io](https://crates.io), descargando desde [nuestra página](https://github.com/nushell/nushell/releases), compilarlo desde la fuente, o jalando un contenedor preconstruido con Docker.
 
 ## Binarios
 
 Puedes descargar Nu compilado desde [nuestra página](https://github.com/nushell/nushell/releases). Alternativamente, si usas [Homebrew](https://brew.sh/) para macOS, puedes instalar el binario ejecutando `brew install nushell`.
+
+## Contenedores de Docker preconstruidos
+
+Si deseas jalar un contenedor preconstruido, puedes navegar las etiquetas de la [organización nushell](https://quay.io/organization/nushell)
+en Quay.io. Jalar un contenedor se reduce a:
+
+```bash
+$ docker pull quay.io/nushell/nu
+$ docker pull quay.io/nushell/nu-base
+```
+
+Tanto "nu-base" y "nu" proporciona el binario `nu`, sin embargo nu-base también incluye el código fuente en `/code` en el contenedor y todas las dependencias.
+
+Opcionalmente, también puedes construir los contenedores localmente utilizando los [dockerfiles proporcionados](https://github.com/nushell/nushell/tree/master/docker):
+Para construir la imagen base:
+
+```bash
+$ docker build -f docker/Dockerfile.nu-base -t nushell/nu-base .
+``` 
+
+y luego para construir el contenedor más pequeño (usando una construcción de varias etapas):
+
+```bash
+$ docker build -f docker/Dockerfile -t nushell/nu .
+``` 
+
+De cualquier manera, se puede ejecutar cualquier contenedor de la siguiente manera:
+
+```bash
+$ docker run -it nushell/nu-base
+$ docker run -it nushell/nu
+/> exit
+```
+
+El segundo contenedor es un poco más pequeño, si tamaño es importante para ti.
 
 ## Preparación
 
@@ -80,7 +115,7 @@ apt install pkg-config libssl-dev
 Usuarios de Linux que desean usar las funcionalidades opcionales `rawkey` o `clipboard` necesitarán instalar los paquetes "libx11-dev" y "libxcb-composite0-dev":
 
 ```
-apt install libx11-dev libxcb-composite0-dev 
+apt install libxcb-composite0-dev libx11-dev
 ```
 
 ### macOS
