@@ -120,7 +120,7 @@ Gitでメインのnushellリポジトリをクローンし、Nuをビルドし�
 
 ```
 > cd nushell
-nushell> cargo build && cargo run
+nushell> cargo build --all-features && cargo run --all-features
 ```
 
 リリースモードでNuをビルドし実行することもできます。

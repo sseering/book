@@ -120,7 +120,7 @@ Git nos clonará el repositorio principal de Nu. Partiendo de ahí podemos contr
 
 ```
 > cd nushell
-nushell> cargo build && cargo run
+nushell> cargo build --all-features && cargo run --all-features
 ```
 
 También puedes construir y arrancar Nu en modo release:
