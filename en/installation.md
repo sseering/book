@@ -1,10 +1,46 @@
 # Installing Nu
 
-The best way currently to get Nu up and running is to install from [crates.io](https://crates.io), download pre-built binaries from our [release page](https://github.com/nushell/nushell/releases), or build from source.
+The best way currently to get Nu up and running is to install from [crates.io](https://crates.io), download pre-built binaries from our [release page](https://github.com/nushell/nushell/releases), build from source, or pulling a pre-built container with Docker.
 
 ## Pre-built binaries
 
 You can download Nu pre-built from the [release page](https://github.com/nushell/nushell/releases). Alternatively, if you use [Homebrew](https://brew.sh/) for macOS, you can install the binary by running `brew install nushell`.
+
+## Pre-built docker containers
+
+If you want to pull a pre-built container, you can browse tags for the [nushell organization](https://quay.io/organization/nushell)
+on Quay.io. Pulling a container would come down to:
+
+```bash
+$ docker pull quay.io/nushell/nu
+$ docker pull quay.io/nushell/nu-base
+```
+
+Both "nu-base" and "nu" provide the `nu` binary, however nu-base also includes the source code at `/code`
+in the container and all dependencies.
+
+Optionally, you can also build the containers locally using the [dockerfiles provided](https://github.com/nushell/nushell/tree/master/docker):
+To build the base image:
+
+```bash
+$ docker build -f docker/Dockerfile.nu-base -t nushell/nu-base .
+``` 
+
+And then to build the smaller container (using a Multistage build):
+
+```bash
+$ docker build -f docker/Dockerfile -t nushell/nu .
+``` 
+
+Either way, you can run either container as follows:
+
+```bash
+$ docker run -it nushell/nu-base
+$ docker run -it nushell/nu
+/> exit
+```
+
+The second container is a bit smaller, if size is important to you.
 
 ## Getting Ready
 
@@ -130,4 +166,3 @@ nushell> cargo build --release && cargo run --release
 ```
 
 People familiar with Rust may wonder why we do both a "build" and a "run" step if "run" does a build by default. This is to get around a shortcoming of the new `default-run` option in Cargo, and ensure that all plugins are built, though this may not be required in the future.
-
