@@ -30,7 +30,7 @@ Data coming from an external command into Nu will collect into a single string, 
 
 `external_command_1 | external_command_2`
 
-Nu works with data piped between two external commands in the same way other shells, like Bash would. The `stdout` of external_command_1 is connected to the `stdin` of external_command_2. This lets data flow naturally between the two commands.
+Nu works with data piped between two external commands in the same way as other shells, like Bash would. The `stdout` of external_command_1 is connected to the `stdin` of external_command_2. This lets data flow naturally between the two commands.
 
 ## Behind the scenes
 

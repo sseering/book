@@ -172,7 +172,7 @@ There is a `from-` command for each of the structed data text formats that Nu ca
 
 ## Opening in raw mode
 
-While it's helpful to be able to open a file and immediate work with a table of its data, this is not always what you want to do. To get to the underlying text, the `open` command can take an optional flag:
+While it's helpful to be able to open a file and immediately work with a table of its data, this is not always what you want to do. To get to the underlying text, the `open` command can take an optional `--raw` flag:
 
 ```
 > open Cargo.toml --raw

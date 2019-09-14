@@ -135,7 +135,7 @@ jonathan
 
 Right now, there's just one user on the system named "jonathan". You'll notice that we can pass a path and not just the name of the column. Nu will take the path and go to the corresponding bit of data in the table.
 
-You might have noticed something else that's different. Rather than having a table of data, we have just the single element: the string "jonathan". Nu works with both tables of data as well as strings. String are an important part of working with commands outside of Nu. 
+You might have noticed something else that's different. Rather than having a table of data, we have just the single element: the string "jonathan". Nu works with both tables of data as well as strings. Strings are an important part of working with commands outside of Nu.
 
 Let's see how strings work outside of Nu in action. We'll take our example from before and run the external `echo` command, which is built into most OSes:
 
@@ -144,5 +144,5 @@ Let's see how strings work outside of Nu in action. We'll take our example from 
 jonathan
 ```
 
-If this looks very similar to what we had before, you have a keen eye! It is similar, but with one important different: we've called `echo` with the value we saw earlier. This allows us to pass data out of Nu into `echo` (or any command outside of Nu, like `git` for example)
+If this looks very similar to what we had before, you have a keen eye! It is similar, but with one important difference: we've called `echo` with the value we saw earlier. This allows us to pass data out of Nu into `echo` (or any command outside of Nu, like `git` for example)
 

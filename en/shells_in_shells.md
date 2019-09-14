@@ -7,8 +7,8 @@ While it's common to work in one directory, it can be handy to work in multiple 
 To get started, let's enter a directory:
 
 ```
-/home/jonathan/Source/lark(master)> enter ../lark
-lark(master)> ls
+/home/jonathan/Source/nushell(master)> enter ../lark
+/home/jonathan/Source/lark(master)> ls
 ----+----------------+-----------+----------+---------+---------------+---------------
  #  | name           | type      | readonly | size    | accessed      | modified 
 ----+----------------+-----------+----------+---------+---------------+---------------
@@ -29,7 +29,7 @@ Entering is similar to changing directories (as we saw with the `cd` command). T
 ---+---+------------+-------------------------------
 ```
 
-The `shells` command shows use there are two shells currently active: our original "nushell" source directory and now this new "lark" directory.
+The `shells` command shows us there are two shells currently active: our original "nushell" source directory and now this new "lark" directory.
 
 We can jump between these shells with the `n` and `p` shortcuts, short for "next" and "previous":
 
@@ -51,7 +51,7 @@ You can always quit Nu, even if multiple shells are active by passing the `--now
 
 Nu can also create shells from other things aside from paths in a filesystem. Let's say, for example, you're working with a large data set and don't want to lose your place inside of it.
 
-To see how this works, let's do the following exercise. Currently, we list the [Nu plugins](plugins.md) we have developed in the "Cargo.toml" file. Let's say we just created a new plugin in the src/plugins directory called "doc.rs", and we're interested to know if is listed in the "Cargo.toml" as well so that it can be compiled and installed correctly for Nu.
+To see how this works, let's do the following exercise. Currently, we list the [Nu plugins](plugins.md) we have developed in the "Cargo.toml" file. Let's say we just created a new plugin in the src/plugins directory called "doc.rs", and we're interested to know if it's listed in the "Cargo.toml" as well so that it can be compiled and installed correctly for Nu.
 
 Let's `enter` the file "Cargo.toml" from Nu's source code:
 
@@ -65,7 +65,7 @@ Let's `enter` the file "Cargo.toml" from Nu's source code:
 ------------+--------------+------------------+----------+----------
 ```
 
-For the moment we've only `enter`ed the file and we can look what's in it from the table `ls` gives back. If you pay close attention, this time we've entered a file format that Nu understands (.toml). Nu also projects the contents of the file in a filesystem-like so we can explore it as if it were a regular filesystem.
+For the moment we've only `enter`ed the file and we can see what's in it from the table `ls` gives back. If you pay close attention, this time we've entered a file format that Nu understands (.toml). Nu also projects the contents of the file in a filesystem-like so we can explore it as if it were a regular filesystem.
 
 Before we continue, let's check the active shells:
 
@@ -155,4 +155,4 @@ We are back at the directory we were working in before entering the file "Cargo.
 ----+---------------+------+----------+---------+------------+------------
 ```
 
-We can now compare the two to see if there are any missing or additional plugins we need to add to our file (clearly we need to add it to "Cargo.toml"!)
+We can now compare the two to see if there are any missing or additional plugins we need to add to our file (clearly we need to add it to "Cargo.toml"!).

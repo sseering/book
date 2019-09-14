@@ -100,7 +100,7 @@ You can also `skip` rows that you don't want.  Let's skip the first two of the 5
 
 We've narrowed it to three rows we care about.
 
-Let's look look at a few other commands for selecting data.  You may have wondered why the rows of the table are numbers. This acts as a handy way to get to a single row.  Let's sort our table by the file name and then pick one of the rows with the `n-th` command using its row number:
+Let's look at a few other commands for selecting data.  You may have wondered why the rows of the table are numbers. This acts as a handy way to get to a single row.  Let's sort our table by the file name and then pick one of the rows with the `nth` command using its row number:
 
 ```
 > ls | sort-by name

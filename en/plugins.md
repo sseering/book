@@ -4,7 +4,7 @@ The functionality of Nu can be extended using plugins. The plugins can perform m
 
 To add a plugin, simply build it and put the binary in your PATH. Nu plugins begin with the filename `nu_plugin_` so that Nu can find them among other binaries in your PATH. 
 
-**Note:** in the future, plugins may have a specific place they need to be put in order for Nu to find them.
+**Note:** in the future, plugins may have a specific place they need to be put into in order for Nu to find them.
 
 When Nu starts up, it scans your system and loads the plugins it finds.
 
