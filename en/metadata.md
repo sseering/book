@@ -15,7 +15,7 @@ error: Expected a string from pipeline
 
 The error message tells us not only that what we gave `from-toml` wasn't a string, but also where the value originally came from. How would it know that?
 
-Values that flow through a pipeline in Nu often have a set of addition information, or metadata, attached to them. These are known as tags, like the tags on an item in a store. These tags don't affect the data, but they give Nu a way to improve the experience of working with that data.
+Values that flow through a pipeline in Nu often have a set of additional information, or metadata, attached to them. These are known as tags, like the tags on an item in a store. These tags don't affect the data, but they give Nu a way to improve the experience of working with that data.
 
 Let's run the `open` command again, but this time, we'll look at the tags it gives back:
 
