@@ -132,10 +132,18 @@ brew install openssl cmake
 Once we have the dependencies Nu needs, we can install it using the `cargo` command that comes with the Rust compiler.
 
 ```
-> cargo install nu
+> cargo +nightly install nu
 ```
 
 That's it!  The cargo tool will do the work of downloading Nu and its source dependencies, building it, and installing it into the cargo bin path so that we can run it.
+
+If you want to install all the features, including some fun optional ones, you can use:
+
+```
+> cargo +nightly install nu --all-features
+```
+
+For this to work, make sure you have all the dependencies (shown above) on your system.
 
 Once installed, we can run Nu using the `nu` command:
 
