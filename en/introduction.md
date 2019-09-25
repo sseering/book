@@ -146,3 +146,20 @@ jonathan
 
 If this looks very similar to what we had before, you have a keen eye! It is similar, but with one important difference: we've called `echo` with the value we saw earlier. This allows us to pass data out of Nu into `echo` (or any command outside of Nu, like `git` for example)
 
+*Note: help text for any of Nu's builtin commands can be discovered with the `help` command*:
+
+```
+> help config
+Configuration management.
+
+Usage:
+  > config {flags}
+
+flags:
+  --load <Path>
+  --set <Any>
+  --get <Any>
+  --remove <Any>
+  --clear
+  --path
+```
