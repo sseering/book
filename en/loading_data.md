@@ -183,12 +183,12 @@ description = "A shell for the GitHub era"
 license = "MIT"
 ```
 
-## Opening URLs
+## Fetching URLs
 
-In addition to loading files from your filesystem, you can also give the `open` command a URL. This will fetch the contents of the URL from the internet and return it to you:
+In addition to loading files from your filesystem, you can also load URLs by using the `fetch` command. This will fetch the contents of the URL from the internet and return it to you:
 
 ```
-> open https://www.jonathanturner.org/feed.xml
+> fetch https://www.jonathanturner.org/feed.xml
 ----------
  rss 
 ----------
