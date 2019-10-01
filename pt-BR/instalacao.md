@@ -177,14 +177,12 @@ Pessoas mais acostumadas com Rust podem se perguntar por que fazemos tanto o "bu
 
 {% hint style="warning" %} Nushell ainda está em desenvovlimento e pode não estar estável para uso diário. {% endhint %}
 
-Para definir o seu login shell, você pode usar o comando [`chsh`](https://linux.die.net/man/1/chsh).
+Você pode definir o seu login shell usando o comando [`chsh`](https://linux.die.net/man/1/chsh).
 
-Algumas distribuições Linux possuem uma lista de shells válidos em `/etc/shells` e não permitirão modifica o shell até que o Nu esteja nessa lista branca. Você pode ver um erro similar ao mostrado abaixo se não tiver atualizado seu arquivo `shells`.
+Algumas distribuições Linux possuem uma lista de shells válidos em `/etc/shells` e não permitirão modificar o shell até que o Nu esteja nessa lista branca. Você pode ver um erro similar ao mostrado abaixo se não tiver atualizado seu arquivo `shells`.
 
 ```
 chsh: /home/username/.cargo/bin/nu is an invalid shell
 ```
 
-Você pode adicionar o Nu à lista de shell permitidos acrescentando o binário do Nu ao arquivo `shells`.
-
-O caminho a ser adicionado pode ser encontrado com o comando `which nu`. Geralmente é `$HOME/.cargo/bin/nu`.
+Você pode adicionar o Nu à lista de shell permitidos acrescentando o binário do Nu ao arquivo `shells`. O caminho a ser adicionado pode ser encontrado com o comando `which nu` e geralmente é `$HOME/.cargo/bin/nu`.
