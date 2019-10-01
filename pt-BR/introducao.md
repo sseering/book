@@ -1,0 +1,165 @@
+# Introdução
+
+Olá! Seja bem vindo ao projeto Nushell. O objetivo desse projeto é trazer a filosofia de shells do Unix, onde  pipes conectam comandos simples, para o estilo moderno de desenvolvimento.
+
+Nu usa dicas de vários territórios familiares: shells tradicionais como bash, shells avançados como PowerShell, programação funcional, programação de sistemas, e outros. Porém, mais do que tentar ser "pau pra toda obra", Nu foca sua energia em fazer poucas coisas muito bem:
+
+* Criar um shell multiplataforma flexível para o programador moderno da era GitHub
+* Permitir que você combine aplicações de linha de comando com um shell que entende a estrutura dos seus dados
+* Ter o mesmo nível de polimento de UX (experência do usuário) fornecido pelas aplicações CLI modernas
+
+O jeito mais fácil de ver o que o Nu pode fazer é começar com alguns exemplos, então vamos nessa.
+
+A primeira coisa que você vai perceber quando rodar um comando como `ls` é que ao invés de um bloco de texto, você recebe de volta uma tabela estruturada.
+
+```
+> ls
+----+------------------+-----------+----------+----------+----------------+----------------
+ #  | name             | type      | readonly | size     | accessed       | modified
+----+------------------+-----------+----------+----------+----------------+----------------
+ 0  | .azure           | Directory |          | 4.1 KB   | 2 months ago   | a week ago
+ 1  | IMG_1291.jpg     | File      |          | 115.5 KB | a month ago    | 4 months ago
+ 2  | Cargo.toml       | File      |          | 3.1 KB   | 17 minutes ago | 17 minutes ago
+ 3  | LICENSE          | File      |          | 1.1 KB   | 2 months ago   | 2 months ago
+ 4  | readonly.txt     | File      | readonly | <empty>  | a month ago    | a month ago
+ 5  | target           | Directory |          | 4.1 KB   | 2 days ago     | 15 minutes ago
+...
+```
+
+Essa tabela faz mais do que somente mostrar o diretório de um jeito diferente. Assim como uma planilha, ela nos permite trabalhar com os dados interativamente.
+
+A primeira coisa que vamos fazer é ordenar a tabela pelo nome. Para isso, vamos direcionar a saída do `ls` para um comando capaz de ordenar tabelas com base no conteúdo de uma coluna.
+
+```
+> ls | sort-by name
+----+------------------+-----------+----------+----------+----------------+----------------
+ #  | name             | type      | readonly | size     | accessed       | modified
+----+------------------+-----------+----------+----------+----------------+----------------
+ 0  | .azure           | Directory |          | 4.1 KB   | 2 months ago   | a week ago
+ 1  | .cargo           | Directory |          | 4.1 KB   | 2 months ago   | 2 months ago
+ 2  | .editorconfig    | File      |          | 148 B    | 2 months ago   | 2 months ago
+ 3  | .git             | Directory |          | 4.1 KB   | 2 months ago   | 20 minutes ago
+ 4  | .gitignore       | File      |          | 58 B     | a week ago     | a week ago
+ 5  | .vscode          | Directory |          | 4.1 KB   | a month ago    | a month ago
+...
+```
+
+Você pode ver que, para fazer isso funcionar, nós não passamos parâmetros de linha de comando para o `ls`. Ao invés disso, nós usamos o comando `sort-by`, fornecido pelo Nu, para ordenar a saída do comando `ls`.
+
+Nu fornece muitos comandos que trabalham com tabelas. Por exemplo, podemos filtrar o conteúdo da tabela do `ls` para que ela mostre apenas os arquivos com mais de 4 kilobytes:
+
+```
+> ls | where size > 4kb
+----+----------------+------+----------+----------+----------------+----------------
+ #  | name           | type | readonly | size     | accessed       | modified
+----+----------------+------+----------+----------+----------------+----------------
+ 0  | IMG_1291.jpg   | File |          | 115.5 KB | a month ago    | 4 months ago
+ 1  | README.md      | File |          | 11.1 KB  | 2 days ago     | 2 days ago
+ 2  | IMG_1291.png   | File |          | 589.0 KB | a month ago    | a month ago
+ 3  | IMG_1381.jpg   | File |          | 81.0 KB  | a month ago    | 4 months ago
+ 4  | butterfly.jpeg | File |          | 4.2 KB   | a month ago    | a month ago
+ 5  | Cargo.lock     | File |          | 199.6 KB | 22 minutes ago | 22 minutes ago
+```
+
+Assim como na filosofia Unix, fazer os comandos conversarem uns com os outros nos permite combiná-los de muitas maneiras diferentes. Vamos ver outro comando:
+
+```
+> ps
+-----+-------+----------+------+--------------------------------------------------------------------------------
+ #   | pid   | status   | cpu  | name
+-----+-------+----------+------+--------------------------------------------------------------------------------
+ 0   | 1003  | Unknown  | 0.00 |
+ 1   | 1515  | Sleeping | 0.00 | /usr/lib/gnome-settings-daemon/gsd-screensaver-proxy
+ 2   | 2128  | Sleeping | 0.00 | /usr/lib/gnome-settings-daemon/gsd-screensaver-proxy
+ 3   | 2285  | Unknown  | 0.00 |
+ 4   | 8872  | Sleeping | 0.00 | /usr/lib/gvfs/gvfsd-dnssd--spawner:1.23/org/gtk/gvfs/exec_spaw/4
+ 5   | 1594  | Sleeping | 0.00 | /usr/lib/ibus/ibus-engine-simple
+```
+
+You may be familiar with the `ps` command if you've used Linux. With it, we can get a list of all the current processes that the system is running, what their status is, and what their name is. We can also see the CPU load for the process.
+
+What if we wanted to show the processes that were actively using the CPU? Just like we did with the `ls` command earlier, we can also work with the table that the `ps` command gives back to us:
+
+```
+> ps | where cpu > 10
+---+-------+----------+-------+-----------------------------
+ # | pid   | status   | cpu   | name
+---+-------+----------+-------+-----------------------------
+ 0 | 1992  | Sleeping | 44.52 | /usr/bin/gnome-shell
+ 1 | 1069  | Sleeping | 16.15 |
+ 2 | 24116 | Sleeping | 13.70 | /opt/google/chrome/chrome
+ 3 | 21976 | Sleeping | 12.67 | /usr/share/discord/Discord
+```
+
+So far, we've seen using `ls` and `ps` to list files and processes. Nu also offers other commands that can create tables of useful information. Next, let's explore `date` and `sys`.
+
+Running `date` gives us information about the current day and time:
+
+```
+> date
+------+-------+-----+------+--------+--------+----------
+ year | month | day | hour | minute | second | timezone
+------+-------+-----+------+--------+--------+----------
+ 2019 | 8     | 17  | 19   | 20     | 50     | +12:00
+------+-------+-----+------+--------+--------+----------
+```
+
+Running `sys` gives information about the system that Nu is running on:
+
+```
+> sys
+----------+----------+-----------+----------+-----------+-----------
+ host     | cpu      | disks     | mem      | temp      | net
+----------+----------+-----------+----------+-----------+-----------
+ [object] | [object] | [3 items] | [object] | [3 items] | [3 items]
+----------+----------+-----------+----------+-----------+-----------
+```
+
+This is a bit different than the tables we saw before. The `sys` command gives us a table that contains structured tables in the cells instead of simple values. To take a look at this data, we need to select the column to view:
+
+```
+> sys | get host
+-------+------------------+----------+--------+----------+----------
+ name  | release          | hostname | arch   | uptime   | users
+-------+------------------+----------+--------+----------+----------
+ Linux | 5.0.0-21-generic | pop-os   | x86_64 | [object] | [1 item]
+-------+------------------+----------+--------+----------+----------
+```
+
+The `get` command lets us jump into the contents of a column of the table. Here, we're looking into the "host" column, which contains information about the host that Nu is running on. The name of the OS, the hostname, the CPU, and more. Let's get the name of the users on the system:
+
+```
+> sys | get host.users
+jonathan
+```
+
+Right now, there's just one user on the system named "jonathan". You'll notice that we can pass a path and not just the name of the column. Nu will take the path and go to the corresponding bit of data in the table.
+
+You might have noticed something else that's different. Rather than having a table of data, we have just the single element: the string "jonathan". Nu works with both tables of data as well as strings. Strings are an important part of working with commands outside of Nu.
+
+Let's see how strings work outside of Nu in action. We'll take our example from before and run the external `echo` command, which is built into most OSes:
+
+```
+> sys | get host.users | echo $it
+jonathan
+```
+
+If this looks very similar to what we had before, you have a keen eye! It is similar, but with one important difference: we've called `echo` with the value we saw earlier. This allows us to pass data out of Nu into `echo` (or any command outside of Nu, like `git` for example)
+
+*Note: help text for any of Nu's builtin commands can be discovered with the `help` command*:
+
+```
+> help config
+Configuration management.
+
+Usage:
+  > config {flags}
+
+flags:
+  --load <Path>
+  --set <Any>
+  --get <Any>
+  --remove <Any>
+  --clear
+  --path
+```
