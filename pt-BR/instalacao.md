@@ -172,3 +172,19 @@ nushell> cargo build --release && cargo run --release
 ```
 
 Pessoas mais acostumadas com Rust podem se perguntar por que fazemos tanto o "build" como o "run" se o "run" já faz o build por padrão. Isso serve para contornar uma falha da nova opção `default-run` no Cargo e assegurar que será feito o build de todos os plugins, embora  possa não ser necessário no futuro.
+
+## Configurando como login shell
+
+{% hint style="warning" %} Nushell ainda está em desenvovlimento e pode não estar estável para uso diário. {% endhint %}
+
+Para definir o seu login shell, você pode usar o comando [`chsh`](https://linux.die.net/man/1/chsh).
+
+Algumas distribuições Linux possuem uma lista de shells válidos em `/etc/shells` e não permitirão modifica o shell até que o Nu esteja nessa lista branca. Você pode ver um erro similar ao mostrado abaixo se não tiver atualizado seu arquivo `shells`.
+
+```
+chsh: /home/username/.cargo/bin/nu is an invalid shell
+```
+
+Você pode adicionar o Nu à lista de shell permitidos acrescentando o binário do Nu ao arquivo `shells`.
+
+O caminho a ser adicionado pode ser encontrado com o comando `which nu`. Geralmente é `$HOME/.cargo/bin/nu`.
