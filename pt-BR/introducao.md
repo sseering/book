@@ -2,7 +2,7 @@
 
 Olá! Seja bem vindo ao projeto Nushell. O objetivo desse projeto é trazer a filosofia de shells do Unix, onde  pipes conectam comandos simples, para o estilo moderno de desenvolvimento.
 
-Nu usa dicas de vários territórios familiares: shells tradicionais como bash, shells avançados como PowerShell, programação funcional, programação de sistemas, e outros. Porém, mais do que tentar ser "pau pra toda obra", Nu foca sua energia em fazer poucas coisas muito bem:
+Nu usa dicas de vários terrenos familiares: shells tradicionais como bash, shells avançados como PowerShell, programação funcional, programação de sistemas, e outros. Porém, mais do que tentar ser "pau pra toda obra", Nu foca sua energia em fazer poucas coisas muito bem:
 
 * Criar um shell multiplataforma flexível para o programador moderno da era GitHub
 * Permitir que você combine aplicações de linha de comando com um shell que entende a estrutura dos seus dados
@@ -28,7 +28,7 @@ A primeira coisa que você vai perceber quando rodar um comando como `ls` é que
 
 Essa tabela faz mais do que somente mostrar o diretório de um jeito diferente. Assim como uma planilha, ela nos permite trabalhar com os dados interativamente.
 
-A primeira coisa que vamos fazer é ordenar a tabela pelo nome. Para isso, vamos direcionar a saída do `ls` para um comando capaz de ordenar tabelas com base no conteúdo de uma coluna.
+A primeira coisa que vamos fazer é ordenar a tabela por nome. Para isso, vamos direcionar a saída do `ls` para um comando capaz de ordenar tabelas com base no conteúdo de uma coluna.
 
 ```
 > ls | sort-by name
@@ -44,9 +44,9 @@ A primeira coisa que vamos fazer é ordenar a tabela pelo nome. Para isso, vamos
 ...
 ```
 
-Você pode ver que, para fazer isso funcionar, nós não passamos parâmetros de linha de comando para o `ls`. Ao invés disso, nós usamos o comando `sort-by`, fornecido pelo Nu, para ordenar a saída do comando `ls`.
+Você pode ver que, para fazer isso funcionar, não passamos parâmetros de linha de comando para o `ls`. Ao invés disso, usamos o comando `sort-by`, fornecido pelo Nu, para ordenar a saída do comando `ls`.
 
-Nu fornece muitos comandos que trabalham com tabelas. Por exemplo, podemos filtrar o conteúdo da tabela do `ls` para que ela mostre apenas os arquivos com mais de 4 kilobytes:
+O Nu fornece muitos comandos que trabalham com tabelas. Por exemplo, podemos filtrar o conteúdo da tabela do `ls` para que ela mostre apenas os arquivos com mais de 4 kilobytes:
 
 ```
 > ls | where size > 4kb
@@ -76,9 +76,9 @@ Assim como na filosofia Unix, fazer os comandos conversarem uns com os outros no
  5   | 1594  | Sleeping | 0.00 | /usr/lib/ibus/ibus-engine-simple
 ```
 
-You may be familiar with the `ps` command if you've used Linux. With it, we can get a list of all the current processes that the system is running, what their status is, and what their name is. We can also see the CPU load for the process.
+Você deve conhecer o comando `ps` se já usou Linux. Com ele, vemos uma lista com todos os processos que o sistema está rodando atualmente, seus estados e seus nomes. Também podemos ver a carga de CPU para cada processo.
 
-What if we wanted to show the processes that were actively using the CPU? Just like we did with the `ls` command earlier, we can also work with the table that the `ps` command gives back to us:
+E se quiséssemos mostrar somente os processos que estão usando a CPU de fato? Exatamente como fizemos com o comando `ls` anteriormente, podemos também manipular a tabela que o comando `ps` nos retorna:
 
 ```
 > ps | where cpu > 10
@@ -91,9 +91,9 @@ What if we wanted to show the processes that were actively using the CPU? Just l
  3 | 21976 | Sleeping | 12.67 | /usr/share/discord/Discord
 ```
 
-So far, we've seen using `ls` and `ps` to list files and processes. Nu also offers other commands that can create tables of useful information. Next, let's explore `date` and `sys`.
+Até agora vimos como usar `ls` e `ps` para listar arquivos e processos. O Nu também oferece outros comandos que podem criar tabelas com informações úteis. A seguir vamos explorar `date` e `sys`.
 
-Running `date` gives us information about the current day and time:
+Ao executar `date` obtemos informações sobre a data e hora correntes:
 
 ```
 > date
@@ -104,7 +104,7 @@ Running `date` gives us information about the current day and time:
 ------+-------+-----+------+--------+--------+----------
 ```
 
-Running `sys` gives information about the system that Nu is running on:
+E ao executar `sys` obtemos informações sobre o sistema em que o Nu está rodando:
 
 ```
 > sys
@@ -115,7 +115,7 @@ Running `sys` gives information about the system that Nu is running on:
 ----------+----------+-----------+----------+-----------+-----------
 ```
 
-This is a bit different than the tables we saw before. The `sys` command gives us a table that contains structured tables in the cells instead of simple values. To take a look at this data, we need to select the column to view:
+Essa tabela é um pouco diferente das que vimos antes. O comando `sys` retorna uma tabela que contém tabelas estruturadas em suas células, ao invés de valores simples. Para dar uma olhada nesses dados, precisamos selecionar a coluna que queremos ver:
 
 ```
 > sys | get host
@@ -126,27 +126,27 @@ This is a bit different than the tables we saw before. The `sys` command gives u
 -------+------------------+----------+--------+----------+----------
 ```
 
-The `get` command lets us jump into the contents of a column of the table. Here, we're looking into the "host" column, which contains information about the host that Nu is running on. The name of the OS, the hostname, the CPU, and more. Let's get the name of the users on the system:
+O comando `get` permite que tenhamos acesso ao conteúdo de uma coluna da tabela. Aqui, estamos olhando para dentro da coluna `host`, que contém informações a respeito da máquina host em que o Nu está rodando, como nome do SO (sistema operacional), o nome de host, a CPU e outros dados mais. Vamos ver os nomes dos usuários do sistema:
 
 ```
 > sys | get host.users
 jonathan
 ```
 
-Right now, there's just one user on the system named "jonathan". You'll notice that we can pass a path and not just the name of the column. Nu will take the path and go to the corresponding bit of data in the table.
+Nesse momento só tem um único usuário no sistema, chamado "jonathan". Note que nós podemos passar um caminho e não apenas o nome de uma coluna. O Nu vai seguir esse caminho até o dado correspondente na tabela.
 
-You might have noticed something else that's different. Rather than having a table of data, we have just the single element: the string "jonathan". Nu works with both tables of data as well as strings. Strings are an important part of working with commands outside of Nu.
+Talvez você tenha notado mais alguma coisa de diferente. Ao invés de uma tabela, recebemos apenas um elemento simples: a string "jonathan". O Nu trabalha tanto com tabelas de dados como com strings, que são uma parte importante da interação com comandos externos ao Nu.
 
-Let's see how strings work outside of Nu in action. We'll take our example from before and run the external `echo` command, which is built into most OSes:
+Vejamos como as strings funcionam fora do Nu. Vamos usar nosso exemplo anterior e executar o comando externo `echo`, presente na maioria dos SOs:
 
 ```
 > sys | get host.users | echo $it
 jonathan
 ```
 
-If this looks very similar to what we had before, you have a keen eye! It is similar, but with one important difference: we've called `echo` with the value we saw earlier. This allows us to pass data out of Nu into `echo` (or any command outside of Nu, like `git` for example)
+Se isso lhe parece bastante similar ao que tínhamos anteriormente, você tem um olho afiado! É similar, mas com uma diferença importante: chamamos `echo` com o valor retornado antes. Isso permite que passemos dados para o `echo` fora do Nu (ou para qualquer outro comando de fora do Nu, como `git`, por exemplo).
 
-*Note: help text for any of Nu's builtin commands can be discovered with the `help` command*:
+*Nota: você pode obter um texto de ajuda para quaisquer comandos embutidos do Nu usando o comando `help`*:
 
 ```
 > help config
