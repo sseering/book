@@ -1,12 +1,12 @@
-# Loading data
+# Carregando dados
 
-Earlier we saw how you can use commands like `ls`, `ps`, `date`, and `sys` to load information about your files, processes, time of date, and the system itself. Each command gives us a table of information that we can explore. There are other ways we can load in a table of data to work with.
+Anteriormente vimos como você pode usar comandos como `ls`, `ps`, `date` e `sys` para carregar informações sobre seus arquivos, processos, data e hora e sobre o sistema em si. Cada comando retorna uma tabela de informações que podemos explorar. Há outras maneiras de se carregar uma tabela de dados com a qual trabalhar.
 
-## Opening files
+## Abrindo arquivos
 
-One of Nu's most powerful assets in working with data is the `open` command. It is a multi-tool that can work with a number of different data formats. To see what this means, let's try opening a json file:
+Uma das funcionalidades mais poderosas do Nu para lidar com dados é o comando `open`. Ele é uma ferramenta múltipla, capaz de trabalhar com diversos formatos de dados. Para vermos o que isso significa, vamos tentar abrir um arquivo json:
 
-```
+```shell
 > open editors/vscode/package.json
 ------+----------+----------+---------+---------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------
  name | descript | author   | license | version | reposito | publishe | categori | keywords | engines  | activati | main     | contribu | scripts  | devDepen 
@@ -19,16 +19,16 @@ One of Nu's most powerful assets in working with data is the `open` command. It 
 ------+----------+----------+---------+---------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------
 ```
 
-In a similar way to `ls`, opening a file type that Nu understands will give us back something that is more than just text (or a stream of bytes). Here we open a "package.json" file from a JavaScript project. Nu can recognize and open the JSON text and give back a table of data.
+De um jeito similar ao comando `ls`, abrir um tipo de arquivo que o Nu entende vai nos retornar algo que é mais do que apenas texto (ou um fluxo de bytes). Aqui nós abrimos um arquivo "package.json" de um projeto JavaScript. O Nu abre e reconhece o texto JSON e retorna uma tabela de dados.
 
-If we wanted to check the version of the project we were looking at, we can use the `get` command.
+Se quisermos checar a versão do projeto que estamos olhando, podemos usar o comando `get`.
 
-```
+```shell
 > open editors/vscode/package.json | get version
 1.0.0
 ```
 
-Nu currently supports the following formats for loading data directly into tables:
+O Nu atualmente suporta carregar dados diretamente para tabelas a partir dos seguintes formatos:
 
 * json
 * yaml
@@ -37,33 +37,34 @@ Nu currently supports the following formats for loading data directly into table
 * csv
 * ini
 
-But what happens if you load a text file that isn't one of these? Let's try it:
+Mas o que acontece se você carregar um arquivo texto cujo formato não é um desses? Vamos tentar:
 
-```
+```shell
 > open README.md
 ```
 
-We're shown the contents of the file. If the file is too large, we get a handy scroll-view to look at the file and then jump back to the terminal. To help with readability, Nu will also syntax-highlight common file formats like source files, markdown, and more.
+O conteúdo do arquivo é mostrado. Se o arquivo for muito grande, obteremos uma visão rolável para examinar o arquivo e depois voltar para o terminal. Para ajudar na legibilidade, Nu faz realce de sintaxe para formatos comuns como arquivos de código fonte, markdown e outros.
 
-Below the surface, what Nu sees in these text files is one large string. Next, we'll talk about how to work with these strings to get the data we need out of them.
+Por baixo dos panos, o que o Nu enxerga nesses arquivos texto é uma grande string. A seguir, vamos falar sobre como trabalhar com essas strings para obter os dados que precisamos delas.
 
-## Working with strings
+## Trabalhando com strings
 
-An important part of working with data coming from outside Nu is that it's not always in a format that Nu understands. Often this data is given to us as a string. 
+Uma parte importante de se trabalhar com dados vindos de fora do Nu é que eles nem sempre vêm num formato que o Nu entende. Com frequência, esses dados são passados como uma string.
 
-Let's imagine that we're given this data file:
+Vamos imaginar que obtivemos esse arquivo de dados:
 
-```
+```shell
 > open people.txt
 Octavia | Butler | Writer
 Bob | Ross | Painter
 Antonio | Vivaldi | Composer
 ```
-Each bit of data we want is separated by the pipe ('|') symbol, and each person is on a separate line. Nu doesn't have a pipe-delimited file format by default, so we'll have to parse this ourselves.
 
-The first thing we want to do when bringing in the file is to work with it a line at a time:
+Cada pedacinho de dado que queremos está separado pelo símbolo de pipe ('|') e cada pessoa está numa linha em separado. Nu não possui por padrão um formato de arquivos delimitados por pipe, então teremos que interpretá-lo nós mesmos.
 
-```
+A primeira coisa que queremos fazer ao carregar o arquivo é trabalhar com ele linha a linha:
+
+```shell
 > open people.txt | lines
 ---+------------------------------
  # | value 
@@ -74,9 +75,9 @@ The first thing we want to do when bringing in the file is to work with it a lin
 ---+------------------------------
 ```
 
-We can see that we're working with the lines because we're back into a table. Our next step is to see if we can split up the rows into something a little more useful. For that, we'll use the `split-column` command. `split-column`, as the name implies, gives us a way to split a delimited string into columns. We tell it what the delimiter is, and it does the rest:
+Podemos notar que estamos lidando com linhas porque voltamos a ver uma tabela. Nosso próximo passo é tentar dividir as linhas em algo um pouco mais útil. Para isso, vamos usar o comando `split-column`. Como o nome implica, esse comando nos dá uma forma de dividir em colunas uma string delimitada. Informamos qual é o delimitador e o comando faz o resto:
 
-```
+```shell
 > open people.txt | lines | split-column "|"
 ---+----------+-----------+-----------
  # | Column1  | Column2   | Column3 
@@ -87,9 +88,9 @@ We can see that we're working with the lines because we're back into a table. Ou
 ---+----------+-----------+-----------
 ```
 
-That almost looks correct. Looks like there is extra space there. Let's change our delimiter:
+Está quase certo. Parece que tem um espaço extra ali. Vamos mudar nosso delimitador:
 
-```
+```shell
 > open people.txt | lines | split-column " | "
 ---+---------+---------+----------
  # | Column1 | Column2 | Column3 
@@ -100,9 +101,9 @@ That almost looks correct. Looks like there is extra space there. Let's change o
 ---+---------+---------+----------
 ```
 
-Not bad. The `split-column` command gives us data we can use. It also goes ahead and gives us default column names:
+Nada mal. O comando `split-column` retorna dados que podemos usar. Ele também vai além e nos dá nomes de coluna padrão:
 
-```
+```shell
 > open people.txt | lines | split-column " | " | get Column1
 ---+---------
  # | value 
@@ -113,9 +114,9 @@ Not bad. The `split-column` command gives us data we can use. It also goes ahead
 ---+---------
 ```
 
-We can also name our columns instead of using the default names:
+Podemos também nomear nossas colunas ao invés de usar os nomes padrão:
 
-```
+```shell
 > open people.txt | lines | split-column " | " first_name last_name job
 ---+------------+-----------+----------
  # | first_name | last_name | job 
@@ -126,9 +127,9 @@ We can also name our columns instead of using the default names:
 ---+------------+-----------+----------
 ```
 
-Now that our data is in a table, we can use all the commands we've used on tables before:
+Agora que nossos dados estão em uma tabela, podemos usar todos os comandos que já usávamos antes em tabelas:
 
-```
+```shell
 > open people.txt | lines | split-column " | " first_name last_name job | sort-by first_name
 ---+------------+-----------+----------
  # | first_name | last_name | job 
@@ -139,16 +140,17 @@ Now that our data is in a table, we can use all the commands we've used on table
 ---+------------+-----------+----------
 ```
 
-There are other commands you can use to work with strings:
+Há outros comandos que você pode usar para trabalhar com strings:
+
 * split-row
 * str
 * lines
 * size
 * trim
 
-There is also a set of helper commands we can call if we know the data has a structure that Nu should be able to understand. For example, let's open a Rust lock file:
+Há também um conjunto de comandos auxiliares que podemos chamar se soubermos que os dados têm uma estrutura que o Nu deve ser capaz de entender. Por exemplo, vamos abrir um arquivo de lock do Rust:
 
-```
+```shell
 > open Cargo.lock
 # This file is automatically @generated by Cargo.
 # It is not intended for manual editing.
@@ -157,9 +159,9 @@ name = "adhoc_derive"
 version = "0.1.2"
 ```
 
-The "Cargo.lock" file is actually a .toml file, but the file extension isn't .toml. That's okay, we can use the `from-toml` command:
+O arquivo "Cargo.lock" é na verdade um arquivo .toml, mas a extensão do arquivo não é .toml. Tudo bem, podemos usar o comando `from-toml`:
 
-```
+```shell
 > open Cargo.lock | from-toml
 ----------+-------------
  metadata | package 
@@ -168,13 +170,13 @@ The "Cargo.lock" file is actually a .toml file, but the file extension isn't .to
 ----------+-------------
 ```
 
-There is a `from-` command for each of the structed data text formats that Nu can open and understand.
+Há um comando `from-` para cada formato de dados estruturados em texto que o Nu entende e pode abrir.
 
-## Opening in raw mode
+## Abrindo no modo bruto
 
-While it's helpful to be able to open a file and immediately work with a table of its data, this is not always what you want to do. To get to the underlying text, the `open` command can take an optional `--raw` flag:
+Embora seja útil poder abrir um arquivo e trabalhar imediatamente com uma tabela dos seus dados, nem sempre é isso o que queremos fazer. Para ter acesso ao texto subjacente, o comando `open` pode receber um modificador opcional `--raw`:
 
-```
+```shell
 > open Cargo.toml --raw
 [package]                                                                                        name = "nu"
 version = "0.1.3"
@@ -183,11 +185,11 @@ description = "A shell for the GitHub era"
 license = "MIT"
 ```
 
-## Opening URLs
+## Abrindo URLs
 
-In addition to loading files from your filesystem, you can also give the `open` command a URL. This will fetch the contents of the URL from the internet and return it to you:
+Além de carregar dados a partir do sistema de arquivos, você também pode passar uma URL para o comando `open`. Ele trará da internet o conteúdo dessa URL e o retornará para você:
 
-```
+```shell
 > open https://www.jonathanturner.org/feed.xml
 ----------
  rss 
