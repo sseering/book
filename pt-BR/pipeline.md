@@ -1,51 +1,51 @@
-# The pipeline
+# O pipeline
 
-One of the core designs of Nu is the pipeline, a design idea that tracks its roots back decades to some of the original philosophy behind Unix. Just as Nu extends from the single string data type of Unix, Nu also extends the idea of the pipeline to include more than just text.
+Um dos principais designs do Nu é o pipeline, uma ideia de design que tem suas raízes décadas atrás, na filosofia original por trás do Unix. Assim como Nu se extende a partir do tipo de dado string do Unix, também extende a ideia do pipeline para incluir mais do que apenas texto.
 
-## Basics
+## Básico
 
-A pipeline is constructed with three parts: the input, the filter, and the output.
+Um pipeline é construído com três partes: a entrada, o filtro e a saída.
 
-```
+```shell
 > open "Cargo.toml" | inc package.version | save "Cargo_new.toml"
 ```
 
-The first command, `open "Cargo.toml"`, is an input (sometimes also called a "source" or "producer"). This creates or loads data and feeds it into a pipeline. It's from input that pipelines have values to work with.  Commands like `ls` are also inputs, as they take data from the filesystem and send it through the pipelines so that it can be used.
+O primeiro comando, `open "Cargo.toml"`, é uma entrada (às vezes também chamado de "fonte" ou "produtor"). Ele cria ou carrega dados com os quais alimenta o pipeline. É a partir da entrada que os pipelines conseguem dados para trabalhar. Comandos como `ls` também são entradas, já que pegam dados do sistema de arquivos e os enviam através dos pipelines para que possam ser usados adiante.
 
-The second command, `inc package.version`, is a filter. Filters take the data they are given and often do something with it. They may change it (as with the `inc` command in our example), or they may do another operation, like logging, as the values pass through.
+O segundo comando, `inc package.version`, é um filtro. Filtros recebem dados e normalmente fazem alguma coisa com eles. Podem mudá-los (como o comando `inc` no nosso exemplo), ou podem executar outra operação, como registro de log, conforme os valores passam.
 
-The last command, `save "Cargo_new.toml"`, is an output (sometimes called a "sink"). An output takes input from the pipeline and does some final operation on it. In our example, we save what comes through the pipeline to a file as the final step. Other types of output commands may take the values and view them for the user.
+O último comando, `save "Cargo_new.toml"`, é uma saída (às vezes chamado de "pia" ou "ralo"). Uma saída recebe dados do pipeline e executa alguma operação final sobre eles. No nosso exemplo, salvamos o que chega pelo pipeline em um arquivo como passo final. Outros tipos de comandos de saída podem exibir os dados para o usuário.
 
-## Working with external commands
+## Trabalhando com comandos externos
 
-Nu commands communicate with each other using the Nu data types (see [types of data](types_of_data.md)), but what about commands outside of Nu?  Let's look at some examples of working with external commands:
+Os comandos do Nu se comunicam entre si usando tipos de dados fornecidos pelo próprio Nu (veja [tipos de dados](tipos_de_dados.md)), mas e os comandos de fora do Nu? Vejamos alguns exemplos de como trabalhar com comandos externos:
 
-`internal_command | external_command`
+`comando_interno | comando_externo`
 
-Data will flow from the internal_command to the external_command. This data is expected to be strings, so that they can be sent to the `stdin` of the external_command.
+Dados fluem do comando_interno para o comando_externo. Espera-se que esses dados sejam strings, para que possam ser enviados para a entrada padrão (`stdin`) do comando_externo.
 
-`external_command | internal_command`
+`comando_externo | comando_interno`
 
-Data coming from an external command into Nu will collect into a single string, and then will be passed into internal_command. Commands like `lines` help make it easier to bring in data from external commands in such a way that it's easier to work with.
+Dados vindo de um comando externo para o Nu são agrupados em uma string única e, então, passados para o comando_interno. Comandos como `lines` ajudam a trazer dados de comandos externos de modo a facilitar sua utilização.
 
-`external_command_1 | external_command_2`
+`comando_externo_1 | comando_externo_2`
 
-Nu works with data piped between two external commands in the same way as other shells, like Bash would. The `stdout` of external_command_1 is connected to the `stdin` of external_command_2. This lets data flow naturally between the two commands.
+Nu trabalha com dados canalizados entre dois comandos externos da mesma maneira que em outros shells, como Bash. A saída padrão (`stdout`) do comando_externo_1 é conectada à entrada padrão (`stdin`) do comando_externo_2, permitindo que os dados fluam naturalmente entre os dois comandos.
 
-## Behind the scenes
+## Nos bastidores
 
-You may have wondered how we see a table if `ls` is an input and not an output. Nu adds this output for us automatically using another command called `autoview`. The `autoview` command is appended to any pipeline that doesn't have an output allowing us to see the result.
+Você pode ter se perguntado como vemos uma tabela se o `ls` é uma entrada e não uma saída. Nu adiciona automaticamente por nós uma saída usando outro comando chamado `autoview`, que é adicionado a qualquer pipeline que não tenha uma saída que nos permita ver o resultado.
 
-In effect, the command:
+Com efeito, o comando:
 
-```
+```shell
 > ls
 ```
 
-And the pipeline:
+E o pipeline:
 
-```
+```shell
 > ls | autoview
 ```
 
-Are one and the same.
+São a mesma coisa.
