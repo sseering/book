@@ -23,13 +23,13 @@ Para fazer o build da imagem base:
 
 ```bash
 $ docker build -f docker/Dockerfile.nu-base -t nushell/nu-base .
-``` 
+```
 
 E então, para fazer o build do container menor (usando o build Multiestágios):
 
 ```bash
 $ docker build -f docker/Dockerfile -t nushell/nu .
-``` 
+```
 
 De qualquer modo, você pode rodar qualquer um dos containers assim:
 
@@ -51,7 +51,7 @@ Se ainda não tivermos o Rust instalado no sistema, a melhor maneira de instalar
 
 O Nu atualmente requer a versão **nightly** do Rust. Quando você abrir o "rustup" pela primeira vez, ele vai perguntar qual versão do Rust você quer instalar:
 
-```
+```shell
 Current installation options:
 
    default host triple: x86_64-unknown-linux-gnu
@@ -65,25 +65,25 @@ Current installation options:
 
 Selecione a opção #2 para customizar a instalação.
 
-```
+```shell
 Default host triple?
 ```
 
 Aperte enter aqui para selecionar o default.
 
-```
+```shell
 Default toolchain? (stable/beta/nightly/none)
 ```
 
 Certifique-se de digitar "nightly" aqui e pressionar enter. Isso vai levar à configuração seguinte:
 
-```
+```shell
 Modify PATH variable? (y/n)
 ```
 
 Você pode opcionalmente atualizar o seu *path*. Normalmente é uma boa ideia, pois torna os passos seguintes mais fáceis.
 
-```
+```shell
 Current installation options:
 
    default host triple: x86_64-unknown-linux-gnu
@@ -107,21 +107,21 @@ Se você preferir não instalar o Rust via "rustup", você pode também instalar
 
 Você vai precisar instalar os pacotes "pkg-config" e "libssl-dev":
 
-```
+```bash
 apt install pkg-config libssl-dev
 ```
 
 Usuários Linux que quiserem usar as funcionalidades opcionais `rawkey` ou `clipboard` precisarão instalar os pacotes "libx11-dev" and "libxcb-composite0-dev":
 
-```
+```bash
 apt install libxcb-composite0-dev libx11-dev
 ```
 
 ### macOS
 
-Ao usar o [Homebrew](https://brew.sh/), você precisará instalar o "openssl" e o "cmake" usando: 
+Ao usar o [Homebrew](https://brew.sh/), você precisará instalar o "openssl" e o "cmake" usando:
 
-```
+```bash
 brew install openssl cmake
 ```
 
@@ -129,7 +129,7 @@ brew install openssl cmake
 
 Quando tivermos todas as dependências de que o Nu precisa, podemos instalá-lo usando o comando `cargo`, que vem junto com o compilador Rust.
 
-```
+```shell
 > cargo +nightly install nu
 ```
 
@@ -137,7 +137,7 @@ Pronto! A ferramenta cargo fará o download do Nu e das dependências do fonte, 
 
 Se quiser instalar todas as funcionalidades, inclusive algumas opcionais divertidas, você pode usar:
 
-```
+```shell
 > cargo +nightly install nu --all-features
 ```
 
@@ -145,29 +145,29 @@ Para esse comando funcionar, certifique-se de ter todas as dependências (mostra
 
 Uma vez instalado, podemos rodar o Nu usando o comando `nu`:
 
-```
+```bash
 $ nu
-/home/jonathan/Source> 
+/home/jonathan/Source>
 ```
 
 ## Fazendo o Build a partir dos fontes
 
 Também podemos fazer o build do código fonte diretamente do GitHub. Isso nos dá acesso imediato às últimas funcionalidades e correções do Nu.
 
-```
+```shell
 > git clone https://github.com/nushell/nushell.git
 ```
 
 O Git vai clonar o repositório principal do nushell e daí podemos fazer o build e rodar o Nu:
 
-```
+```bash
 > cd nushell
 nushell> cargo build --all-features && cargo run --all-features
 ```
 
 Você também pode fazer o build e rodar o Nu em modo release:
 
-```
+```bash
 nushell> cargo build --release && cargo run --release
 ```
 
@@ -181,7 +181,7 @@ Você pode definir o seu login shell usando o comando [`chsh`](https://linux.die
 
 Algumas distribuições Linux possuem uma lista de shells válidos em `/etc/shells` e não permitirão modificar o shell até que o Nu esteja nessa lista branca. Você pode ver um erro similar ao mostrado abaixo se não tiver atualizado seu arquivo `shells`.
 
-```
+```bash
 chsh: /home/username/.cargo/bin/nu is an invalid shell
 ```
 
