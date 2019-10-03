@@ -1,12 +1,12 @@
-# Shells in shells
+# Shells em shells
 
-## Working in multiple directories
+## Trabalhando em múltiplos diretórios
 
-While it's common to work in one directory, it can be handy to work in multiple places at the same time. For this, Nu offers the concept of "shells". As the name implies, they're a way of running multiple shells in one, allowing you to quickly jump between working directories and more.
+Embora seja comum trabalhar em um único diretório, pode ser útil trabalhar em múltiplos locais ao mesmo tempo. Para isso, Nu oferece o conceito de "shells". Como o nome implica, eles são uma maneira de executar múltiplos shells em um, permitindo que você salte rapidamente entre diretórios e muito mais.
 
-To get started, let's enter a directory:
+Para começar, vamos entrar num diretório:
 
-```
+```shell
 /home/jonathan/Source/nushell(master)> enter ../lark
 /home/jonathan/Source/lark(master)> ls
 ----+----------------+-----------+----------+---------+---------------+---------------
@@ -17,9 +17,9 @@ To get started, let's enter a directory:
  2  | notes          | Directory |          | 4.1 KB  | 10 months ago | 6 months ago
 ```
 
-Entering is similar to changing directories (as we saw with the `cd` command). This allows you to jump into a directory to work in it. Instead of changing the directory, we now are in two directories. To see this more clearly, we can use the `shells` command to list the current directories we have active:
+Entrar é semlhante a mudar de diretório (como vimos com o comando `cd`), permitindo que você salte para o diretório dentro do qual vai trabalhar. Ao invés de mudar de diretório, nós agora estamos em dois diretórios. Para ver isso mais claramente, podemos usar o comando `shells` para listar os diretórios ativos agora:
 
-```
+```shell
 /home/jonathan/Source/lark(master)> shells
 ---+---+------------+-------------------------------
  # |   | name       | path 
@@ -29,9 +29,9 @@ Entering is similar to changing directories (as we saw with the `cd` command). T
 ---+---+------------+-------------------------------
 ```
 
-The `shells` command shows us there are two shells currently active: our original "nushell" source directory and now this new "lark" directory.
+O comando `shells` nos mostra que há dois diretórios ativos agora: nosso diretório original "nushell" e agora esse novo diretório "lark".
 
-We can jump between these shells with the `n` and `p` shortcuts, short for "next" and "previous":
+Podemos saltar entre esses shells com os atalhos `n` e `p`, abrevisções para "next" (próximo) e "previous" (anterior):
 
 ```
 /home/jonathan/Source/lark(master)> n
@@ -39,23 +39,23 @@ We can jump between these shells with the `n` and `p` shortcuts, short for "next
 /home/jonathan/Source/lark(master)>
 ```
 
-We can see the directory changing, but we're always able to get back to a previous directory we were working on. This allows us to work in multiple directories in the same session.
+Podemos ver a alteração de diretórios, mas sempre somos capazes de voltar para um diretório anterior em que estávamos trabalhando. Isso nos permite trabalhar em múltiplos diretórios na mesma sessão.
 
-## Exiting the shell
+## Saindo do shell
 
-You can leave a shell you have `enter`ed using the `exit` command. If this is the last open shell, Nu will quit.
+Você pode sair de um shell em que tenha entrado (usando `enter`) através do comando `exit`. Se esse for o último shell aberto, Nu será encerrado.
 
-You can always quit Nu, even if multiple shells are active by passing the `--now` flag to the exit command. Like so: `exit --now`
+Você sempre pode emcerrar o Nu, mesmo que múltiplos shells estejam ativos, passando o modificador `--now` para o comando `exit`. Assim: `exit --now`.
 
-## Going beyond directories
+## Indo além de diretórios
 
-Nu can also create shells from other things aside from paths in a filesystem. Let's say, for example, you're working with a large data set and don't want to lose your place inside of it.
+O Nu também pode criar shells a partir de outras coisas além de caminhos do sistema de arquivos. Digamos, por exemplo, que você está trabalhando com uma grande massa de dadose não quer perder seu lugar dentro dela.
 
-To see how this works, let's do the following exercise. Currently, we list the [Nu plugins](plugins.md) we have developed in the "Cargo.toml" file. Let's say we just created a new plugin in the src/plugins directory called "doc.rs", and we're interested to know if it's listed in the "Cargo.toml" as well so that it can be compiled and installed correctly for Nu.
+Para ver como isso funciona, vamos fazer o seguinte exercício. Atualmente, listamos os [plugins](plugins.md) que desenvolvemos para o Nu no arquivo "Cargo.toml". Digamos que tenhamos acabado de criar um novo plugin no diretório src/plugins chamado "doc.rs" e queremos saber se ele também está listado, de forma que possa ser compilado e instalado corretamente.
 
-Let's `enter` the file "Cargo.toml" from Nu's source code:
+Vamos entrar no arquivo "Cargo.toml" do código fonte do Nu:
 
-```
+```shell
 /Users/andresrobalino/Code/nushell(master)> enter Cargo.toml
 /> ls
 ------------+--------------+------------------+----------+----------
@@ -65,11 +65,11 @@ Let's `enter` the file "Cargo.toml" from Nu's source code:
 ------------+--------------+------------------+----------+----------
 ```
 
-For the moment we've only `enter`ed the file and we can see what's in it from the table `ls` gives back. If you pay close attention, this time we've entered a file format that Nu understands (.toml). Nu also projects the contents of the file in a filesystem-like so we can explore it as if it were a regular filesystem.
+Até o momento, apenas entramos no arquivo (usando o comando `enter`) e podemos ver o que há dentro dele pela tabela que o `ls` nos retorna. Se você prestar bastante atenção, dessa vez entramos num arquivo cujo formato o Nu entende (.toml). O Nu também projeta o conteúdo do arquivo em algo semelhante a um sistema de arquivos para que possamos explorá-lo como se fosse um sistema de arquivos regular.
 
-Before we continue, let's check the active shells:
+Antes de continuarmos, vamos checar os shells ativos:
 
-```
+```shell
 /> shells
 ---+---+-------------------------------------------------+------------------------------------
  # |   | name                                            | path
@@ -80,9 +80,9 @@ Before we continue, let's check the active shells:
 
 ```
 
-We can observe that we have two active shells and telling us we are currently inside of "Cargo.toml" with a default root path "/". Let's view the contents again:
+Podemos observar que temos dois shells ativos e que estamos agora dentro do arquivo "Cargo.toml" com um caminho raíz padrão "/". Vamos ver seu contéudo novamente:
 
-```
+```shell
 /> ls
 ------------+--------------+------------------+----------+----------
  bin        | dependencies | dev-dependencies | lib      | package 
@@ -91,9 +91,9 @@ We can observe that we have two active shells and telling us we are currently in
 ------------+--------------+------------------+----------+----------
 ```
 
-What we're looking for might be inside of the "bin" column. So let's go into there:
+O que estamos procurando pode estar dentro da coluna "bin", então vamos entrar lá:
 
-```
+```shell
 > cd bin
 /bin> ls
 ----+----------------------+---------------------------
@@ -113,15 +113,15 @@ What we're looking for might be inside of the "bin" column. So let's go into the
 ----+----------------------+---------------------------
 ```
 
-From here, we can always jump back to the directory we were working in before using p (for previous).
+Daqui, sempre podemos voltar para o diretório em que estávamos trabalhando antes usando p (de prévio, anterior).
 
-```
+```shell
 /bin> p
 ```
 
-Let's verify the shells again:
+Vamos verificar os shells de novo:
 
-```
+```shell
 /Users/andresrobalino/Code/nushell(master)> shells
 ---+---+-------------------------------------------------+------------------------------------
  # |   | name                                            | path
@@ -132,9 +132,9 @@ Let's verify the shells again:
 
 ```
 
-We are back at the directory we were working in before entering the file "Cargo.toml". Now let's go into the directory where the source code of the plugins are and track them down:
+Estamos de volta ao diretório onde estávamos trabalhando antes de entrar no arquivo "Cargo.toml". Agora vamos mudar para o diretório onde então os códigos fonte dos plugins e rastreá-los:
 
-```
+```shell
 /Users/andresrobalino/Code/nushell(master)> cd src/plugins/
 /Users/andresrobalino/Code/nushell/src/plugins(master)> ls
 ----+---------------+------+----------+---------+------------+------------
@@ -155,4 +155,4 @@ We are back at the directory we were working in before entering the file "Cargo.
 ----+---------------+------+----------+---------+------------+------------
 ```
 
-We can now compare the two to see if there are any missing or additional plugins we need to add to our file (clearly we need to add it to "Cargo.toml"!).
+Podemos agora comparar os dois para ver se há algum plugin faltando ou a mais que precisemos adicionao ao nosso arquivo (claramente precisamos adicionar o plugin `doc.rs` que criamos ao arquivo "Cargo.toml"!).
