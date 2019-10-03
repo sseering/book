@@ -34,3 +34,15 @@
   * [シェル](ja/shells_in_shells.md) - 複数の場所で作業しよう
   * [コマンドのエスケープ](ja/escaping.md) - Nuコマンドと同じ名前のコマンドを実行するには
   * [プラグイン](ja/plugins.md) - プラグインを利用してnushellを拡張する
+* [Português do Brasil](pt-BR/README.md)
+  * [Instalação](pt-BR/instalacao.md) - Instalando o nushell
+  * [Introdução](pt-BR/introducao.md) - Começando a usar o nushell
+  * [Explorando](pt-BR/explorando.md) - Explorando o nushell
+  * [Tipos de dados](pt-BR/tipos_de_dados.md) - Tipos de dados no nushell
+  * [Carregando dados](pt-BR/carregando_dados.md) - Carregando e usando dados
+  * [Trabalhando com tabelas](pt-BR/trabalhando_com_tabelas.md) - Trabalhando com as tabelas do nushell
+  * [Pipeline](pt-BR/pipeline.md) - Como o pipeline funciona
+  * [Metadados](pt-BR/metadados.md) - Uma explicação sobre o sistema de metadados do nushell
+  * [Shells](pt-BR/shells_em_shells.md) - Trabalhando com múltiplos locais
+  * [Escapando comandos](pt-BR/escapando.md) - Escapando para comandos nativos com o mesmo nome
+  * [Plugins](pt-BR/plugins.md) - Melhorando o nushell com mais funcionalidades usando plugins
