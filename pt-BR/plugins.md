@@ -1,11 +1,11 @@
 # Plugins
 
-The functionality of Nu can be extended using plugins. The plugins can perform many of the same operations that Nu's built-in commands can, with the added benefit that they can be added separately of Nu itself.
+A funcionalidade do Nu pode ser extendida usando plugins. Os plugins podem desenpenhar muitas das mesmas operações que os comandos embutidos do Nu, com o benefício adicional de que eles podem ser incluídos separadamente do Nu em si.
 
-To add a plugin, simply build it and put the binary in your PATH. Nu plugins begin with the filename `nu_plugin_` so that Nu can find them among other binaries in your PATH. 
+Para adicionar um plugin, simplesmente implemente-o e coloque o binário no seu PATH. Os nomes dos arquivos de plugins do Nu começam com `nu_plugin_` para que o Nu possa encontrá-los em meio aos outros binários no seu PATH.
 
-**Note:** in the future, plugins may have a specific place they need to be put into in order for Nu to find them.
+**Nota:** no futuro, plugins podem ter um local específico em precisem ser colocados a fim de que o Nu possa encontrá-los.
 
-When Nu starts up, it scans your system and loads the plugins it finds.
+Quando o Nu inicia, ele faz uma busca no sistema e carrega os plugins que encontra.
 
-The protocol that Nu plugins use is subject to change while Nu is under heavy development. The best place to learn more about the protocol and how to create your own plugins is by reading the source for the [plugins in the Nu repository](https://github.com/nushell/nushell/tree/master/src/plugins). You can also refer to the [plugins chapter of the contributor book](https://github.com/nushell/contributor-book/blob/master/en/plugins.md)
+O protocolo que os plugins do Nu usam estão sujeitos a mudar enquanto o Nu estiver em pleno desenvolvimento. O melhor lugar para aprender mais sobre o protocolo e como criar seus próprios plugins é lendo o código fonte para os [plugins no repositório do Nu](https://github.com/nushell/nushell/tree/master/src/plugins). Você pode também se dirigir ao [capítulo de plugins no livro do colaborador](https://github.com/nushell/contributor-book/blob/master/en/plugins.md).
