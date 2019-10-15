@@ -50,7 +50,7 @@ Before we can install Nu, we need to make sure our system has the necessary requ
 
 If we don't already have Rust on our system, the best way to install it via [rustup](https://rustup.rs/). Rustup is a way of managing Rust installations, including managing using different Rust versions. 
 
-Nu currently requires the **nightly** version of Rust. When you first open "rustup" it will ask what version of Rust you wish to install:
+Nu currently requires the **beta** version of Rust. The best way to let rustup find the correct version for you. When you first open "rustup" it will ask what version of Rust you wish to install:
 
 ```
 Current installation options:
@@ -64,44 +64,9 @@ Current installation options:
 3) Cancel installation
 ```
 
-Select option #2 to customize the installation, 
+Once we are ready, we press 1 and then enter.  After this point, we can follow the instructions "rustup" gives us and we should have a working Rust compiler on our system. The correct version of the compiler to use will be fetched when you do to the build.
 
-```
-Default host triple?
-```
-
-Hit enter here to select the default.
-
-```
-Default toolchain? (stable/beta/nightly/none)
-```
-
-Make sure to type "nightly" here and press enter. This should give this setup:
-
-```
-Modify PATH variable? (y/n)
-```
-
-You can optionally update your path. This is generally a good idea, as it makes later steps easier.
-
-
-```
-Current installation options:
-
-   default host triple: x86_64-unknown-linux-gnu
-     default toolchain: nightly
-  modify PATH variable: yes
-
-1) Proceed with installation (default)
-2) Customize installation
-3) Cancel installation
-```
-
-You can see that our default toolchain has now changed to the nightly toolchain. If this sounds a bit risky, don't worry. The Rust compiler is run through a full battery of tests. The nightly compiler is often as reliable as the stable version.
-
-Once we are ready, we press 1 and then enter.  After this point, we can follow the instructions "rustup" gives us and we should have a working Rust compiler on our system.
-
-If you'd rather not install Rust via "rustup", you can also install it via other methods (eg from a package in a Linux distro). Just be sure to install a recent nightly version of the toolchain.
+If you'd rather not install Rust via "rustup", you can also install it via other methods (eg from a package in a Linux distro). Just be sure to install the matching version the toolchain (which you can find in the `rust-toolchain` file).
 
 ## Dependencies
 
@@ -132,7 +97,7 @@ brew install openssl cmake
 Once we have the dependencies Nu needs, we can install it using the `cargo` command that comes with the Rust compiler.
 
 ```
-> cargo +nightly install nu
+> cargo +beta install nu
 ```
 
 That's it!  The cargo tool will do the work of downloading Nu and its source dependencies, building it, and installing it into the cargo bin path so that we can run it.
@@ -140,7 +105,7 @@ That's it!  The cargo tool will do the work of downloading Nu and its source dep
 If you want to install all the features, including some fun optional ones, you can use:
 
 ```
-> cargo +nightly install nu --all-features
+> cargo +beta install nu --all-features
 ```
 
 For this to work, make sure you have all the dependencies (shown above) on your system.
@@ -160,7 +125,7 @@ We can also build our own Nu from source directly from github. This gives us imm
 > git clone https://github.com/nushell/nushell.git
 ```
 
-Git will clone the main nushell repo for us. From there, we can build and run Nu:
+Git will clone the main nushell repo for us. From there, we can build and run Nu if we are using `rustup` with:
 
 ```
 > cd nushell
