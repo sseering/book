@@ -22,13 +22,13 @@ Let's run the `open` command again, but this time, we'll look at the tags it giv
 ```
 > open Cargo.toml | tags
 ----------+------------------------------------------
- span     | origin 
+ span     | anchor 
 ----------+------------------------------------------
  [object] | /home/jonathan/Source/nushell/Cargo.toml 
 ----------+------------------------------------------
 ```
 
-Currently, we track two bits of metadata on the values in pipeline. You can notice that we have the origin, which gives the location for where this data was loaded from. This can help Nu better understand how to present data.
+Currently, we track two bits of metadata on the values in pipeline. You can notice that we have the anchor, which gives the location for where this data was loaded from. This can help Nu better understand how to present data.
 
 There's also a span. Let's take a closer look at that:
 
