@@ -142,15 +142,14 @@ People familiar with Rust may wonder why we do both a "build" and a "run" step i
 
 ## Setting as your login shell
 
-{% hint style="warning" %} Nushell is still in development, and may not be stable for everyday use. {% endhint %}
+{% hint style="warning" %} Nu is still in development, and may not be stable for everyday use. {% endhint %}
 
 To set the login shell you can use the [`chsh`](https://linux.die.net/man/1/chsh) command.
-Some Linux distributions have a list of valid shells located in `/etc/shells` and will disallow changing the shell until Nu is in the whitelist. You may see an error similar to the one below if you haven't updated the `shells` file.
+Some Linux distributions have a list of valid shells located in `/etc/shells` and will disallow changing the shell until Nu is in the whitelist. You may see an error similar to the one below if you haven't updated the `shells` file:
 
 ```
 chsh: /home/username/.cargo/bin/nu is an invalid shell
 ```
 
 You can add Nu to the list of allowed shells by appending your Nu binary to the `shells` file.
-The path to add can be found with the command `which nu`.
-Usually it's `$HOME/.cargo/bin/nu`.
+The path to add can be found with the command `which nu`, usually it is `$HOME/.cargo/bin/nu`.

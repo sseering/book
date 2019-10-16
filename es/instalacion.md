@@ -166,3 +166,16 @@ nushell> cargo build --release && cargo run --release
 Gente familiarizada con Rust se preguntará la razón por la que hacemos un paso "build" y otro paso "run" si "run" construye por defecto. Esto es para evitar una deficiencia de la nueva opción `default-run` en Cargo y asegurar que todos los plugins se construyan aunque puede que esto no sea necesario en el futuro.
 
 **Nota:** Si te encuentras trabajando tanto en modo debug y release, asegúrate de ejecutar `cargo clean` cuando cambies entre ellas. Nu buscará plugins en los directorios tanto de debug así como release y puede suceder que cargue versiones de un plugin que no tienes intenciones de usar.
+
+## Establecer como shell de inicio de sesión
+
+{% hint style="warning" %} Nu todavía está en desarrollo y puede no ser estable para uso diario. {% endhint %}
+
+Para configurar la shell de inicio de sesión, puedes usra el comando [`chsh`](https://linux.die.net/man/1/chsh).
+En algunas distribuciones de Linux se encuentra una lista válida de shells en `/etc/shells` y no permitirá cambiar la shell hasta que Nu esté en la lista blanca. Es posible que vea un error similar al siguiente si no ha actualizado el archivo `shells`:
+
+```
+chsh: /home/username/.cargo/bin/nu is an invalid shell
+```
+
+Puedes agregar Nu a la lista de shells válidas añadiendo el binario al archivo `shells`. La ruta para agregar puedes encontrarla con el comando `which nu`, usualmente es `$HOME/.cargo/bin/nu`.
