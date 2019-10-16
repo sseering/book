@@ -22,7 +22,7 @@ Let's run the `open` command again, but this time, we'll look at the tags it giv
 ```
 > open Cargo.toml | tags
 ----------+------------------------------------------
- span     | anchor 
+ span     | anchor
 ----------+------------------------------------------
  [object] | /home/jonathan/Source/nushell/Cargo.toml 
 ----------+------------------------------------------
