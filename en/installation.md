@@ -50,7 +50,7 @@ Before we can install Nu, we need to make sure our system has the necessary requ
 
 If we don't already have Rust on our system, the best way to install it via [rustup](https://rustup.rs/). Rustup is a way of managing Rust installations, including managing using different Rust versions. 
 
-Nu currently requires the **beta** version of Rust. The best way to let rustup find the correct version for you. When you first open "rustup" it will ask what version of Rust you wish to install:
+Nu currently requires the **beta** version of Rust. The best way to let `rustup` find the correct version for you. When you first open `rustup` it will ask what version of Rust you wish to install:
 
 ```
 Current installation options:
@@ -64,9 +64,9 @@ Current installation options:
 3) Cancel installation
 ```
 
-Once we are ready, we press 1 and then enter.  After this point, we can follow the instructions "rustup" gives us and we should have a working Rust compiler on our system. The correct version of the compiler to use will be fetched when you do to the build.
+Once we are ready, we press 1 and then enter.  After this point, we can follow the instructions `rustup` gives us and we should have a working Rust compiler on our system. The correct version of the compiler to use will be fetched when you do to the build.
 
-If you'd rather not install Rust via "rustup", you can also install it via other methods (eg from a package in a Linux distro). Just be sure to install the matching version the toolchain (which you can find in the `rust-toolchain` file).
+If you'd rather not install Rust via `rustup`, you can also install it via other methods (eg from a package in a Linux distro). Just be sure to install the matching version of the toolchain (which you can find in the `rust-toolchain` file).
 
 ## Dependencies
 
@@ -142,15 +142,14 @@ People familiar with Rust may wonder why we do both a "build" and a "run" step i
 
 ## Setting as your login shell
 
-{% hint style="warning" %} Nushell is still in development, and may not be stable for everyday use. {% endhint %}
+{% hint style="warning" %} Nu is still in development, and may not be stable for everyday use. {% endhint %}
 
 To set the login shell you can use the [`chsh`](https://linux.die.net/man/1/chsh) command.
-Some Linux distributions have a list of valid shells located in `/etc/shells` and will disallow changing the shell until Nu is in the whitelist. You may see an error similar to the one below if you haven't updated the `shells` file.
+Some Linux distributions have a list of valid shells located in `/etc/shells` and will disallow changing the shell until Nu is in the whitelist. You may see an error similar to the one below if you haven't updated the `shells` file:
 
 ```
 chsh: /home/username/.cargo/bin/nu is an invalid shell
 ```
 
 You can add Nu to the list of allowed shells by appending your Nu binary to the `shells` file.
-The path to add can be found with the command `which nu`.
-Usually it's `$HOME/.cargo/bin/nu`.
+The path to add can be found with the command `which nu`, usually it is `$HOME/.cargo/bin/nu`.

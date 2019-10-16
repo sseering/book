@@ -187,10 +187,10 @@ license = "MIT"
 
 ## Abriendo URLs
 
-Además de cargar archivos desde tu archivos de sistema, también puedes proporcionar al comando `open` una URL. Esto cargará el contenido de la URL por internet y devolvértela:
+Además de cargar archivos desde tu archivos de sistema, también puedes usar el comando `fetch` proporcionando una URL. Se cargará el contenido de la URL por internet y devolverá:
 
 ```
-> open http://www.andresrobalino.com/feed.xml
+> fetch http://www.andresrobalino.com/feed.xml
 ----------
  rss 
 ----------
