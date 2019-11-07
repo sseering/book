@@ -50,7 +50,7 @@ Before we can install Nu, we need to make sure our system has the necessary requ
 
 If we don't already have Rust on our system, the best way to install it via [rustup](https://rustup.rs/). Rustup is a way of managing Rust installations, including managing using different Rust versions. 
 
-Nu currently requires the **beta** version of Rust. The best way to let `rustup` find the correct version for you. When you first open `rustup` it will ask what version of Rust you wish to install:
+Nu currently requires the **latest stable (1.39 or later)** version of Rust. The best way to let `rustup` find the correct version for you. When you first open `rustup` it will ask what version of Rust you wish to install:
 
 ```
 Current installation options:
@@ -64,9 +64,9 @@ Current installation options:
 3) Cancel installation
 ```
 
-Once we are ready, we press 1 and then enter.  After this point, we can follow the instructions `rustup` gives us and we should have a working Rust compiler on our system. The correct version of the compiler to use will be fetched when you do to the build.
+Once we are ready, we press 1 and then enter.
 
-If you'd rather not install Rust via `rustup`, you can also install it via other methods (eg from a package in a Linux distro). Just be sure to install the matching version of the toolchain (which you can find in the `rust-toolchain` file).
+If you'd rather not install Rust via `rustup`, you can also install it via other methods (eg from a package in a Linux distro). Just be sure to install a version of Rust that is 1.39 or later.
 
 ## Dependencies
 
@@ -97,7 +97,7 @@ brew install openssl cmake
 Once we have the dependencies Nu needs, we can install it using the `cargo` command that comes with the Rust compiler.
 
 ```
-> cargo +beta install nu
+> cargo install nu
 ```
 
 That's it!  The cargo tool will do the work of downloading Nu and its source dependencies, building it, and installing it into the cargo bin path so that we can run it.
@@ -105,7 +105,7 @@ That's it!  The cargo tool will do the work of downloading Nu and its source dep
 If you want to install all the features, including some fun optional ones, you can use:
 
 ```
-> cargo +beta install nu --all-features
+> cargo install nu --all-features
 ```
 
 For this to work, make sure you have all the dependencies (shown above) on your system.
