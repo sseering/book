@@ -6,6 +6,44 @@ The best way currently to get Nu up and running is to install from [crates.io](h
 
 You can download Nu pre-built from the [release page](https://github.com/nushell/nushell/releases). Alternatively, if you use [Homebrew](https://brew.sh/) for macOS, you can install the binary by running `brew install nushell`.
 
+### Windows
+
+**please note:** Nu works on Windows 10 and does not currently have Windows 7/8.1 support.
+
+Download the current released `.zip`-file from the [release page](https://github.com/nushell/nushell/releases) and extract it for example to:
+
+```
+C:\Program Files
+```
+
+And then add the folder of `nu` to your PATH. Once we have done that, we can run Nu using the `nu` command:
+
+```
+> nu
+C:\Users\user>
+```
+
+
+
+If you are using the new [Windows Terminal](https://github.com/microsoft/terminal) you can set `nu` as your default shell by adding:
+
+```         
+            {
+            "guid": "{2b372ca1-1ee2-403d-a839-6d63077ad871}",
+            "hidden": false,
+            "name": "Nu Shell",
+            "commandline": "nu.exe"
+            }
+```
+
+to  `"profiles"` in your Terminal Settings (JSON-file). The last thing to do is to change the `"defaulProfile"` to:
+
+```
+"defaultProfile": "{2b372ca1-1ee2-403d-a839-6d63077ad871}"",
+```
+
+Now `nu` should load on startup of the Windows Terminal.
+
 ## Pre-built docker containers
 
 If you want to pull a pre-built container, you can browse tags for the [nushell organization](https://quay.io/organization/nushell)
