@@ -39,7 +39,7 @@ If you are using the new [Windows Terminal](https://github.com/microsoft/termina
 to  `"profiles"` in your Terminal Settings (JSON-file). The last thing to do is to change the `"defaulProfile"` to:
 
 ```
-"defaultProfile": "{2b372ca1-1ee2-403d-a839-6d63077ad871}"",
+"defaultProfile": "{2b372ca1-1ee2-403d-a839-6d63077ad871}",
 ```
 
 Now `nu` should load on startup of the Windows Terminal.
