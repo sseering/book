@@ -84,6 +84,18 @@ The second container is a bit smaller, if size is important to you.
 
 Before we can install Nu, we need to make sure our system has the necessary requirements. Currently, this means making sure we have both the Rust toolchain and local dependencies installed.
 
+### Installing a compiler suite
+
+For Rust to work properly, you'll need to have a compatible compiler suite installed on your system. These are the recommended compiler suites:
+
+* Linux: GCC or Clang
+* macOS: Clang (install Xcode)
+* Windows: [Visual Studio Community Edition](https://visualstudio.microsoft.com/vs/community/)
+
+For Linux and macOS, once you have installed the compiler, you are ready to install Rust via `rustup` (see below).
+
+For Windows, when you install Visual Studio Community Edition, make sure to install the "C++ build tools" as what we need is `link.exe` which is provided as part of that optional install.  With that, we're ready to move to the next step.
+
 ### Installing Rust
 
 If we don't already have Rust on our system, the best way to install it via [rustup](https://rustup.rs/). Rustup is a way of managing Rust installations, including managing using different Rust versions. 
