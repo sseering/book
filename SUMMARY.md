@@ -6,6 +6,7 @@
   * [Loading data](en/loading_data.md) - Loading data and using it
   * [Working with tables](en/working_with_tables.md) - Working with nushell tables
   * [Pipeline](en/pipeline.md) - How the pipeline works
+  * [Configuration](en/configuration.md) - How to configure nushell
   * [Metadata](en/metadata.md) - An explanation of nushell's metadata system
   * [Shells](en/shells_in_shells.md) - Working with multiple locations
   * [Escaping commands](en/escaping.md) - Escaping to native commands of the same name 
