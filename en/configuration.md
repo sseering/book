@@ -12,10 +12,82 @@ Nu has a small, but growing, number of internal variables you can set to change 
 
 ## Usage
 
+### Setting variables
+
 To set one of these variables, you can use `config --set`. For example:
 
 ```
 > config --set [edit_mode "vi"]
+```
+
+### Setting a variable from the pipeline
+
+There's an additional way to set a variable, and that is to use the contents of the pipeline as the value you want to use for the variable. For this, use the `--set_into` flag:
+
+```
+> echo "bar" | config --set_into foo
+```
+
+This is helpful when working with the `env` and `path` variables.
+
+### Listing all variables
+
+Runing the `config` command without any arguments will show a table of the current configuration settings:
+
+```
+> config
+━━━━━━━━━━━┯━━━━━━━━━━━━━━━━┯━━━━━━━━━━━━━━━━━━┯━━━━━━━━━━━━
+ edit_mode │ env            │ path             │ table_mode 
+───────────┼────────────────┼──────────────────┼────────────
+ emacs     │ [table: 1 row] │ [table: 10 rows] │ normal 
+━━━━━━━━━━━┷━━━━━━━━━━━━━━━━┷━━━━━━━━━━━━━━━━━━┷━━━━━━━━━━━━
+```
+
+Note: if you haven't set any configuration variables, yet, this may be empty.
+
+### Getting a variable
+
+Using the `--get` flag, you can retrieve the value for a given variable:
+
+```
+> config --get edit_mode
+```
+
+### Removing a variable
+
+To remove a variable from the config, use the `--remove` flag:
+
+```
+> config --remove edit_mode
+```
+
+### Clearing the whole configuration
+
+If you want to clear the whole configuration and start fresh, you can use the `--clear` flag. Of course, be careful with this as once you run it, the configuration file is also cleared.
+
+```
+> config --clear
+```
+
+### Finding where the configuration is stored
+
+The configuration file is loaded from a default location. To find what this location is on your system, you can ask for it using the `--path` flag:
+
+```
+config --path
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ <value> 
+───────────────────────────────────────
+ /home/nusheller/.config/nu/config.toml 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+### Loading the config from a file
+
+You may wish to load the configuration from a different file than the default. To do so, use the `--load` parameter:
+
+```
+> config --load myconfiguration.toml
 ```
 
 ## Configuring Nu as a login shell
