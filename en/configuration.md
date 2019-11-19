@@ -32,7 +32,7 @@ This is helpful when working with the `env` and `path` variables.
 
 ### Listing all variables
 
-Runing the `config` command without any arguments will show a table of the current configuration settings:
+Running the `config` command without any arguments will show a table of the current configuration settings:
 
 ```
 > config

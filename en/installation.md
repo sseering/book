@@ -36,7 +36,7 @@ If you are using the new [Windows Terminal](https://github.com/microsoft/termina
             }
 ```
 
-to  `"profiles"` in your Terminal Settings (JSON-file). The last thing to do is to change the `"defaulProfile"` to:
+to  `"profiles"` in your Terminal Settings (JSON-file). The last thing to do is to change the `"defaultProfile"` to:
 
 ```
 "defaultProfile": "{2b372ca1-1ee2-403d-a839-6d63077ad871}",
@@ -116,7 +116,7 @@ Current installation options:
 
 Once we are ready, we press 1 and then enter.
 
-If you'd rather not install Rust via `rustup`, you can also install it via other methods (eg from a package in a Linux distro). Just be sure to install a version of Rust that is 1.39 or later.
+If you'd rather not install Rust via `rustup`, you can also install it via other methods (e.g. from a package in a Linux distro). Just be sure to install a version of Rust that is 1.39 or later.
 
 ## Dependencies
 
@@ -169,7 +169,7 @@ $ nu
 
 ## Building from source
 
-We can also build our own Nu from source directly from github. This gives us immediate access to the latest Nu features and bugfixes.
+We can also build our own Nu from source directly from github. This gives us immediate access to the latest Nu features and bug fixes.
 
 ```
 > git clone https://github.com/nushell/nushell.git
