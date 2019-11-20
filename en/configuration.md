@@ -55,7 +55,7 @@ Using the `--get` flag, you can retrieve the value for a given variable:
 
 ### Removing a variable
 
-To remove a variable from the config, use the `--remove` flag:
+To remove a variable from the configuration, use the `--remove` flag:
 
 ```
 > config --remove edit_mode
