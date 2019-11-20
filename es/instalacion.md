@@ -49,7 +49,7 @@ Antes de que podamos instalar Nu, necesitamos asegurarnos de que nuestro sistema
 
 En el caso de que no dispongamos de Rust en nuestro sistema la mejor manera de instalarlo es mediante [rustup](https://rustup.rs/). Rustup es una manera de manejar instalaciones de Rust incluyendo distintas versiones de Rust.
 
-Nu actualmente requiere la versión **beta** de Rust. La mejor manera de `rustup` inferir la versión correcta para ti. En el momento de abrir `rustup` te solicitará qué versión de Rust deseas instalar:
+Nu actualmente requiere la versión **estable más reciente (1.39 o posterior)** de Rust. La mejor manera de `rustup` inferir la versión correcta para ti. En el momento de abrir `rustup` te solicitará qué versión de Rust deseas instalar:
 
 ```
 Current installation options:
@@ -63,9 +63,9 @@ Current installation options:
 3) Cancel installation
 ```
 
-Una vez que estamos listos, presionamos 1 y luego enter. Después de este punto, podemos seguir las instrucciones que `rustup` proporciona y deberíamos tener un compilador de Rust listo en el sistema. La versión correcta del compilador se obtendrá en el momento que realices la compilación.
+Una vez que estamos listos, presionamos 1 y luego enter.
 
-Si prefieres no instalar Rust mediante `rustup`, también puedes instalar a través de otros métodos (Ej. un paquete en alguna distribución de Linux). Solo asegúrate de instalar una versión correspondiente del toolchain (puedes encontrarla en el archivo `rust-toolchain`)
+Si prefieres no instalar Rust mediante `rustup`, también puedes instalar a través de otros métodos (Ej. un paquete en alguna distribución de Linux). Solo asegúrate de instalar una versión que sea Rust 1.39 o posterior.
 
 ## Dependencias
 
@@ -96,7 +96,7 @@ brew install openssl cmake
 Una vez instaladas las depependencias que Nu necesita, podemos instalarla usando el comando `cargo` que viene con el compilador Rust.
 
 ```
-> cargo +beta install nu
+> cargo install nu
 ```
 
 ¡Eso es todo! Cargo hará el trabajo de descarga Nu junto con sus dependencias, construirla e instalarla en el bin path de cargo para que podamos arrancarlo.
@@ -104,7 +104,7 @@ Una vez instaladas las depependencias que Nu necesita, podemos instalarla usando
 Si deseas instalar todas las funciones, incluyendo algunas opcionales divertidas, puedes hacer:
 
 ```
-> cargo +beta install nu --all-features
+> cargo install nu --all-features
 ```
 
 Para que esto funcione, asegúrate de tener todas las dependencias instaladas (que se muestran arriba) en el sistema.
