@@ -37,7 +37,7 @@ y posteriormente agrega Nu a la variable de entorno `PATH`. Una vez que hagamos 
  a  `"profiles"` en las preferencias de tu Terminal (archivo JSON). Lo último que tienes que hacer es cambiar `"defaultProfile"` a:
 
  ```
- "defaultProfile": "{2b372ca1-1ee2-403d-a839-6d63077ad871}"",
+ "defaultProfile": "{2b372ca1-1ee2-403d-a839-6d63077ad871}",
  ```
  
  Ahora `nu` debería cargar al inicio de la Terminal de Windows.
@@ -79,7 +79,21 @@ El segundo contenedor es un poco más pequeño, si tamaño es importante para ti
 
 ## Preparación
 
-Antes de que podamos instalar Nu, necesitamos asegurarnos de que nuestro sistema tenga los requerimientos necesarios. Actualmente significa que debemos verificar tener instalado tanto el Rust toolchain así como las dependencias locales.
+Antes de que podamos instalar Nu, necesitamos asegurarnos de que nuestro sistema tenga los requerimientos necesarios. Actualmente significa que debemos verificar tener instalado tanto el Rust toolchain así como las dependencias locales. Estás son las suites de compilación recomendadas:
+
+* Linux: GCC or Clang
+* macOS: Clang (install Xcode)
+* Windows: [Visual Studio Community Edition](https://visualstudio.microsoft.com/vs/community/)
+
+Para Linux y macOS, una vez que hayas instalado la suite de compilación, todo estará listo para instalar Rust a través de `rustup` (ver más abajo).
+
+For Windows, when you install Visual Studio Community Edition, make sure to install the "C++ build tools" as what we need is `link.exe` which is provided as part of that optional install.  With that, we're ready to move to the next step.
+
+Para Windows, cuando instalas Visual Studio Community Edition, asegúrate de instalar las herramientas "C++ build tools" ya que lo que necesitamos es `link.exe`, que es proporcionado como parte de esa instalación optcional. Con eso, estamos listos para el siguiente paso.
+
+### Instalando un suite de compilación
+
+Para que Rust funcione correctamente, necesitarás tener un suite de compilación compatible instalado en el sistema. 
 
 ### Instalando Rust
 
