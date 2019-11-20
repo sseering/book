@@ -4,7 +4,7 @@ Hello, and welcome to the Nushell project. The goal of this project is to take t
 
 Nu takes cues from a lot of familiar territory: traditional shells like bash, advanced shells like PowerShell, functional programming, systems programming, and more. But rather than trying to be the jack of all trades, Nu focuses its energy on doing a few things well:
 
-* Create a flexible crossplatform shell for the modern, GitHub-era programmer
+* Create a flexible cross-platform shell for the modern, GitHub-era programmer
 * Allow you to mix and match commandline applications with a shell that understands the structure of your data
 * Have the level of UX polish that modern CLI apps provide
 

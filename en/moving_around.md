@@ -51,7 +51,7 @@ To change from the current directory to a new one, we use the `cd` command. Just
 
 ## Filesystem commands
 
-Nu also provides some basic filesystem commands that works crossplatform. 
+Nu also provides some basic filesystem commands that works cross-platform. 
 
 We can move an item from one place to another using the `mv` command:
 

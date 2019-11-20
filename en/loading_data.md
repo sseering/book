@@ -168,7 +168,7 @@ The "Cargo.lock" file is actually a .toml file, but the file extension isn't .to
 ----------+-------------
 ```
 
-There is a `from-` command for each of the structed data text formats that Nu can open and understand.
+There is a `from-` command for each of the structured data text formats that Nu can open and understand.
 
 ## Opening in raw mode
 
