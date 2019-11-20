@@ -6,6 +6,42 @@ La mejor manera actualmente para poner en marcha Nu es instalándolo a través d
 
 Puedes descargar Nu compilado desde [nuestra página](https://github.com/nushell/nushell/releases). Alternativamente, si usas [Homebrew](https://brew.sh/) para macOS, puedes instalar el binario ejecutando `brew install nushell`.
 
+### Windows
+
+**nota:** Nu trabaja con Windows 10 y no soporta Windows 7/8.1
+
+Descarga el archivo actual `.zip` [de la página de releases](https://github.com/nushell/nushell/releases) y extráelo por ejemplo a:
+
+```
+ C:\Program Files
+ ```
+
+y posteriormente agrega Nu a la variable de entorno `PATH`. Una vez que hagamos eso, podemos ejecutar Nu usando el comando `nu`:
+
+```
+ > nu
+ C:\Users\user>
+ ```
+
+ Si te encuentras usando la nueva [Windows Terminal](https://github.com/microsoft/terminal) puedes establecer `nu` como la shell por defecto añadiendo:
+
+ ```         
+             {
+             "guid": "{2b372ca1-1ee2-403d-a839-6d63077ad871}",
+             "hidden": false,
+             "name": "Nu Shell",
+             "commandline": "nu.exe"
+             }
+ ```
+
+ a  `"profiles"` en las preferencias de tu Terminal (archivo JSON). Lo último que tienes que hacer es cambiar `"defaultProfile"` a:
+
+ ```
+ "defaultProfile": "{2b372ca1-1ee2-403d-a839-6d63077ad871}"",
+ ```
+ 
+ Ahora `nu` debería cargar al inicio de la Terminal de Windows.
+
 ## Contenedores de Docker preconstruidos
 
 Si deseas jalar un contenedor preconstruido, puedes navegar las etiquetas de la [organización nushell](https://quay.io/organization/nushell)
