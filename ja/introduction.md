@@ -1,4 +1,11 @@
-# はじめに
+---
+layout: content
+title: はじめに
+prev: インストール
+next: ファイルシステムの操作
+link_prev: /ja/installation.html
+link_next: /ja/moving_around.html
+---
 
 こんにちは、Nushellプロジェクトへようこそ。このプロジェクトのゴールは、シンプルなコマンドをパイプでつなぎ合わせるというUnixのシェル哲学を取り入れ、これを現代の開発スタイルにすることです。
 

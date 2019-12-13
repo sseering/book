@@ -1,4 +1,11 @@
-# Nuのインストール
+---
+layout: content
+title: Nuのインストール
+prev: 開始
+next: はじめに
+link_prev: /
+link_next: /ja/introduction.html
+---
 
 今のところNuをインストールするもっともよい方法は、[crates.io](https://crates.io)からインストールするか、ビルド済のバイナリーを[リリースページ](https://github.com/nushell/nushell/releases)からダウンロードするか、ソースからビルドすることです。
 Dockerを利用してビルド済のコンテナをプルしてくる方法もあります。

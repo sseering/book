@@ -1,4 +1,11 @@
-# Loading data
+---
+layout: content
+title: Loading data
+prev: Types of data
+next: Tables
+link_prev: /en/types_of_data.html
+link_next: /en/working_with_tables.html
+---
 
 Earlier we saw how you can use commands like `ls`, `ps`, `date`, and `sys` to load information about your files, processes, time of date, and the system itself. Each command gives us a table of information that we can explore. There are other ways we can load in a table of data to work with.
 

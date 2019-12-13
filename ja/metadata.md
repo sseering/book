@@ -1,4 +1,11 @@
-# メタデータ
+---
+layout: content
+title: メタデータ
+prev: パイプライン
+next: シェル
+link_prev: /ja/pipeline.html
+link_next: /ja/shells_in_shells.html
+---
 
 Nuを使用していると裏でなにか特別なことがおきているのではないかと思うことがあるでしょう。例えば、Nuがサポートしているファイル形式を忘れていて、余計に変換しようとしてしまったとしましょう。
 

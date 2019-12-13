@@ -1,4 +1,11 @@
-# Working with tables
+---
+layout: content
+title: Working with tables
+prev: Loading data
+next: Pipeline
+link_prev: /en/loading_data.html
+link_next: /en/pipeline.html
+---
 
 One of the common ways of seeing data in Nu is through a table. Nu comes with a number of commands for working with tables to make it convenient to find what you're looking for, and for narrowing the data to just what you need.
 

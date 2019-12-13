@@ -1,4 +1,11 @@
-# Metadados
+---
+layout: content
+title: Metadados
+prev: Pipeline
+next: Shells
+link_prev: /pt-BR/pipeline.html
+link_next: /pt-BR/shells_em_shells.html
+---
 
 Usando o Nu vocë pode se deparar com momentos em que sente como se houvesse algo a mais acontecendo nos bastidores. Por exemplo, digamos que vocë vai tentar abrir um arquivo mas se esquece que ele é suportado pelo Nu e tenta convertê-lo novamente:
 

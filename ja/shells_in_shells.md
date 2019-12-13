@@ -1,4 +1,11 @@
-# シェルの中のシェル
+---
+layout: content
+title: シェルの中のシェル
+prev: メタデータ
+next: コマンドのエスケープ
+link_prev: /ja/metadata.html
+link_next: /ja/escaping.html
+---
 
 ## 複数のディレクトリで作業する
 

@@ -1,4 +1,11 @@
-# Cargando datos
+---
+layout: content
+title: Cargando datos
+prev: Tipos de datos
+next: Tablas
+link_prev: /es/tipos_de_datos.html
+link_next: /es/trabajando_con_tablas.html
+---
 
 Hemos visto como puedes usar comandos como `ls`, `ps`, `date`, y `sys` para cargar información sobre los archivos, procesos, hora de fecha, y del mismo sistema. Cada comando nos entrega una tabla de información que podemos explorar. Hay otras maneras de cargar datos en una tabla de datos para trabajar.
 

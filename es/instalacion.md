@@ -1,4 +1,11 @@
-# Instalando Nu
+---
+layout: content
+title: Instalando Nu
+prev: START
+next: Introduccion
+link_prev: /
+link_next: /es/introduccion.html
+---
 
 La mejor manera actualmente para poner en marcha Nu es instalándolo a través de [crates.io](https://crates.io), descargando desde [nuestra página](https://github.com/nushell/nushell/releases), compilarlo desde la fuente, o jalando un contenedor preconstruido con Docker.
 
@@ -192,7 +199,7 @@ Gente familiarizada con Rust se preguntará la razón por la que hacemos un paso
 
 ## Establecer como shell de inicio de sesión
 
-{% hint style="warning" %} Nu todavía está en desarrollo y puede no ser estable para uso diario. {% endhint %}
+**!!! Nu todavía está en desarrollo y puede no ser estable para uso diario. !!!**
 
 Para configurar la shell de inicio de sesión, puedes usra el comando [`chsh`](https://linux.die.net/man/1/chsh).
 En algunas distribuciones de Linux se encuentra una lista válida de shells en `/etc/shells` y no permitirá cambiar la shell hasta que Nu esté en la lista blanca. Es posible que vea un error similar al siguiente si no ha actualizado el archivo `shells`:

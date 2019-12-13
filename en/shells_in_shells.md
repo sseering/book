@@ -1,4 +1,11 @@
-# Shells in shells
+---
+layout: content
+title: Shells in shells
+prev: Metadata
+next: Escaping
+link_prev: /en/metadata.html
+link_next: /en/escaping.html
+---
 
 ## Working in multiple directories
 

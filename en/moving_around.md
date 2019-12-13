@@ -1,4 +1,11 @@
-# Moving around your system
+---
+layout: content
+title: Moving around your system
+prev: Introduction
+next: Types of data
+link_prev: /en/introduction.html
+link_next: /en/types_of_data.html
+---
 
 Early shells allow you to move around your filesystem and run commands, and modern shells like Nu allow you to do the same. Let's take a look at some of the common commands you might use when interacting with your system.
 
