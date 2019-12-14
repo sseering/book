@@ -1,4 +1,11 @@
-# データ型
+---
+layout: content
+title: データ型
+prev: ファイルシステムの操作
+next: データの読み込み
+link_prev: /ja/moving_around.html
+link_next: /ja/loading_data.html
+---
 
 従来、Unixシェルコマンドは文字列テキストを通じて互いに通信していました。あるコマンドは標準出力(しばしば'stdout'と略されます)を介してテキストを出力し、他方のコマンドは標準入力(または'stdin')を介してテキストを読み込みます。このようにして、２つのコマンドは通信できます。
 

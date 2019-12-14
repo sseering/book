@@ -1,4 +1,11 @@
-# Instalando Nu
+---
+layout: content
+title: Instalando Nu
+prev: START
+next: Introdução
+link_prev: /
+link_next: /pt-BR/introducao.html
+---
 
 Atualmente, as melhores maneiras de instalar o Nu são a partir do [crates.io](https://crates.io), fazer o download dos binários da nossa [página de releases](https://github.com/nushell/nushell/releases), fazer o build a partir dos fontes ou baixar um container pronto com o Docker.
 
@@ -175,7 +182,7 @@ Pessoas mais acostumadas com Rust podem se perguntar por que fazemos tanto o "bu
 
 ## Configurando como login shell
 
-{% hint style="warning" %} Nushell ainda está em desenvovlimento e pode não estar estável para uso diário. {% endhint %}
+**!!! Nushell ainda está em desenvovlimento e pode não estar estável para uso diário. !!!**
 
 Você pode definir o seu login shell usando o comando [`chsh`](https://linux.die.net/man/1/chsh).
 

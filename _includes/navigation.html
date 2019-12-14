@@ -1,0 +1,102 @@
+<nav>
+    <span style="cursor:pointer;color:#51cd28" onclick="openNav()">&#9776;</span>
+    <a href="{{ '/' | relative_url }}">Nu Book</a>
+    <a class="{% if include.current == 'Other Books' %} active {% endif %}" href="{{ '/books.html' | relative_url }}">Books</a>
+    <div class="right">
+        <a href="https://www.nushell.sh" class="button"><span class="no-mobile">Visit our </span>Website</a>
+    </div>
+</nav>
+
+<div id="Sidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+  <a href="#" class="hide" data-toggle="#list_en">English</a>
+  <ol id="list_en">
+    <li><a href="{{ '/en/installation.html' | relative_url }}">Installation</a></li>
+    <li><a href="{{ '/en/introduction.html' | relative_url }}">Introduction</a></li>
+    <li><a href="{{ '/en/moving_around.html' | relative_url }}">Moving around</a></li>
+    <li><a href="{{ '/en/types_of_data.html' | relative_url }}">Types of data</a></li>
+    <li><a href="{{ '/en/loading_data.html' | relative_url }}">Loading data</a></li>
+    <li><a href="{{ '/en/working_with_tables.html' | relative_url }}">Tables</a></li>
+    <li><a href="{{ '/en/pipeline.html' | relative_url }}">Pipeline</a></li>
+    <li><a href="{{ '/en/configuration.html' | relative_url }}">Configuration</a></li>
+    <li><a href="{{ '/en/metadata.html' | relative_url }}">Metadata</a></li>
+    <li><a href="{{ '/en/shells_in_shells.html' | relative_url }}">Shells</a></li>
+    <li><a href="{{ '/en/escaping.html' | relative_url }}">Escaping</a></li>
+    <li><a href="{{ '/en/plugins.html' | relative_url }}">Plugins</a></li>
+  </ol>
+
+  <a href="#" class="hide" data-toggle="#list_es">Español</a>
+  <ol id="list_es">
+    <li><a href="{{ '/es/instalacion.html' | relative_url }}">Instalación</a></li>
+    <li><a href="{{ '/es/introduccion.html' | relative_url }}">Introducción</a></li>
+    <li><a href="{{ '/es/explorando.html' | relative_url }}">Explorando</a></li>
+    <li><a href="{{ '/es/tipos_de_datos.html' | relative_url }}">Tipos de datos</a></li>
+    <li><a href="{{ '/es/cargando_datos.html' | relative_url }}">Cargando datos</a></li>
+    <li><a href="{{ '/es/trabajando_con_tablas.html' | relative_url }}">Tablas</a></li>
+    <li><a href="{{ '/es/pipeline.html' | relative_url }}">Pipeline</a></li>
+    <li><a href="{{ '/es/configuracion.html' | relative_url }}">Configuración</a></li>
+    <li><a href="{{ '/es/metadatos.html' | relative_url }}">Metadatos</a></li>
+    <li><a href="{{ '/es/shells_en_shells.html' | relative_url }}">Shells</a></li>
+    <li><a href="{{ '/es/escapando.html' | relative_url }}">Escapando comandos</a></li>
+    <li><a href="{{ '/es/plugins.html' | relative_url }}">Plugins</a></li>
+  </ol>
+
+  <a href="#" class="hide" data-toggle="#list_pt-BR">Português do Brasil</a>
+  <ol id="list_pt-BR">
+    <li><a href="{{ '/pt-BR/instalacao.html' | relative_url }}">Instalação</a></li>
+    <li><a href="{{ '/pt-BR/introducao.html' | relative_url }}">Introdução</a></li>
+    <li><a href="{{ '/pt-BR/explorando.html' | relative_url }}">Explorando</a></li>
+    <li><a href="{{ '/pt-BR/tipos_de_dados.html' | relative_url }}">Tipos de dados</a></li>
+    <li><a href="{{ '/pt-BR/carregando_dados.html' | relative_url }}">Carregando dados</a></li>
+    <li><a href="{{ '/pt-BR/trabalhando_com_tabelas.html' | relative_url }}">Tabelas</a></li>
+    <li><a href="{{ '/pt-BR/pipeline.html' | relative_url }}">Pipeline</a></li>
+    <li><a href="{{ '/pt-BR/metadados.html' | relative_url }}">Metadados</a></li>
+    <li><a href="{{ '/pt-BR/shells_em_shells.html' | relative_url }}">Shells</a></li>
+    <li><a href="{{ '/pt-BR/escapando.html' | relative_url }}">Escapando comandos</a></li>
+    <li><a href="{{ '/pt-BR/plugins.html' | relative_url }}">Plugins</a></li>
+  </ol>
+
+  <a href="#" class="hide" data-toggle="#list_ja">日本語</a>
+  <ol id="list_ja">
+    <li><a href="{{ '/ja/installation.html' | relative_url }}">インストール</a></li>
+    <li><a href="{{ '/ja/introduction.html' | relative_url }}">はじめに</a></li>
+    <li><a href="{{ '/ja/moving_around.html' | relative_url }}">ファイルシステムの操作</a></li>
+    <li><a href="{{ '/ja/types_of_data.html' | relative_url }}">データ型</a></li>
+    <li><a href="{{ '/ja/loading_data.html' | relative_url }}">データの読み込み</a></li>
+    <li><a href="{{ '/ja/working_with_tables.html' | relative_url }}">テーブル</a></li>
+    <li><a href="{{ '/ja/pipeline.html' | relative_url }}">パイプライン</a></li>
+    <li><a href="{{ '/ja/metadata.html' | relative_url }}">メタデータ</a></li>
+    <li><a href="{{ '/ja/shells_in_shells.html' | relative_url }}">シェル</a></li>
+    <li><a href="{{ '/ja/escaping.html' | relative_url }}">コマンドのエスケープ</a></li>
+    <li><a href="{{ '/ja/plugins.html' | relative_url }}">プラグイン</a></li>
+  </ol>
+</div>
+
+<script>
+        function openNav() {
+          document.getElementById("Sidenav").style.width = "220px";
+          document.getElementById("main").style.marginLeft = "220px";
+        }
+  
+        function closeNav() {
+          document.getElementById("Sidenav").style.width = "0";
+          document.getElementById("main").style.marginLeft = "0";
+        }
+</script>
+<script>
+  $('[data-toggle]').on('click', function(){
+  var id = $(this).data("toggle"),
+      $object = $(id),
+      className = "open";
+
+  if ($object) {
+    if ($object.hasClass(className)) {
+      $object.removeClass(className)
+    } else {
+      $object.addClass(className)
+      $object.replace(">", "^")
+    }
+  }
+});
+</script>

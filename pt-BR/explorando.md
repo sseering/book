@@ -1,4 +1,11 @@
-# Explorando seu sistema
+---
+layout: content
+title: Explorando seu sistema
+prev: Introdução
+next: Tipos de dados
+link_prev: /pt-BR/introducao.html
+link_next: /pt-BR/tipos_de_dados.html
+---
 
 Shells mais antigos permitem que você navegue pelo sistema de arquivos e execute comandos. Shells modernos como o Nu permitem que você faça o mesmo. Vamos dar uma olhada em alguns dos comandos comuns que você vai usar quando estiver interagindo com seu sistema.
 

@@ -1,4 +1,11 @@
-# Metadatos
+---
+layout: content
+title: Metadatos
+prev: Configuración
+next: Shells
+link_prev: /es/configuracion.html
+link_next: /es/shells_en_shells.html
+---
 
 Al usar Nu es posible que hayan momentos que has encontrado como si algo extra sucediera detrás de escenas. Por ejemplo digamos que intentas abrir un archivo soportado por Nu para luego olvidarte e intentar convertir nuevamente:
 

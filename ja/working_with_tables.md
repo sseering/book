@@ -1,4 +1,11 @@
-# テーブルを扱う
+---
+layout: content
+title: テーブルを扱う
+prev: データの読み込み
+next: パイプライン
+link_prev: /ja/loading_data.html
+link_next: /ja/pipeline.html
+---
 
 Nuでデータを表示する一般的な方法はテーブルを使用することです。Nuには、探しているものを見つけやすくしたり、必要なデータを絞り込んだりするのに便利なテーブルを操作するためのコマンドが多数付属しています。
 

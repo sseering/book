@@ -1,4 +1,11 @@
-# O pipeline
+---
+layout: content
+title: O pipeline
+prev: Tabelas
+next: Metadados
+link_prev: /pt-BR/trabalhando_com_tabelas.html
+link_next: /pt-BR/metadados.html
+---
 
 Um dos principais designs do Nu é o pipeline, uma ideia de design que tem suas raízes décadas atrás, na filosofia original por trás do Unix. Assim como Nu se extende a partir do tipo de dado string do Unix, também extende a ideia do pipeline para incluir mais do que apenas texto.
 

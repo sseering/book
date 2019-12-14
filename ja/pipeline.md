@@ -1,4 +1,11 @@
-# パイプライン
+---
+layout: content
+title: パイプライン
+prev: テーブル
+next: メタデータ
+link_prev: /ja/working_with_tables.html
+link_next: /ja/metadata.html
+---
 
 Nuのコアデザインのひとつがパイプラインです。パイプラインはUnixの背後にある哲学にまでそのルーツを遡ることができるデザインアイデアです。Nuは、Unixの文字列データを拡張したように、パイプラインの概念も拡張してテキスト以外のものも扱えるようにします。
 

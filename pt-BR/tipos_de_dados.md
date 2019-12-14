@@ -1,4 +1,11 @@
-# Tipos de dados
+---
+layout: content
+title: Tipos de dados
+prev: Explorando
+next: Carregando dados
+link_prev: /pt-BR/explorando.html
+link_next: /pt-BR/carregando_dados.html
+---
 
 Tradicionalmente, comandos de shell do Unix comunicavam-se entre si através de strings de texto. Um comando gerava texto como saída através da saída padrão (normalmente abreviada como 'stdout') e o outro comando lia o texto pela entrada padrão (ou 'stdin'). Desse modo, os dois comandos podiam se comunicar.
 

@@ -1,4 +1,11 @@
-# Installing Nu
+---
+layout: content
+title: Installing Nu
+prev: START
+next: Introduction
+link_prev: /
+link_next: /en/introduction.html
+---
 
 The best way currently to get Nu up and running is to install from [crates.io](https://crates.io), download pre-built binaries from our [release page](https://github.com/nushell/nushell/releases), build from source, or pulling a pre-built container with Docker.
 
@@ -192,7 +199,7 @@ People familiar with Rust may wonder why we do both a "build" and a "run" step i
 
 ## Setting as your login shell
 
-{% hint style="warning" %} Nu is still in development, and may not be stable for everyday use. {% endhint %}
+**!!! Nu is still in development, and may not be stable for everyday use. !!!**
 
 To set the login shell you can use the [`chsh`](https://linux.die.net/man/1/chsh) command.
 Some Linux distributions have a list of valid shells located in `/etc/shells` and will disallow changing the shell until Nu is in the whitelist. You may see an error similar to the one below if you haven't updated the `shells` file:

@@ -1,4 +1,11 @@
-# システム内の移動
+---
+layout: content
+title: システム内の移動
+prev: はじめに
+next: データ型
+link_prev: /ja/introduction.html
+link_next: /ja/types_of_data.html
+---
 
 初期のシェルを使うとシステム内を移動してコマンドを実行することができますが、Nuのような現代的なシェルでも同じことができます。システムとやり取りする際に使用する一般的なコマンドのいくつかを見てみましょう。
 

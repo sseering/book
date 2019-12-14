@@ -1,4 +1,11 @@
-# El pipeline
+---
+layout: content
+title: El pipeline
+prev: Tablas
+next: Configuración
+link_prev: /es/trabajando_con_tablas.html
+link_next: /es/configuracion.html
+---
 
 Uno de los diseños centrales de Nu es la tubería (pipeline), una idea de diseño que rastrea sus raíces décadas atrás hasta parte de la filosofía original detrás de Unix. Así como Nu extiende desde un solo dato tipo de cadena de Unix, Nu también extiende la idea de tuberías (pipelines) para incluir más que solo texto.
 

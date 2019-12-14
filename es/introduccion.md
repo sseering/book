@@ -1,4 +1,11 @@
-# Introducción
+---
+layout: content
+title: Introduccion
+prev: Instalación
+next: Explorando
+link_prev: /es/instalacion.html
+link_next: /es/explorando.html
+---
 
 Hola, y bienvenido al proyecto Nushell. El objectivo de este proyecto es tomar la filosofía Unix de shells, dónde tuberías (pipes) conectan comandos simples juntos y llevarlos al estilo moderno de desarrollo.
 

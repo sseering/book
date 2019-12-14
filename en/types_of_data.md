@@ -1,4 +1,11 @@
-# Types of data
+---
+layout: content
+title: Types of data
+prev: Moving around
+next: Loading data
+link_prev: /en/moving_around.html
+link_next: /en/loading_data.html
+---
 
 Traditionally, Unix shell commands have communicated with each other using strings of text. One command would output text via standard out (often abbreviated 'stdout') and the other would read in text via standard in (or 'stdin'). In this way, the two commands could communicate.
 
