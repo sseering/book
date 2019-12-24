@@ -102,12 +102,19 @@ You may wish to load the configuration from a different file than the default. T
 To use Nu as a login shell, you'll need to configure the `path` and `env` configuration variables. With these, you'll have enough support to run external commands as a login shell.
 
 Before switching, run Nu inside of another shell, like Bash. Then, take the environment and PATH from that shell with the following commands:
+
+```
+> config --set [path $nu.path]
+> config --set [env $nu.env]
+```
+
+Versions before 0.7.2 used:
 ```
 > config --set [path $nu:path]
 > config --set [env $nu:env]
 ```
 
-The `$nu:path` and `$nu:env` are special variables which are set to the current PATH and environment variables, respectively. Once you set these into the configuration, they'll be available later when using Nu as a login shell.
+The `$nu.path` and `$nu.env` values are set to the current PATH and environment variables, respectively. Once you set these into the configuration, they'll be available later when using Nu as a login shell.
 
 Next, on some distros you'll also need to ensure Nu is in the /etc/shells list:
 
