@@ -3,7 +3,7 @@ layout: content
 title: Plugins
 prev: Escaping
 next: END
-link_prev: /en/plugins.html
+link_prev: /en/escaping.html
 link_next: /
 ---
 
