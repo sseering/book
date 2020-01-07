@@ -159,10 +159,18 @@ Once we have the dependencies Nu needs, we can install it using the `cargo` comm
 
 That's it!  The cargo tool will do the work of downloading Nu and its source dependencies, building it, and installing it into the cargo bin path so that we can run it.
 
-If you want to install all the features, including some fun optional ones, you can use:
+If you want to install with more features, you can use:
 
 ```
-> cargo install nu --all-features
+> cargo install nu --features=stable
+```
+
+For all the available features, the easiest way is to check out Nu and build it yourself using the same Rust tools:
+
+```
+> git clone https://github.com/nushell/nushell.git
+> cd nushell
+nushell> cargo install --path . --force --features=stable
 ```
 
 For this to work, make sure you have all the dependencies (shown above) on your system.
