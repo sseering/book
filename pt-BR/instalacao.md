@@ -1,9 +1,9 @@
 ---
 layout: content
 title: Instalando Nu
-prev: START
+prev: Índice
 next: Introdução
-link_prev: /
+link_prev: /pt-BR/indice.html
 link_next: /pt-BR/introducao.html
 ---
 

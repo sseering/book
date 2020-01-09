@@ -1,9 +1,9 @@
 ---
 layout: content
 title: Installing Nu
-prev: START
+prev: Table of Contents
 next: Introduction
-link_prev: /
+link_prev: /en/table_of_contents.html
 link_next: /en/introduction.html
 ---
 
