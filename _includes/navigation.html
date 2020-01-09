@@ -9,8 +9,7 @@
 
 <div id="Sidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-
-  <a href="#" class="hide" data-toggle="#list_en">English</a>
+  <a id="lang_en" href="#" class="hide" data-toggle="#list_en" onclick="changeColor(this.id)">English</a>
   <ol id="list_en">
     <li><a href="{{ '/en/installation.html' | relative_url }}">Installation</a></li>
     <li><a href="{{ '/en/introduction.html' | relative_url }}">Introduction</a></li>
@@ -26,7 +25,7 @@
     <li><a href="{{ '/en/plugins.html' | relative_url }}">Plugins</a></li>
   </ol>
 
-  <a href="#" class="hide" data-toggle="#list_es">Español</a>
+  <a id="lang_es" href="#" class="hide" data-toggle="#list_es" onclick="changeColor(this.id)">Español</a>
   <ol id="list_es">
     <li><a href="{{ '/es/instalacion.html' | relative_url }}">Instalación</a></li>
     <li><a href="{{ '/es/introduccion.html' | relative_url }}">Introducción</a></li>
@@ -42,7 +41,7 @@
     <li><a href="{{ '/es/plugins.html' | relative_url }}">Plugins</a></li>
   </ol>
 
-  <a href="#" class="hide" data-toggle="#list_pt-BR">Português do Brasil</a>
+  <a id="lang_pt" href="#" class="hide" data-toggle="#list_pt-BR" onclick="changeColor(this.id)">Português do Brasil</a>
   <ol id="list_pt-BR">
     <li><a href="{{ '/pt-BR/instalacao.html' | relative_url }}">Instalação</a></li>
     <li><a href="{{ '/pt-BR/introducao.html' | relative_url }}">Introdução</a></li>
@@ -57,7 +56,7 @@
     <li><a href="{{ '/pt-BR/plugins.html' | relative_url }}">Plugins</a></li>
   </ol>
 
-  <a href="#" class="hide" data-toggle="#list_ja">日本語</a>
+  <a id="lang_ja" href="#" class="hide" data-toggle="#list_ja" onclick="changeColor(this.id)">日本語</a>
   <ol id="list_ja">
     <li><a href="{{ '/ja/installation.html' | relative_url }}">インストール</a></li>
     <li><a href="{{ '/ja/introduction.html' | relative_url }}">はじめに</a></li>
@@ -71,6 +70,8 @@
     <li><a href="{{ '/ja/escaping.html' | relative_url }}">コマンドのエスケープ</a></li>
     <li><a href="{{ '/ja/plugins.html' | relative_url }}">プラグイン</a></li>
   </ol>
+  <br>
+  Click to expand language-specific table of contents
 </div>
 
 <script>
@@ -82,6 +83,13 @@
         function closeNav() {
           document.getElementById("Sidenav").style.width = "0";
           document.getElementById("main").style.marginLeft = "0";
+        }
+        function changeColor(elementID) {
+          if (document.getElementById(elementID).style.color == "rgb(136, 136, 136)") {
+            document.getElementById(elementID).style.color = "#51cd28"
+          } else {
+            document.getElementById(elementID).style.color = "#888888"
+          }
         }
 </script>
 <script>
