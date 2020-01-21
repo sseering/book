@@ -3,7 +3,7 @@ layout: content
 title: Nuのインストール
 prev: 開始
 next: はじめに
-link_prev: /
+link_prev: /ja/table_of_contents.html
 link_next: /ja/introduction.html
 ---
 
