@@ -137,7 +137,7 @@ brew install openssl cmake
 Quando tivermos todas as dependências de que o Nu precisa, podemos instalá-lo usando o comando `cargo`, que vem junto com o compilador Rust.
 
 ```shell
-> cargo +nightly install nu
+> cargo install nu
 ```
 
 Pronto! A ferramenta cargo fará o download do Nu e das dependências do fonte, o build e a instalação no caminho bin do cargo, de forma que possamos rodá-lo.
@@ -145,7 +145,7 @@ Pronto! A ferramenta cargo fará o download do Nu e das dependências do fonte, 
 Se quiser instalar todas as funcionalidades, inclusive algumas opcionais divertidas, você pode usar:
 
 ```shell
-> cargo +nightly install nu --all-features
+> cargo install nu --features=stable
 ```
 
 Para esse comando funcionar, certifique-se de ter todas as dependências (mostradas acima) instaladas no seu sistema.
@@ -169,13 +169,13 @@ O Git vai clonar o repositório principal do nushell e daí podemos fazer o buil
 
 ```bash
 > cd nushell
-nushell> cargo build --all-features && cargo run --all-features
+nushell> cargo build --workspace --features=stable && cargo run --features=stable
 ```
 
 Você também pode fazer o build e rodar o Nu em modo release:
 
 ```bash
-nushell> cargo build --release && cargo run --release
+nushell> cargo build --release --workspace --features=stable && cargo run --release --features=stable
 ```
 
 Pessoas mais acostumadas com Rust podem se perguntar por que fazemos tanto o "build" como o "run" se o "run" já faz o build por padrão. Isso serve para contornar uma falha da nova opção `default-run` no Cargo e assegurar que será feito o build de todos os plugins, embora  possa não ser necessário no futuro.
