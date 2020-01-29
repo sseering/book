@@ -194,13 +194,13 @@ Git will clone the main nushell repo for us. From there, we can build and run Nu
 
 ```
 > cd nushell
-nushell> cargo build --all-features && cargo run --all-features
+nushell> cargo build --workspace --features=stable && cargo --features=stable
 ```
 
 You can also build and run Nu in release mode:
 
 ```
-nushell> cargo build --release && cargo run --release
+nushell> cargo build --release --workspace --features=stable && cargo run --release --features=stable
 ```
 
 People familiar with Rust may wonder why we do both a "build" and a "run" step if "run" does a build by default. This is to get around a shortcoming of the new `default-run` option in Cargo, and ensure that all plugins are built, though this may not be required in the future.
