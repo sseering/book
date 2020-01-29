@@ -163,12 +163,12 @@ Gitでメインのnushellリポジトリをクローンし、Nuをビルドし�
 
 ```
 > cd nushell
-nushell> cargo build --all-features && cargo run --all-features
+nushell> cargo build --workspace --features=stable && cargo run --features=stable
 ```
 
 リリースモードでNuをビルドし実行することもできます。
 
 ```
-nushell> cargo build --release && cargo run --release
+nushell> cargo build --release --workspace --features=stable && cargo run --release --features=stable
 ```
 Rustに慣れている人は、"run"はデフォルトでビルドを行うので、"build"と"run"の両方を実行することに疑問をもつかもしれません。これは、Cargoの新しい`default-run`オプションの欠点を回避して、すべてのプラグインが確実にビルドされるようにするためです。ただし、将来的には必要なくなるかもしれません。
