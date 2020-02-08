@@ -194,12 +194,12 @@ description = "A shell for the GitHub era"
 license = "MIT"
 ```
 
-## URLを開く
+## URLからの取得
 
-ファイルシステムからファイルを読み込むことに加えて、`open`コマンドにはURLを指定することも可能です。こうすると、インターネットからURLのコンテンツを取得します。
+ファイルシステムからファイルを読み込むことに加えて、`fetch`コマンドを利用してURLからリソースを取得できます。
 
 ```
-> open https://www.jonathanturner.org/feed.xml
+> fetch https://www.jonathanturner.org/feed.xml
 ----------
  rss
 ----------

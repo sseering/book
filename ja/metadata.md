@@ -3,7 +3,7 @@ layout: content
 title: メタデータ
 prev: パイプライン
 next: シェル
-link_prev: /ja/pipeline.html
+link_prev: /ja/configuration.html
 link_next: /ja/shells_in_shells.html
 ---
 
@@ -29,7 +29,7 @@ Nuのパイプラインを流れる値には、多くの場合、メタデータ
 ```
 > open Cargo.toml | tags
 ----------+------------------------------------------
- span     | origin
+ span     | anchor
 ----------+------------------------------------------
  [object] | /home/jonathan/Source/nushell/Cargo.toml
 ----------+------------------------------------------
