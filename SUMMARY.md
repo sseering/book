@@ -11,6 +11,7 @@
   * [Shells](en/shells_in_shells.md) - Working with multiple locations
   * [Escaping commands](en/escaping.md) - Escaping to native commands of the same name 
   * [Plugins](en/plugins.md) - Enhancing nushell with more features using plugins
+  * [Coming from Bash](en/coming_from_bash.md) - Guide for coming to nushell from bash
 * [Español](es/README.md)
   * [Instalación](es/instalacion.md) - Instalando nushell
   * [Introducción](es/introduccion.md) - Empezando
