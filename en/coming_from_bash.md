@@ -20,7 +20,7 @@ Note: this table assumes Nushell 0.9.1 or later.
 | `cd` | `cd` | Change to the home directory |
 | `mkdir <path>` | `mkdir <path>` | Creates the given path |
 | `mkdir -p <path>` | `mkdir <path>` | Creates the given path, creating parents as necessary |
-| `touch` | | Create a file |
+| `touch` | `<not yet possible>` | Create a file |
 | | `| save <filename.ext>` | Save structured data as a filetype (implied by extension) |
 | `> <path>` | `| save --raw <path>` | Save string into a file |
 | `cat <path>` | `open --raw <path>` | Display the contents of the given file |
@@ -31,14 +31,14 @@ Note: this table assumes Nushell 0.9.1 or later.
 | `rm <path>` | `rm <path>` | Remove the given file |
 | | `rm -t <path>` | Move the given file to the system trash |
 | `rm -rf <path>` | `rm -r <path>` | Recursively removes the given path |
-| `chmod` | | Changes the file attributes |
+| `chmod` | `<not yet possible>` | Changes the file attributes |
 | `man <command>` | `help <command>` | Get the help for a given command |
 |  | `help commands` | List all available commands |
 | `echo $PATH` | `echo $nu.path` | See the current path |
 | `<update ~/.bashrc>` | `config --set [path [<dir1> <dir2> ...]]` | Update PATH permanently |
-| `export PATH = $PATH:/usr/other/bin` | | Update PATH temporarily |
+| `export PATH = $PATH:/usr/other/bin` | `<not yet possible>` | Update PATH temporarily |
 | `export` | `echo $nu.env` | List the current environment variables |
 | `<update ~/.bashrc>` | `echo $nu.env | insert var value | config --set_into env` | Update environment variables permanently |
-| `FOO=BAR ./bin` | | Update environment temporarily |
+| `FOO=BAR ./bin` | `<not yet possible>` | Update environment temporarily |
 | `bash -c <commands>` | `nu -c <commands>` | Run a pipeline of commands (requires 0.9.1 or later) |
 | `bash <script file>` | `nu <script file>` | Run a script file (requires 0.9.1 or later) |
