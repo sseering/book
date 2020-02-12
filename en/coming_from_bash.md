@@ -5,9 +5,6 @@
 | `ls pattern*` | `ls pattern*` | Lists files that match a given pattern |
 | `ls -la` | `ls -f` | List files with all available information |
 | `ls -d */` | `ls \| where type == Dir` | List directories |
-| `rm <filename>` | `rm <filename>` | Remove the given file |
-| | `rm -t <filename>` | Move the given file to the system trash |
-| `rm -rf <path>` | `rm -r <path>` | Recursively removes the given path |
 | `cd <directory>` | `cd <directory>` | Change to the given directory |
 | `cd` | `cd` | Change to the home directory |
 | `mkdir <path>` | `mkdir <path>` | Creates the given path |
@@ -20,5 +17,9 @@
 | `mv <source> <dest>` | `mv <source> <dest>` | Move file to new location |
 | `cp <source> <dest>` | `cp <source> <dest>` | Copy file to new location |
 | `cp -r <source> <dest>` | `cp -r <source> <dest>` | Copy directory to a new location, recursively |
+| `rm <path>` | `rm <path>` | Remove the given file |
+| | `rm -t <path>` | Move the given file to the system trash |
+| `rm -rf <path>` | `rm -r <path>` | Recursively removes the given path |
+| `chmod` | | Changes the file attributes |
 | `man <command>` | `help <command>` | Get the help for a given command |
 |  | `help commands` | List all available commands |
