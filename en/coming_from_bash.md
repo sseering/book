@@ -27,7 +27,7 @@
 | `<update ~/.bashrc>` | `config --set [path [<dir1> <dir2> ...]]` | Update PATH permanently |
 | `export PATH = $PATH:/usr/other/bin` | | Update PATH temporarily |
 | `export` | `echo $nu.env` | List the current environment variables |
-| `<update ~/.bashrc>` | `echo $nu.env \| insert newvar new value \| config --set_into env` | Update environment variables permanently |
+| `<update ~/.bashrc>` | `echo $nu.env \| insert var value \| config --set_into env` | Update environment variables permanently |
 | `FOO=BAR ./bin` | | Update environment temporarily |
 | `bash -c <commands>` | `nu -c <commands>` | Run a pipeline of commands (requires 0.9.1 or later) |
 | `bash <script file>` | `nu <script file>` | Run a script file (requires 0.9.1 or later) |
