@@ -23,3 +23,5 @@
 | `chmod` | | Changes the file attributes |
 | `man <command>` | `help <command>` | Get the help for a given command |
 |  | `help commands` | List all available commands |
+| `bash -c <commands>` | `nu -c <commands>` | Run a pipeline of commands (requires 0.9.1 or later) |
+| `bash <script file>` | `nu <script file>` | Run a script file (requires 0.9.1 or later) |
