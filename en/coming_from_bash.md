@@ -20,7 +20,7 @@ link_next: /
 | `mkdir -p <path>` | `mkdir <path>` | Creates the given path, creating parents as necessary |
 | `touch` | | Create a file |
 | | `| save <filename.ext>` | Save structured data as a filetype (implied by extension) |
-| ` > <path>` | `| save --raw <path>` | Save string into a file |
+| `> <path>` | `| save --raw <path>` | Save string into a file |
 | `cat <path>` | `open --raw <path>` | Display the contents of the given file |
 | | `open <path>` | Read a file as structured data |
 | `mv <source> <dest>` | `mv <source> <dest>` | Move file to new location |
