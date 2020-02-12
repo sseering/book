@@ -2,9 +2,9 @@
 layout: content
 title: Plugins
 prev: Escaping
-next: END
+next: Coming from Bash
 link_prev: /en/escaping.html
-link_next: /
+link_next: /en/coming_from_bash.html
 ---
 
 The functionality of Nu can be extended using plugins. The plugins can perform many of the same operations that Nu's built-in commands can, with the added benefit that they can be added separately of Nu itself.

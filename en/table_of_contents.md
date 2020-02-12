@@ -19,3 +19,4 @@ link_next: /en/installation.html
 * [Shells](shells_in_shells.md) - Working with multiple locations
 * [Escaping commands](escaping.md) - Escaping to native commands of the same name 
 * [Plugins](plugins.md) - Enhancing nushell with more features using plugins
+* [Coming from Bash](coming_from_bash.md) - Guide for those coming to nushell from bash
