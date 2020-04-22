@@ -34,6 +34,7 @@ Note: this table assumes Nushell 0.9.1 or later.
 | `chmod` | `<not yet possible>` | Changes the file attributes |
 | `man <command>` | `help <command>` | Get the help for a given command |
 |  | `help commands` | List all available commands |
+| `command1 && command2` | `command1; command2` | Run a command, and if it's successful run a second |
 | `echo $PATH` | `echo $nu.path` | See the current path |
 | `<update ~/.bashrc>` | `config --set [path [<dir1> <dir2> ...]]` | Update PATH permanently |
 | `export PATH = $PATH:/usr/other/bin` | `<not yet possible>` | Update PATH temporarily |
