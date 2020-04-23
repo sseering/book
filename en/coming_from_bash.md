@@ -43,3 +43,4 @@ Note: this table assumes Nushell 0.9.1 or later.
 | `FOO=BAR ./bin` | `<not yet possible>` | Update environment temporarily |
 | `bash -c <commands>` | `nu -c <commands>` | Run a pipeline of commands (requires 0.9.1 or later) |
 | `bash <script file>` | `nu <script file>` | Run a script file (requires 0.9.1 or later) |
+| `\` | `<not yet possible>` | Line continuation is not yet supported. |
