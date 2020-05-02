@@ -13,6 +13,7 @@ Nu has a small, but growing, number of internal variables you can set to change 
 | ------------- | ------------- | ----- |
 | path | table of strings | PATH to use to find binaries |
 | env | row | the environment variables to pass to external commands |
+| startup | table of strings | commands like `alias`es to run on when nushell starts |
 | ctrlc_exit | boolean | whether or not to exit Nu after multiple ctrl-c presses |
 | table_mode | "light" or other | enable lightweight or normal tables |
 | edit_mode | "vi" or "emacs" | changes line editing to "vi" or "emacs" mode |
