@@ -20,8 +20,7 @@ Note: this table assumes Nushell 0.9.1 or later.
 | `cd` | `cd` | Change to the home directory |
 | `mkdir <path>` | `mkdir <path>` | Creates the given path |
 | `mkdir -p <path>` | `mkdir <path>` | Creates the given path, creating parents as necessary |
-| `touch` | `<not yet possible>` | Create a file |
-| | `| save <filename.ext>` | Save structured data as a filetype (implied by extension) |
+| `touch test.txt` | `touch test.txt` | Create a file |
 | `> <path>` | `| save --raw <path>` | Save string into a file |
 | `cat <path>` | `open --raw <path>` | Display the contents of the given file |
 | | `open <path>` | Read a file as structured data |
