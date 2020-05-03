@@ -13,7 +13,7 @@ Nu has a small, but growing, number of internal variables you can set to change 
 | ------------- | ------------- | ----- |
 | path | table of strings | PATH to use to find binaries |
 | env | row | the environment variables to pass to external commands |
-| startup | table of strings | commands, like `alias`es, to run on when nushell starts |
+| startup | table of strings | commands, like `alias`es, to run when nushell starts |
 | ctrlc_exit | boolean | whether or not to exit Nu after multiple ctrl-c presses |
 | table_mode | "light" or other | enable lightweight or normal tables |
 | edit_mode | "vi" or "emacs" | changes line editing to "vi" or "emacs" mode |
@@ -45,9 +45,9 @@ Running the `config` command without any arguments will show a table of the curr
 ```
 > config
 ━━━━━━━━━━━┯━━━━━━━━━━━━━━━━┯━━━━━━━━━━━━━━━━━━┯━━━━━━━━━━━━
- edit_mode │ env            │ path             │ table_mode 
+ edit_mode │ env            │ path             │ table_mode
 ───────────┼────────────────┼──────────────────┼────────────
- emacs     │ [table: 1 row] │ [table: 10 rows] │ normal 
+ emacs     │ [table: 1 row] │ [table: 10 rows] │ normal
 ━━━━━━━━━━━┷━━━━━━━━━━━━━━━━┷━━━━━━━━━━━━━━━━━━┷━━━━━━━━━━━━
 ```
 
@@ -84,9 +84,9 @@ The configuration file is loaded from a default location. To find what this loca
 ```
 config --path
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
- <value> 
+ <value>
 ───────────────────────────────────────
- /home/nusheller/.config/nu/config.toml 
+ /home/nusheller/.config/nu/config.toml
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
@@ -135,11 +135,11 @@ With this, you should be able to `chsh` and set Nu to be your login shell. After
 
 ## Prompt configuration
 
-Currently, prompt configuration is handled by installing Nu with the [starship](https://github.com/starship/starship) prompt support. 
+Currently, prompt configuration is handled by installing Nu with the [starship](https://github.com/starship/starship) prompt support.
 
 ```
-nushell on 📙 master [$] is 📦 v0.5.1 via 🦀 v1.40.0-nightly 
-❯ 
+nushell on 📙 master [$] is 📦 v0.5.1 via 🦀 v1.40.0-nightly
+❯
 ```
 
 Starship is a fun, colorful, and surprisingly powerful prompt. To configure it, follow the steps in their [configuration manual](https://starship.rs/config/).
