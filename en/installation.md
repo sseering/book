@@ -194,7 +194,7 @@ Git will clone the main nushell repo for us. From there, we can build and run Nu
 
 ```
 > cd nushell
-nushell> cargo build --workspace --features=stable && cargo --features=stable
+nushell> cargo build --workspace --features=stable && cargo run --features=stable
 ```
 
 You can also build and run Nu in release mode:
