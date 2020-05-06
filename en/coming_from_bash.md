@@ -7,7 +7,7 @@ link_prev: /en/plugins.html
 link_next: /
 ---
 
-Note: this table assumes Nushell 0.9.1 or later.
+Note: this table assumes Nushell 0.13.1 or later.
 
 | Bash        | Nu           | Task  |
 | ------------- | ------------- | ----- |
