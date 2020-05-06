@@ -39,7 +39,7 @@ Note: this table assumes Nushell 0.13.1 or later.
 | `export PATH = $PATH:/usr/other/bin` | `<not yet possible>` | Update PATH temporarily |
 | `export` | `echo $nu.env` | List the current environment variables |
 | `<update ~/.bashrc>` | `echo $nu.env | insert var value | config --set_into env` | Update environment variables permanently |
-| `FOO=BAR ./bin` | `with-env [FOO BAR] {./bin}` | Update environment temporarily |
+| `FOO=BAR ./bin` | `FOO=BAR ./bin` | Update environment temporarily |
 | `alias s="git status -sb"` | `alias s [] { git status -sb }` | Define an alias temporarily |
 | `<update ~/.bashrc>` | `config --set [startup ["alias myecho [msg] { echo Hello $msg }"]]` | Add a first alias permanently (for new shells) |
 | `<update ~/.bashrc>` | `config --get startup | append "alias s [] { git status -sb }" | config --set_into startup` | Add an additional alias permanently (for new shells) |
