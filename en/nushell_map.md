@@ -135,6 +135,6 @@ Note: this table assumes Nushell 0.13.1 or later.
 | which                  | N/A                           | N/A                                                  | N/A                                        | which                                           |
 | wrap                   |                               |                                                      |                                            |                                                 |
 
-`*` - these commands are part of the standard plugins
-`**` - renamed from `edit` to `update` in 0.13.1
-`***` - renamed from `pick` to `select` in 0.13.1
+* `*` - these commands are part of the standard plugins
+* `**` - renamed from `edit` to `update` in 0.13.1
+* `***` - renamed from `pick` to `select` in 0.13.1
