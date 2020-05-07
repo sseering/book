@@ -16,3 +16,5 @@ Currently available are:
 * [Escaping commands](escaping.md) - Escaping to native commands of the same name 
 * [Plugins](plugins.md) - Enhancing nushell with more features using plugins
 * [Coming from Bash](coming_from_bash.md) - Guide for those coming to nushell from bash
+* [NuShell Map To SQL,Linq,PowerShell,Bash](nushell_map.md) - A guide to help understand how nushell compares with others. Contributions welcome.
+* [NuShell Operator Map](nushell_operator_map.md) - A guide to help understand operators.
