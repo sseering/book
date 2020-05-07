@@ -35,7 +35,6 @@ Note: this table assumes Nushell 0.13.1 or later.
 | du                     | N/A                           | N/A                                                  |                                            | du                                              |
 | each                   | cursor                        |                                                      | ForEach-Object, foreach, for               |                                                 |
 | echo                   | print                         | N/A                                                  | Write-Output, write                        | echo                                            |
-| edit renamed to update | As                            | N/A                                                  |                                            |                                                 |
 | enter                  | N/A                           | N/A                                                  |                                            |                                                 |
 | evaluate_by            |                               |                                                      |                                            |                                                 |
 | exit                   | N/A                           |                                                      | exit                                       | exit                                            |
@@ -83,7 +82,6 @@ Note: this table assumes Nushell 0.13.1 or later.
 | nth                    | limit x offset y, rownumber = | ElemantAt(x)                                         | [x], indexing operator, ElementAt(x)       |                                                 |
 | open                   |                               |                                                      | Get-Content, gc, cat, type                 | cat                                             |
 | parse                  |                               |                                                      |                                            |                                                 |
-| pick renamed to select | select                        | Select                                               | Select-Object, select                      |                                                 |
 | pivot                  | pivot                         | N/A                                                  |                                            |                                                 |
 | post(`*`)              | N/A                           | HttpClient,WebClient, HttpWebRequest/Response        | Invoke-WebRequest                          |                                                 |
 | prepend                |                               |                                                      |                                            |                                                 |
@@ -97,6 +95,7 @@ Note: this table assumes Nushell 0.13.1 or later.
 | reverse                |                               | Reverse                                              | [Array]::Reverse($var)                     |                                                 |
 | rm                     | N/A                           | N/A                                                  | Remove-Item, del, erase, rd, ri, rm, rmdir | rm                                              |
 | save                   | N/A                           | N/A                                                  | Write-Output, Out-File                     | > foo.txt                                       |
+| select(`***`)          | select                        | Select                                               | Select-Object, select                      |                                                 |
 | shells                 | N/A                           | N/A                                                  | N/A                                        |                                                 |
 | shuffle                |                               | Random                                               | $var                                       | Sort-Object {Get-Random}                        |
 | size                   |                               |                                                      | Measure-Object, measure                    | wc                                              |
@@ -128,6 +127,7 @@ Note: this table assumes Nushell 0.13.1 or later.
 | touch                  | N/A                           | N/A                                                  | Set-Content                                | touch                                           |
 | trim                   | rtrim,ltrim                   | String.Trim()                                        | String.Trim()                              |                                                 |
 | uniq                   | distinct                      | Distinct                                             | Get-Unique, gu                             | uniq                                            |
+| update(`**`)           | As                            | N/A                                                  |                                            |                                                 |
 | version                | select @@version              | N/A                                                  | $PSVersionTable                            |                                                 |
 | with_env               | N/A                           | N/A                                                  | $env:FOO = 'bar'                           | export foo = "bar"                              |
 | what                   |                               |                                                      |                                            |                                                 |
@@ -136,3 +136,5 @@ Note: this table assumes Nushell 0.13.1 or later.
 | wrap                   |                               |                                                      |                                            |                                                 |
 
 `*` - these commands are part of the standard plugins
+`**` - renamed from `edit` to `update` in 0.13.1
+`***` - renamed from `pick` to `select` in 0.13.1
