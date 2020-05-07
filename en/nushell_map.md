@@ -4,7 +4,7 @@ title: NuShell Map To Other Languages
 prev: Coming from Bash
 next: NuShell Operator Map
 link_prev: /en/coming_from_bash.html
-link_next: /en/nushell_operaor_map.html
+link_next: /en/nushell_operator_map.html
 ---
 
 The idea behind this table is to help you understand how NuShell built-ins and plug-ins relate to other known languages. We've tried to produce a map of all the nushell commands and what their equivalents are in other languages. Contributions are welcome.
