@@ -12,21 +12,21 @@ The idea behind this table is to help you understand how NuShell operators relat
 Note: this table assumes Nushell 0.13.1 or later.
 
 
-| SQL      | .Net LINQ (C#)       | PowerShell             | Bash               |
-| -------- | -------------------- | ---------------------- | ------------------ |
-| =        | ==                   | -eq, -is               | -eq                |
-| !=, <>   | !=                   | -ne, -isnot            | -ne                |
-| <        | <                    | -lt                    | -lt                |
-| <=       | <=                   | -le                    | -le                |
-| >        | >                    | -gt                    | -gt                |
-| >=       | >=                   | -ge                    | -ge                |
-| like     | Contains, StartsWith | -like, -contains       | =~                 |
-| not like | Except               | -notlike, -notcontains | ! <str1> =~ <str2> |
-| +        | +                    | +                      | +                  |
-| -        | -                    | -                      | -                  |
-| *        | *                    | *                      | *                  |
-| /        | /                    | /                      | /                  |
-| in       | Contains, StartsWith | -In                    | case in            |
-| not in   | Except               | -NotIn                 |                    |
-| and      | &&                   | -And                   | -a, &&             |
-| or       | \|\|                 | -Or                    | -o, \|\|           |
+| NuShell  | SQL      | .Net LINQ (C#)       | PowerShell             | Bash               |
+| -------- | -------- | -------------------- | ---------------------- | ------------------ |
+| =        | =        | ==                   | -eq, -is               | -eq                |
+| !=       | !=, <>   | !=                   | -ne, -isnot            | -ne                |
+| <        | <        | <                    | -lt                    | -lt                |
+| <=       | <=       | <=                   | -le                    | -le                |
+| >        | >        | >                    | -gt                    | -gt                |
+| >=       | >=       | >=                   | -ge                    | -ge                |
+| =~       | like     | Contains, StartsWith | -like, -contains       | =~                 |
+| !~       | not like | Except               | -notlike, -notcontains | ! <str1> =~ <str2> |
+| +        | +        | +                    | +                      | +                  |
+| -        | -        | -                    | -                      | -                  |
+| *        | *        | *                    | *                      | *                  |
+| /        | /        | /                    | /                      | /                  |
+| in:      | in       | Contains, StartsWith | -In                    | case in            |
+| not-in:  | not in   | Except               | -NotIn                 |                    |
+| &&       | and      | &&                   | -And                   | -a, &&             |
+| \|\|     | or       | \|\|                 | -Or                    | -o, \|\|           |
