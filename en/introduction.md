@@ -128,7 +128,7 @@ Running `sys` gives information about the system that Nu is running on:
 This is a bit different than the tables we saw before. The `sys` command gives us a table that contains structured tables in the cells instead of simple values. To take a look at this data, we need to select the column to view:
 
 ```
-sys | get host
+> sys | get host
 ──────────┬─────────────────────────────────────────────
  name     │ Linux
  release  │ 5.3.0-1019-azure
