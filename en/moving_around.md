@@ -20,33 +20,40 @@ As we've seen in other chapters, `ls` is a command for viewing the contents of a
 The `ls` command also takes an optional argument, to change what you'd like to view.  For example, we can list the files that end in ".txt"
 
 ```
-> ls *.txt
----+--------------+------+----------+---------+--------------+--------------
- # | name         | type | readonly | size    | accessed     | modified 
----+--------------+------+----------+---------+--------------+--------------
- 0 | history.txt  | File |          | 1.3 KB  | 2 months ago | a day ago 
- 1 | readonly.txt | File | readonly | <empty> | 2 months ago | 2 months ago 
----+--------------+------+----------+---------+--------------+--------------
+> ls *.md
+───┬────────────────────┬──────┬─────────┬────────────
+ # │ name               │ type │ size    │ modified 
+───┼────────────────────┼──────┼─────────┼────────────
+ 0 │ CODE_OF_CONDUCT.md │ File │  3.4 KB │ 5 days ago 
+ 1 │ CONTRIBUTING.md    │ File │   886 B │ 5 days ago 
+ 2 │ README.md          │ File │ 15.0 KB │ 5 days ago 
+ 3 │ TODO.md            │ File │  1.6 KB │ 5 days ago 
+───┴────────────────────┴──────┴─────────┴────────────
 ```
 
-The asterisk (\*) in the above optional argument "\*.txt" is sometimes called a wildcard or a glob. It lets us match anything. You could read the glob "\*.txt" as "match any filename, so long as it ends with '.txt' "
+The asterisk (\*) in the above optional argument "\*.md" is sometimes called a wildcard or a glob. It lets us match anything. You could read the glob "\*.md" as "match any filename, so long as it ends with '.md' "
 
 Nu also uses modern globs as well, which allow you access to deeper directories.
 
 ```
-> ls **/*.rs
------+-----------------------------------------------------+------+----------+----------+----------------+----------------
- #   | name                                                | type | readonly | size     | accessed       | modified 
------+-----------------------------------------------------+------+----------+----------+----------------+----------------
- 0   | src/cli.rs                                          | File |          | 19.1 KB  | 15 hours ago   | 15 hours ago 
- 1   | src/commands/args.rs                                | File |          | 244 B    | 2 months ago   | 2 months ago 
- 2   | src/commands/autoview.rs                            | File |          | 2.5 KB   | 15 hours ago   | 15 hours ago 
- 3   | src/commands/cd.rs                                  | File |          | 277 B    | a week ago     | a week ago 
- 4   | src/commands/classified.rs                          | File |          | 13.5 KB  | 15 hours ago   | 15 hours ago 
- 5   | src/commands/clip.rs                                | File |          | 2.0 KB   | 2 days ago     | 2 days ago
- ```
+ ls **/*.md
+────┬───────────────────────────────────────────┬──────┬─────────┬────────────
+ #  │ name                                      │ type │ size    │ modified 
+────┼───────────────────────────────────────────┼──────┼─────────┼────────────
+  0 │ .github/ISSUE_TEMPLATE/bug_report.md      │ File │   592 B │ 5 days ago 
+  1 │ .github/ISSUE_TEMPLATE/feature_request.md │ File │   595 B │ 5 days ago 
+  2 │ CODE_OF_CONDUCT.md                        │ File │  3.4 KB │ 5 days ago 
+  3 │ CONTRIBUTING.md                           │ File │   886 B │ 5 days ago 
+  4 │ README.md                                 │ File │ 15.0 KB │ 5 days ago 
+  5 │ TODO.md                                   │ File │  1.6 KB │ 5 days ago 
+  6 │ crates/nu-source/README.md                │ File │  1.7 KB │ 5 days ago 
+  7 │ docker/packaging/README.md                │ File │  1.5 KB │ 5 days ago 
+  8 │ docs/commands/README.md                   │ File │   929 B │ 5 days ago 
+  9 │ docs/commands/alias.md                    │ File │  1.7 KB │ 5 days ago 
+ 10 │ docs/commands/append.md                   │ File │  1.4 KB │ 5 days ago
+```
  
- Here we're looking for any file that ends with ".rs", and the two asterisks further say "in any directory starting from here".
+ Here we're looking for any file that ends with ".md", and the two asterisks further say "in any directory starting from here".
 
 ## Changing the current directory
 

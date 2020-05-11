@@ -23,7 +23,7 @@ Integers (or round) numbers. Examples include 1, 5, and 100.
 
 ### Decimal
 
-Decimal point numbers are numbers with some fractional component. Examples include 1.5, 2.0, and 15.333.
+Decimal numbers are numbers with some fractional component. Examples include 1.5, 2.0, and 15.333.
 
 ### Strings
 

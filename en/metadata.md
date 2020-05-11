@@ -28,11 +28,10 @@ Let's run the `open` command again, but this time, we'll look at the tags it giv
 
 ```
 > open Cargo.toml | tags
-----------+------------------------------------------
- span     | anchor
-----------+------------------------------------------
- [object] | /home/jonathan/Source/nushell/Cargo.toml 
-----------+------------------------------------------
+────────┬───────────────────────────────────────────
+ span   │ [row end start] 
+ anchor │ /home/jonathant/Source/nushell/Cargo.toml 
+────────┴───────────────────────────────────────────
 ```
 
 Currently, we track two bits of metadata on the values in pipeline. You can notice that we have the anchor, which gives the location for where this data was loaded from. This can help Nu better understand how to present data.
@@ -41,11 +40,10 @@ There's also a span. Let's take a closer look at that:
 
 ```
 > open Cargo.toml | tags | get span
--------+-----
- start | end 
--------+-----
- 5     | 15 
--------+-----
+───────┬────
+ start │ 5 
+ end   │ 15 
+───────┴────
 ```
 
 The span "start" and "end" here refer to where the underline will be in the line. If you count over 5, and then count up to 15, you'll see it lines up with the "Cargo.toml" filename. This is how the error we saw earlier knew what to underline.

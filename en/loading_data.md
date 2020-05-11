@@ -15,15 +15,23 @@ One of Nu's most powerful assets in working with data is the `open` command. It 
 
 ```
 > open editors/vscode/package.json
-------+----------+----------+---------+---------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------
- name | descript | author   | license | version | reposito | publishe | categori | keywords | engines  | activati | main     | contribu | scripts  | devDepen 
-      | ion      |          |         |         | ry       | r        | es       |          |          | onEvents |          | tes      |          | dencies 
-------+----------+----------+---------+---------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------
- lark | Lark     | Lark     | MIT     | 1.0.0   | [object] | vscode   | [0       | [1 item] | [object] | [1 item] | ./out/ex | [object] | [object] | [object] 
-      | support  | develope |         |         |          |          | items]   |          |          |          | tension  |          |          |  
-      | for VS   | rs       |         |         |          |          |          |          |          |          |          |          |          |  
-      | Code     |          |         |         |          |          |          |          |          |          |          |          |          |  
-------+----------+----------+---------+---------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------
+──────────────────┬───────────────────────────────────────────────────────────────────────────────
+ name             │ lark 
+ description      │ Lark support for VS Code 
+ author           │ Lark developers 
+ license          │ MIT 
+ version          │ 1.0.0 
+ repository       │ [row type url] 
+ publisher        │ vscode 
+ categories       │ [table 0 rows] 
+ keywords         │ [table 1 rows] 
+ engines          │ [row vscode] 
+ activationEvents │ [table 1 rows] 
+ main             │ ./out/extension 
+ contributes      │ [row configuration grammars languages] 
+ scripts          │ [row compile postinstall test vscode:prepublish watch] 
+ devDependencies  │ [row @types/mocha @types/node tslint typescript vscode vscode-languageclient] 
+──────────────────┴───────────────────────────────────────────────────────────────────────────────
 ```
 
 In a similar way to `ls`, opening a file type that Nu understands will give us back something that is more than just text (or a stream of bytes). Here we open a "package.json" file from a JavaScript project. Nu can recognize and open the JSON text and give back a table of data.
@@ -72,78 +80,74 @@ The first thing we want to do when bringing in the file is to work with it a lin
 
 ```
 > open people.txt | lines
----+------------------------------
- # | value 
----+------------------------------
- 0 | Octavia | Butler | Writer 
- 1 | Bob | Ross | Painter 
- 2 | Antonio | Vivaldi | Composer 
----+------------------------------
+───┬──────────────────────────────
+ 0 │ Octavia | Butler | Writer 
+ 1 │ Bob | Ross | Painer 
+ 2 │ Antonio | Vivaldi | Composer 
+───┴──────────────────────────────
 ```
 
 We can see that we're working with the lines because we're back into a table. Our next step is to see if we can split up the rows into something a little more useful. For that, we'll use the `split-column` command. `split-column`, as the name implies, gives us a way to split a delimited string into columns. We tell it what the delimiter is, and it does the rest:
 
 ```
 > open people.txt | lines | split-column "|"
----+----------+-----------+-----------
- # | Column1  | Column2   | Column3 
----+----------+-----------+-----------
- 0 | Octavia  |  Butler   |  Writer 
- 1 | Bob      |  Ross     |  Painter 
- 2 | Antonio  |  Vivaldi  |  Composer 
----+----------+-----------+-----------
+───┬──────────┬───────────┬───────────
+ # │ Column1  │ Column2   │ Column3 
+───┼──────────┼───────────┼───────────
+ 0 │ Octavia  │  Butler   │  Writer 
+ 1 │ Bob      │  Ross     │  Painer 
+ 2 │ Antonio  │  Vivaldi  │  Composer 
+───┴──────────┴───────────┴───────────
 ```
 
-That almost looks correct. Looks like there is extra space there. Let's change our delimiter:
+That almost looks correct. Looks like there is extra space there. Let's `trim` that extra space:
 
 ```
-> open people.txt | lines | split-column " | "
----+---------+---------+----------
- # | Column1 | Column2 | Column3 
----+---------+---------+----------
- 0 | Octavia | Butler  | Writer 
- 1 | Bob     | Ross    | Painter 
- 2 | Antonio | Vivaldi | Composer 
----+---------+---------+----------
+> open people.txt | lines | split-column "|" | trim
+───┬─────────┬─────────┬──────────
+ # │ Column1 │ Column2 │ Column3 
+───┼─────────┼─────────┼──────────
+ 0 │ Octavia │ Butler  │ Writer 
+ 1 │ Bob     │ Ross    │ Painer 
+ 2 │ Antonio │ Vivaldi │ Composer 
+───┴─────────┴─────────┴──────────
 ```
 
 Not bad. The `split-column` command gives us data we can use. It also goes ahead and gives us default column names:
 
 ```
-> open people.txt | lines | split-column " | " | get Column1
----+---------
- # | value 
----+---------
- 0 | Octavia 
- 1 | Bob 
- 2 | Antonio 
----+---------
+> open people.txt | lines | split-column "|" | trim | get Column1
+───┬─────────
+ 0 │ Octavia 
+ 1 │ Bob 
+ 2 │ Antonio 
+───┴─────────
 ```
 
 We can also name our columns instead of using the default names:
 
 ```
-> open people.txt | lines | split-column " | " first_name last_name job
----+------------+-----------+----------
- # | first_name | last_name | job 
----+------------+-----------+----------
- 0 | Octavia    | Butler    | Writer 
- 1 | Bob        | Ross      | Painter 
- 2 | Antonio    | Vivaldi   | Composer 
----+------------+-----------+----------
+> open people.txt | lines | split-column "|" first_name last_name job | trim 
+───┬────────────┬───────────┬──────────
+ # │ first_name │ last_name │ job 
+───┼────────────┼───────────┼──────────
+ 0 │ Octavia    │ Butler    │ Writer 
+ 1 │ Bob        │ Ross      │ Painer 
+ 2 │ Antonio    │ Vivaldi   │ Composer 
+───┴────────────┴───────────┴──────────
 ```
 
 Now that our data is in a table, we can use all the commands we've used on tables before:
 
 ```
-> open people.txt | lines | split-column " | " first_name last_name job | sort-by first_name
----+------------+-----------+----------
- # | first_name | last_name | job 
----+------------+-----------+----------
- 0 | Antonio    | Vivaldi   | Composer 
- 1 | Bob        | Ross      | Painter 
- 2 | Octavia    | Butler    | Writer 
----+------------+-----------+----------
+> open people.txt | lines | split-column "|" first_name last_name job | trim | sort-by first_name
+───┬────────────┬───────────┬──────────
+ # │ first_name │ last_name │ job 
+───┼────────────┼───────────┼──────────
+ 0 │ Antonio    │ Vivaldi   │ Composer 
+ 1 │ Bob        │ Ross      │ Painer 
+ 2 │ Octavia    │ Butler    │ Writer 
+───┴────────────┴───────────┴──────────
 ```
 
 There are other commands you can use to work with strings:
@@ -167,12 +171,11 @@ version = "0.1.2"
 The "Cargo.lock" file is actually a .toml file, but the file extension isn't .toml. That's okay, we can use the `from-toml` command:
 
 ```
-> open Cargo.lock | from-toml
-----------+-------------
- metadata | package 
-----------+-------------
- [object] | [405 items] 
-----------+-------------
+> open Cargo.lock | from toml
+──────────┬───────────────────
+ metadata │ [row 107 columns] 
+ package  │ [table 130 rows] 
+──────────┴───────────────────
 ```
 
 There is a `from-` command for each of the structured data text formats that Nu can open and understand.
@@ -196,9 +199,7 @@ In addition to loading files from your filesystem, you can also load URLs by usi
 
 ```
 > fetch https://www.jonathanturner.org/feed.xml
-----------
- rss 
-----------
- [1 item] 
-----------
+─────┬───────────────────────────
+ rss │ [row attributes children] 
+─────┴───────────────────────────
 ```

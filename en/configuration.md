@@ -11,12 +11,17 @@ Nu has a small, but growing, number of internal variables you can set to change 
 
 | Variable        | Type           | Description  |
 | ------------- | ------------- | ----- |
-| path | table of strings | PATH to use to find binaries |
-| env | row | the environment variables to pass to external commands |
-| startup | table of strings | commands, like `alias`es, to run when nushell starts |
+| completion_mode | "list" or "circular" | the style of autocompletion to use |
 | ctrlc_exit | boolean | whether or not to exit Nu after multiple ctrl-c presses |
-| table_mode | "light" or other | enable lightweight or normal tables |
+| disable_table_indexes | boolean | removes the table index column |
 | edit_mode | "vi" or "emacs" | changes line editing to "vi" or "emacs" mode |
+| env | row | the environment variables to pass to external commands |
+| header_align | "center", "right", or other | aligns table headers center-, right-, or left-aligned |
+| key_timeout | integer | the timeout used to switch between edit modes |
+| nonzero_exit_errors | boolean | whether to print errors for non-zero exit codes for externals |
+| path | list of strings | PATH to use to find binaries |
+| startup | list of strings | commands, like `alias`es, to run when nushell starts |
+| table_mode | "light" or other | enable lightweight or normal tables |
 
 ## Usage
 
@@ -44,11 +49,12 @@ Running the `config` command without any arguments will show a table of the curr
 
 ```
 > config
-━━━━━━━━━━━┯━━━━━━━━━━━━━━━━┯━━━━━━━━━━━━━━━━━━┯━━━━━━━━━━━━
- edit_mode │ env            │ path             │ table_mode
-───────────┼────────────────┼──────────────────┼────────────
- emacs     │ [table: 1 row] │ [table: 10 rows] │ normal
-━━━━━━━━━━━┷━━━━━━━━━━━━━━━━┷━━━━━━━━━━━━━━━━━━┷━━━━━━━━━━━━
+─────────────────┬──────────────────
+ completion_mode │ circular 
+ env             │ [row 51 columns] 
+ path            │ [table 9 rows] 
+ startup         │ [table 1 rows] 
+─────────────────┴──────────────────
 ```
 
 Note: if you haven't set any configuration variables, yet, this may be empty.
@@ -82,12 +88,8 @@ If you want to clear the whole configuration and start fresh, you can use the `-
 The configuration file is loaded from a default location. To find what this location is on your system, you can ask for it using the `--path` flag:
 
 ```
-config --path
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
- <value>
-───────────────────────────────────────
- /home/nusheller/.config/nu/config.toml
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+> config --path
+/home/jonathant/.config/nu/config.toml
 ```
 
 ### Loading the config from a file
@@ -120,7 +122,7 @@ The `$nu.path` and `$nu.env` values are set to the current PATH and environment 
 Next, on some distros you'll also need to ensure Nu is in the /etc/shells list:
 
 ```
-❯ cat /etc/shells
+> cat /etc/shells
 # /etc/shells: valid login shells
 /bin/sh
 /bin/dash
