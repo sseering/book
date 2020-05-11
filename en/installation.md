@@ -107,14 +107,15 @@ For Windows, when you install Visual Studio Community Edition, make sure to inst
 
 If we don't already have Rust on our system, the best way to install it via [rustup](https://rustup.rs/). Rustup is a way of managing Rust installations, including managing using different Rust versions. 
 
-Nu currently requires the **latest stable (1.39 or later)** version of Rust. The best way to let `rustup` find the correct version for you. When you first open `rustup` it will ask what version of Rust you wish to install:
+Nu currently requires the **latest stable (1.43 or later)** version of Rust. The best way to let `rustup` find the correct version for you. When you first open `rustup` it will ask what version of Rust you wish to install:
 
 ```
 Current installation options:
 
-   default host triple: x86_64-unknown-linux-gnu
-     default toolchain: stable
-  modify PATH variable: yes
+default host triple: x86_64-unknown-linux-gnu
+default toolchain: stable
+profile: default
+modify PATH variable: yes
 
 1) Proceed with installation (default)
 2) Customize installation
@@ -140,6 +141,10 @@ Linux users who wish to use the `rawkey` or `clipboard` optional features will n
 ```
 apt install libxcb-composite0-dev libx11-dev
 ```
+
+### RHEL
+
+You'll need to install "libxcb", "libssl-dev", and "lib11-dev".
 
 ### macOS
 

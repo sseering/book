@@ -65,5 +65,5 @@ Lists can hold more than one value. This allows them to be a good container for 
 
 ### Blocks
 
-Blocks represent a block of code in Nu. For example, in the command `where { $it.size > 10kb }` the block is the portion contained in curly braces, `{ $it.size > 10kb }`. Blocks are a useful way of representing code that can be executed on each row of data.
+Blocks represent a block of code in Nu. For example, in the command `each { echo $it }` the block is the portion contained in curly braces, `{ echo $it }`. Blocks are a useful way of representing code that can be executed on each row of data.
 
