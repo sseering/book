@@ -93,7 +93,7 @@ Binary data, like the data from an image file, is a group of raw bytes.
 
 ## Structured data
 
-Structured data builds from the simple data. For example, instead of a single integer, structured data gives us a way to represent multiple integers in the same value. Here's a list of the currently supported structured data types: objects, binary data, lists, and blocks.
+Structured data builds from the simple data. For example, instead of a single integer, structured data gives us a way to represent multiple integers in the same value. Here's a list of the currently supported structured data types: rows, lists, and blocks.
 
 ### Rows
 
@@ -102,6 +102,17 @@ The row data type represents what you would see in one row of data in the table.
 ### Lists
 
 Lists can hold more than one value. These can be simple values.  They can also hold rows, and the combination of a list of rows is often called a "table".
+
+Example: a list of strings
+
+```
+> echo [sam fred george]
+───┬────────
+ 0 │ sam 
+ 1 │ fred 
+ 2 │ george 
+───┴────────
+``` 
 
 ### Blocks
 
