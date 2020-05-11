@@ -21,15 +21,31 @@ Like many programming languages, Nu models data using a set of simple and struct
 
 Integers (or round) numbers. Examples include 1, 5, and 100.
 
-### Floats
+### Decimal
 
-Floating point numbers are numbers with some fractional component. Examples include 1.5, 2.0, and 15.333.
+Decimal point numbers are numbers with some fractional component. Examples include 1.5, 2.0, and 15.333.
 
 ### Strings
 
 Strings are the fundamental way of representing text. They are quoted using double quotes. Examples include "Fred", "myname.txt", and "Lynchburg, VA".
 
 Strings in Nu are Unicode aware by default, so you can pass UTF-8 text with ease.
+
+### Lines
+
+Lines are strings with an implied OS-dependent line ending. When used, the OS-specific line ending is used.
+
+### Column paths
+
+Column paths are a path through the table to a specific sub-table, column, row, or cell.
+
+Eg) The value `foo.0.bar` in `open data.toml | get foo.0.bar`
+
+### Patterns
+
+Patterns, sometimes called "glob" patterns, are a way of matching filenames often used in shells.  Globs contain `*` to mean anything can match here, or `?` to mean a single character can match here.
+
+Eg) The value `test*` in `ls test*` is a pattern
 
 ### Booleans
 
@@ -39,6 +55,30 @@ Booleans are the state of being true or false. Rather than writing the value dir
 
 Dates and times are held together in the Date value type. Date values used by the system are timezone-aware, and by default use the UTC timezone.
 
+### Duration
+
+Durations represent a length of time.  A second, 5 weeks, and a year are all durations.
+
+Eg) `1w` is the duration of one week.
+
+This chart shows all durations currently supported:
+
+| Duration | Length     |
+|----------|------------|
+|1s        | one second |
+|1m        | one minute |
+|1h        | one hour   |
+|1d        | one day    |
+|1w        | one week   |
+|1M        | one month  |
+|1y        | one year   |
+
+### Ranges
+
+You can also describe a range of values. Often, you might use this to describe numbers between a start and end number.
+
+eg) `ls | range 1..4`
+
 ### Paths
 
 Paths are a platform-independent way of representing a filepath in the given OS. Examples include /usr/bin and C:\Users\file.txt.
@@ -47,21 +87,21 @@ Paths are a platform-independent way of representing a filepath in the given OS.
 
 Filesizes are held in a special integer type called bytes. Examples include 100, 15kb, and 100mb.
 
-## Structured data
-
-Structured data builds from the simple data. For example, instead of a single integer, structured data gives us a way to represent multiple integers in the same value. Here's a list of the currently supported structured data types: objects, binary data, lists, and blocks.
-
-### Objects
-
-The object data type represents what you would see in one row of data in the table. It has different elements of data, and each element of data is given a column name.
-
 ### Binary data
 
 Binary data, like the data from an image file, is a group of raw bytes.
 
+## Structured data
+
+Structured data builds from the simple data. For example, instead of a single integer, structured data gives us a way to represent multiple integers in the same value. Here's a list of the currently supported structured data types: objects, binary data, lists, and blocks.
+
+### Rows
+
+The row data type represents what you would see in one row of data in the table. It has different elements of data, and each element of data is given a column name.
+
 ### Lists
 
-Lists can hold more than one value. This allows them to be a good container for rows of data in a table.
+Lists can hold more than one value. These can be simple values.  They can also hold rows, and the combination of a list of rows is often called a "table".
 
 ### Blocks
 
