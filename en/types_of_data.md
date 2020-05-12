@@ -51,6 +51,8 @@ Eg) The value `test*` in `ls test*` is a pattern
 
 Booleans are the state of being true or false. Rather than writing the value directly, it is often a result of a comparison.
 
+The two values of booleans are `$true` and `$false`.
+
 ### Dates
 
 Dates and times are held together in the Date value type. Date values used by the system are timezone-aware, and by default use the UTC timezone.
@@ -85,7 +87,7 @@ Paths are a platform-independent way of representing a filepath in the given OS.
 
 ### Bytes
 
-Filesizes are held in a special integer type called bytes. Examples include 100, 15kb, and 100mb.
+Filesizes are held in a special integer type called bytes. Examples include `100`, `15kb`, and `100mb`.
 
 ### Binary data
 

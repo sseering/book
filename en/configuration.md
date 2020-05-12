@@ -2,9 +2,9 @@
 layout: content
 title: Configuration
 prev: Pipeline
-next: Metadata
+next: Aliases
 link_prev: /en/pipeline.html
-link_next: /en/metadata.html
+link_next: /en/aliases.html
 ---
 
 Nu has a small, but growing, number of internal variables you can set to change how it looks and how it operates.  Below is a list of the current variables, their types, and a description of how they're used

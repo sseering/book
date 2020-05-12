@@ -1,9 +1,9 @@
 ---
 layout: content
 title: Metadata
-prev: Configuration
+prev: Environment
 next: Shells
-link_prev: /en/configuration.html
+link_prev: /en/environment.html
 link_next: /en/shells_in_shells.html
 ---
 
