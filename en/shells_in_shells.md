@@ -81,6 +81,7 @@ For the moment we've only `enter`ed the file and we can see what's in it from th
 
 Before we continue, let's check the active shells:
 
+```
 > shells
 ───┬────────┬─────────────────────────────────────────────┬─────────────────────────────────
  # │ active │ name                                        │ path 
