@@ -1,9 +1,9 @@
 ---
 layout: content
-title: NuShell Operator Map
-prev: NuShell Map To Other Languages
+title: NuShell operator map
+prev: NuShell map from functional languages
 next: END
-link_prev: /en/nushell_map.html
+link_prev: /en/nushell_map_functional.html
 link_next: /
 ---
 

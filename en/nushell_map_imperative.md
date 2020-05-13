@@ -1,32 +1,32 @@
 ---
 layout: content
-title: NuShell map from other shells and domain specific languages
-prev: Coming from bash
-next:  NuShell map from imperative languages
-link_prev: /en/coming_from_bash.html
-link_next: /en/nushell_map_imperative.html 
+title: NuShell map from imperative languages
+prev: NuShell map from other shells/DSL
+next: NuShell map from functional languages
+link_prev: /en/nushell_map.html
+link_next: /en/nushell_map_functional.html
 ---
 
-The idea behind this table is to help you understand how NuShell built-ins and plug-ins relate to other known shells and domain specific languages. We've tried to produce a map of all the nushell commands and what their equivalents are in other languages. Contributions are welcome.
+The idea behind this table is to help you understand how NuShell built-ins and plug-ins relate to imperative languages. We've tried to produce a map of all the nushell commands and what their equivalents are in other languages. Contributions are welcome.
 
 Note: this table assumes Nushell 0.13.1 or later.
 
 
-| NuShell                | SQL                           | .Net LINQ (C#)                                       | PowerShell (without external modules)      | Bash                                            |
+| NuShell                | Python                        | Kotlin (Java)                                        | C++                                        | Rust                                            |
 | ---------------------- | ----------------------------- | ---------------------------------------------------- | ------------------------------------------ | ----------------------------------------------- |
-| alias                  | N/A                           | N/A                                                  | alias                                      | alias                                           |
-| append                 | N/A                           | Append()                                             | -Append                                    |                                                 |
-| args                   | N/A                           | N/A                                                  |                                            |                                                 |
-| autoview               | N/A                           | N/A                                                  |                                            |                                                 |
-| average(`*`)           | avg                           | Average()                                            | Measure-Object, measure                    |                                                 |
-| binaryview(`*`)        | N/A                           |                                                      | Format-Hex                                 |                                                 |
+| alias                  |                               |                                                      |                                            |                                                 |
+| append                 | list.append, set.add          | add                                                  | push_back, emplace_back                    | push                                            |
+| args                   |                               |                                                      |                                            |                                                 |
+| autoview               |                               |                                                      |                                            |                                                 |
+| average(`*`)           | statistics.mean               |                                                      |                                            |                                                 |
+| binaryview(`*`)        | "{:x}".format                 | Integer.toHexString                                  |                                            |                                                 |
 | calc, = math           | math operators                | Aggregate, Average, Count, Max, Min, Sum             |                                            | bc                                              |
 | cd                     | N/A                           | N/A                                                  | Set-Location, cd                           | cd                                              |
 | clear                  | N/A                           | N/A                                                  | Clear-Host                                 | clear                                           |
 | clip                   | N/A                           | N/A                                                  | Set-Clipboard, scb                         | clip, clipboard, xclip, pbcopy                  |
 | compact                |                               |                                                      |                                            |                                                 |
 | config                 | N/A                           | N/A                                                  | $Profile                                   | vi .bashrc, .profile                            |
-| count                  | count                         | Count                                                | Measure-Object, measure                    | wc                                              |
+| count                  | count                         | Count                                                | Measure-Object, measure                    |                                                 |
 | cp                     | N/A                           | N/A                                                  | Copy-Item, cp, copy                        | cp                                              |
 | date                   | NOW() / getdate()             | DateTime class                                       | Get-Date                                   | date                                            |
 | debug                  |                               |                                                      |                                            |                                                 |
@@ -125,7 +125,7 @@ Note: this table assumes Nushell 0.13.1 or later.
 | to url                 | N/A                           | N/A                                                  | N/A                                        |                                                 |
 | to yaml                | N/A                           | N/A                                                  | N/A                                        |                                                 |
 | touch                  | N/A                           | N/A                                                  | Set-Content                                | touch                                           |
-| trim                   | rtrim, ltrim                  | String.Trim()                                        | String.Trim()                              |                                                 |
+| trim                   | rtrim,ltrim                   | String.Trim()                                        | String.Trim()                              |                                                 |
 | uniq                   | distinct                      | Distinct                                             | Get-Unique, gu                             | uniq                                            |
 | update(`**`)           | As                            | N/A                                                  |                                            |                                                 |
 | version                | select @@version              | N/A                                                  | $PSVersionTable                            |                                                 |
