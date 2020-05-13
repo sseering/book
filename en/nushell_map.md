@@ -58,6 +58,7 @@ Note: this table assumes Nushell 0.13.1 or later.
 | from xml               | cast(variable as xml)         | N/A                                                  | ConvertFrom-Xml                            |                                                 |
 | from yaml              | N/A                           | N/A                                                  | N/A                                        |                                                 |
 | get                    |                               | Select                                               | (cmd).column                               |                                                 |
+| grep                   | filter                        | filter                                               | filter                                     | filter                                          |
 | group_by               | group by                      | GroupBy, group                                       | Group-Object, group                        |                                                 |
 | headers                |                               |                                                      |                                            |                                                 |
 | help                   | sp_help                       | N/A                                                  | Get-Help, help, man                        | man                                             |
@@ -102,14 +103,13 @@ Note: this table assumes Nushell 0.13.1 or later.
 | skip                   | where row_number()            | Skip                                                 | Select-Object -Skip                        |                                                 |
 | skip_until             |                               |                                                      |                                            |                                                 |
 | skip_while             |                               | SkipWhile                                            |                                            |                                                 |
-| sort_by                | order by                      | OrderBy, OrderByDescending, ThenBy, ThenByDescending | Sort-Object, sort                          |                                                 |
+| sort-by                | order by                      | OrderBy, OrderByDescending, ThenBy, ThenByDescending | Sort-Object, sort                          |                                                 |
 | split_by               |                               | String.Split()                                       | String.Split()                             |                                                 |
 | split_column           |                               | N/A                                                  |                                            |                                                 |
 | split_row              |                               | N/A                                                  |                                            |                                                 |
 | str(`*`)               | string functions              | String class                                         | String class                               |                                                 |
 | sum                    | sum                           | Sum()                                                | Measure-Object, measure                    |                                                 |
 | sys(`*`)               | N/A                           | N/A                                                  | Get-ComputerInfo                           | uname, lshw, lsblk, lscpu, lsusb, hdparam, free |
-| t_sort_by              |                               |                                                      |                                            |                                                 |
 | table                  |                               |                                                      | Format-Table, ft, Format-List, fl          |                                                 |
 | tags                   | N/A                           | N/A                                                  | N/A                                        |                                                 |
 | textview(`*`)          | N/A                           | N/A                                                  | Get-Content, cat                           |                                                 |

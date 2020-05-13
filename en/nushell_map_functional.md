@@ -14,12 +14,12 @@ Note: this table assumes Nushell 0.13.1 or later.
 
 | NuShell                | Clojure                       | Tablecloth (Ocaml / Elm)                             | Haskell                                    |
 | ---------------------- | ----------------------------- | ---------------------------------------------------- | ------------------------------------------ | ----------------------------------------------- |
-| alias                  | N/A                           | N/A                                                  | alias                                      | alias                                           |
-| append                 | N/A                           | N/A                                                  | -Append                                    |                                                 |
+| alias                  |                               |                                                      |                                            |                                                 |
+| append                 | conj                          | N/A                                                  | (++)                                       |                                                 |
 | args                   | N/A                           | N/A                                                  |                                            |                                                 |
 | autoview               | N/A                           | N/A                                                  |                                            |                                                 |
 | average(`*`)           | avg                           | Average()                                            | Measure-Object, measure                    |                                                 |
-| binaryview(`*`)        | N/A                           |                                                      | Format-Hex                                 |                                                 |
+| binaryview(`*`)        | Integer/toHexString           |                                                      | Format-Hex                                 |                                                 |
 | calc, = math           | math operators                | Aggregate, Average, Count, Max, Min, Sum             |                                            | bc                                              |
 | cd                     | N/A                           | N/A                                                  | Set-Location, cd                           | cd                                              |
 | clear                  | N/A                           | N/A                                                  | Clear-Host                                 | clear                                           |
@@ -27,7 +27,7 @@ Note: this table assumes Nushell 0.13.1 or later.
 | compact                |                               |                                                      |                                            |                                                 |
 | config                 | N/A                           | N/A                                                  | $Profile                                   | vi .bashrc, .profile                            |
 | count                  | count                         | Count                                                | Measure-Object, measure                    |                                                 |
-| cp                     | N/A                           | N/A                                                  | Copy-Item, cp, copy                        | cp                                              |
+| cp                     |                               |                                                      |                                            |                                                 |
 | date                   | NOW() / getdate()             | DateTime class                                       | Get-Date                                   | date                                            |
 | debug                  |                               |                                                      |                                            |                                                 |
 | default                |                               |                                                      |                                            |                                                 |
@@ -39,8 +39,8 @@ Note: this table assumes Nushell 0.13.1 or later.
 | evaluate_by            |                               |                                                      |                                            |                                                 |
 | exit                   | N/A                           |                                                      | exit                                       | exit                                            |
 | fetch(`*`)             | N/A                           | HttpClient,WebClient, HttpWebRequest/Response        | Invoke-WebRequest                          | wget                                            |
-| first                  | top, limit                    | First, FirstOrDefault                                | Select-Object -First                       | head                                            |
-| format                 |                               | String.Format()                                      | String.Format()                            |                                                 |
+| first                  | first                         |                                                      | head                                       |                                                 |
+| format                 | format                        | String.Format()                                      | String.Format()                            |                                                 |
 | from bson              | N/A                           | N/A                                                  | N/A                                        |                                                 |
 | from csv               | import flatfile               | N/A                                                  | Import-Csv, ConvertFrom-Csv                |                                                 |
 | from eml               | N/A                           | N/A                                                  | N/A                                        |                                                 |
@@ -58,6 +58,7 @@ Note: this table assumes Nushell 0.13.1 or later.
 | from xml               | cast(variable as xml)         | N/A                                                  | ConvertFrom-Xml                            |                                                 |
 | from yaml              | N/A                           | N/A                                                  | N/A                                        |                                                 |
 | get                    |                               | Select                                               | (cmd).column                               |                                                 |
+| grep                   | filter                        | filter                                               | filter                                     |                                                 |
 | group_by               | group by                      | GroupBy, group                                       | Group-Object, group                        |                                                 |
 | headers                |                               |                                                      |                                            |                                                 |
 | help                   | sp_help                       | N/A                                                  | Get-Help, help, man                        | man                                             |
@@ -66,11 +67,11 @@ Note: this table assumes Nushell 0.13.1 or later.
 | inc(`*`)               | N/A                           |                                                      | N/A                                        | N/A                                             |
 | insert                 |                               |                                                      | Add-Member                                 |                                                 |
 | is_empty               | is null                       | String.InNullOrEmpty()                               | String.InNullOrEmpty()                     |                                                 |
-| keep                   | top,limit                     | Take                                                 | Select-Object -First                       | head                                            |
+| keep                   | take                          | Take                                                 | Select-Object -First                       | head                                            |
 | keep_until             |                               |                                                      |                                            |                                                 |
 | keep_while             |                               | TakeWhile                                            |                                            |                                                 |
 | kill                   | N/A                           | N/A                                                  | Stop-Process, kill                         | kill                                            |
-| last                   |                               | Last, LastOrDefault                                  | Select-Object -Last                        | tail                                            |
+| last                   | last                          |                                                      | last                                       |                                                 |
 | lines                  | N/A                           | N/A                                                  | File.ReadAllLines()                        |                                                 |
 | ls                     | N/A                           | N/A                                                  | Get-ChildItem, dir, ls                     | ls                                              |
 | map_max_by             |                               |                                                      |                                            |                                                 |
@@ -102,14 +103,13 @@ Note: this table assumes Nushell 0.13.1 or later.
 | skip                   | where row_number()            | Skip                                                 | Select-Object -Skip                        |                                                 |
 | skip_until             |                               |                                                      |                                            |                                                 |
 | skip_while             |                               | SkipWhile                                            |                                            |                                                 |
-| sort_by                | order by                      | OrderBy, OrderByDescending, ThenBy, ThenByDescending | Sort-Object, sort                          |                                                 |
+| sort-by                | order by                      | OrderBy, OrderByDescending, ThenBy, ThenByDescending | Sort-Object, sort                          |                                                 |
 | split_by               |                               | String.Split()                                       | String.Split()                             |                                                 |
 | split_column           |                               | N/A                                                  |                                            |                                                 |
 | split_row              |                               | N/A                                                  |                                            |                                                 |
 | str(`*`)               | string functions              | String class                                         | String class                               |                                                 |
 | sum                    | sum                           | Sum()                                                | Measure-Object, measure                    |                                                 |
 | sys(`*`)               | N/A                           | N/A                                                  | Get-ComputerInfo                           | uname, lshw, lsblk, lscpu, lsusb, hdparam, free |
-| t_sort_by              |                               |                                                      |                                            |                                                 |
 | table                  |                               |                                                      | Format-Table, ft, Format-List, fl          |                                                 |
 | tags                   | N/A                           | N/A                                                  | N/A                                        |                                                 |
 | textview(`*`)          | N/A                           | N/A                                                  | Get-Content, cat                           |                                                 |
