@@ -1,7 +1,7 @@
 ---
 layout: content
 title: NuShell operator map
-prev: NuShell map from functional languages
+prev: Functional map
 next: END
 link_prev: /en/nushell_map_functional.html
 link_next: /

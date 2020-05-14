@@ -2,7 +2,7 @@
 layout: content
 title: NuShell map from other shells and domain specific languages
 prev: Coming from bash
-next:  NuShell map from imperative languages
+next: Imperative map
 link_prev: /en/coming_from_bash.html
 link_next: /en/nushell_map_imperative.html 
 ---

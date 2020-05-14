@@ -1,8 +1,8 @@
 ---
 layout: content
 title: NuShell map from imperative languages
-prev: NuShell map from other shells/DSL
-next: NuShell map from functional languages
+prev: Shells/DSL map
+next: Functional map
 link_prev: /en/nushell_map.html
 link_next: /en/nushell_map_functional.html
 ---
@@ -37,40 +37,40 @@ Note: this table assumes Nushell 0.13.1 or later.
 | echo                   | print                         | println                                              | printf                                     | println!                                        |
 | enter                  |                               |                                                      |                                            |                                                 |
 | evaluate_by            |                               |                                                      |                                            |                                                 |
-| exit                   | N/A                           |                                                      | exit                                       | exit                                            |
-| fetch(`*`)             | N/A                           | HttpClient,WebClient, HttpWebRequest/Response        | Invoke-WebRequest                          | wget                                            |
-| first                  | top, limit                    | First, FirstOrDefault                                | Select-Object -First                       | head                                            |
-| format                 |                               | String.Format()                                      | String.Format()                            |                                                 |
-| from bson              | N/A                           | N/A                                                  | N/A                                        |                                                 |
-| from csv               | import flatfile               | N/A                                                  | Import-Csv, ConvertFrom-Csv                |                                                 |
-| from eml               | N/A                           | N/A                                                  | N/A                                        |                                                 |
-| from ics               | N/A                           | N/A                                                  | N/A                                        |                                                 |
-| from ini               | N/A                           | N/A                                                  | N/A                                        |                                                 |
-| from json              | openjson                      | N/A                                                  | ConvertFrom-Json                           |                                                 |
-| from ods               | N/A                           | N/A                                                  | N/A                                        |                                                 |
-| from sqlite            | N/A                           | N/A                                                  | N/A                                        |                                                 |
-| from ssv               | import flatfile               | N/A                                                  | N/A                                        |                                                 |
-| from toml              | N/A                           | N/A                                                  | N/A                                        |                                                 |
-| from tsv               | import flatfile               | N/A                                                  | N/A                                        |                                                 |
-| from url               | N/A                           | N/A                                                  | N/A                                        |                                                 |
-| from vcf               | N/A                           | N/A                                                  | N/A                                        |                                                 |
-| from xlsx              | import                        | N/A                                                  | N/A                                        |                                                 |
-| from xml               | cast(variable as xml)         | N/A                                                  | ConvertFrom-Xml                            |                                                 |
-| from yaml              | N/A                           | N/A                                                  | N/A                                        |                                                 |
+| exit                   | exit                          | System.exit, kotlin.system.exitProcess               | exit                                       | exit                                            |
+| fetch(`*`)             | urllib.request.urlopen        |                                                      |                                            |                                                 |
+| first                  | list[0]                       | List[0]                                              | vector[0]                                  | vec[0]                                          |
+| format                 | format                        |                                                      |                                            |                                                 |
+| from bson              |                               |                                                      |                                            |                                                 |
+| from csv               | csv                           |                                                      |                                            |                                                 |
+| from eml               |                               |                                                      |                                            |                                                 |
+| from ics               |                               |                                                      |                                            |                                                 |
+| from ini               |                               |                                                      |                                            |                                                 |
+| from json              | json                          |                                                      |                                            |                                                 |
+| from ods               |                               |                                                      |                                            |                                                 |
+| from sqlite            | sqlite3                       |                                                      |                                            |                                                 |
+| from ssv               |                               |                                                      |                                            |                                                 |
+| from toml              |                               |                                                      |                                            |                                                 |
+| from tsv               |                               |                                                      |                                            |                                                 |
+| from url               |                               |                                                      |                                            |                                                 |
+| from vcf               |                               |                                                      |                                            |                                                 |
+| from xlsx              |                               |                                                      |                                            |                                                 |
+| from xml               |                               |                                                      |                                            |                                                 |
+| from yaml              |                               |                                                      |                                            |                                                 |
 | get                    |                               | Select                                               | (cmd).column                               |                                                 |
 | grep                   | filter                        | filter                                               | filter                                     | filter                                          |
 | group_by               | group by                      | GroupBy, group                                       | Group-Object, group                        |                                                 |
 | headers                |                               |                                                      |                                            |                                                 |
-| help                   | sp_help                       | N/A                                                  | Get-Help, help, man                        | man                                             |
-| histogram              | N/A                           | N/A                                                  |                                            |                                                 |
-| history                | N/A                           | N/A                                                  | Get-History, history                       | history                                         |
+| help                   | help                          |                                                      |                                            |                                                 |
+| histogram              |                               |                                                      |                                            |                                                 |
+| history                |                               |                                                      |                                            |                                                 |
 | inc(`*`)               | N/A                           |                                                      | N/A                                        | N/A                                             |
 | insert                 |                               |                                                      | Add-Member                                 |                                                 |
 | is_empty               | is null                       | String.InNullOrEmpty()                               | String.InNullOrEmpty()                     |                                                 |
-| keep                   | top,limit                     | Take                                                 | Select-Object -First                       | head                                            |
-| keep_until             |                               |                                                      |                                            |                                                 |
-| keep_while             |                               | TakeWhile                                            |                                            |                                                 |
-| kill                   | N/A                           | N/A                                                  | Stop-Process, kill                         | kill                                            |
+| keep                   | list[:x]                      |                                                      |                                            | head                                            |
+| keep_until             | itertools.dropwhile           |                                                      |                                            |                                                 |
+| keep_while             | itertools.takewhile           |                                                      |                                            |                                                 |
+| kill                   | os.kill                       |                                                      |                                            |                                                 |
 | last                   | list[-1]                      |                                                      |                                            |                                                 |
 | lines                  | N/A                           | N/A                                                  | File.ReadAllLines()                        |                                                 |
 | ls                     | N/A                           | N/A                                                  | Get-ChildItem, dir, ls                     | ls                                              |

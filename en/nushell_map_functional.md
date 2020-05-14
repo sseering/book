@@ -1,8 +1,8 @@
 ---
 layout: content
 title: NuShell map from functional languages
-prev: NuShell map from imperative languages 
-next: NuShell operator map
+prev: Imperative map 
+next: Operator map
 link_prev: /en/nushell_map_imperative.html
 link_next: /en/nushell_operator_map.html 
 ---
@@ -37,26 +37,26 @@ Note: this table assumes Nushell 0.13.1 or later.
 | echo                   | println                       |                                                      | putStrLn, print                            |                                                 |
 | enter                  |                               |                                                      |                                            |                                                 |
 | evaluate_by            |                               |                                                      |                                            |                                                 |
-| exit                   | N/A                           |                                                      | exit                                       | exit                                            |
-| fetch(`*`)             | N/A                           |                                                      | Invoke-WebRequest                          | wget                                            |
+| exit                   | System/exit                   |                                                      |                                            |                                                 |
+| fetch(`*`)             |                               |                                                      |                                            |                                                 |
 | first                  | first                         |                                                      | head                                       |                                                 |
-| format                 | format                        |                                                      | String.Format()                            |                                                 |
-| from bson              | N/A                           |                                                      | N/A                                        |                                                 |
-| from csv               | import flatfile               |                                                      | Import-Csv, ConvertFrom-Csv                |                                                 |
-| from eml               | N/A                           |                                                      | N/A                                        |                                                 |
-| from ics               | N/A                           |                                                      | N/A                                        |                                                 |
-| from ini               | N/A                           |                                                      | N/A                                        |                                                 |
-| from json              | openjson                      |                                                      | ConvertFrom-Json                           |                                                 |
-| from ods               | N/A                           |                                                      | N/A                                        |                                                 |
-| from sqlite            | N/A                           |                                                      | N/A                                        |                                                 |
-| from ssv               | import flatfile               |                                                      | N/A                                        |                                                 |
-| from toml              | N/A                           |                                                      | N/A                                        |                                                 |
-| from tsv               | import flatfile               |                                                      | N/A                                        |                                                 |
-| from url               | N/A                           |                                                      | N/A                                        |                                                 |
-| from vcf               | N/A                           |                                                      | N/A                                        |                                                 |
-| from xlsx              | import                        |                                                      | N/A                                        |                                                 |
-| from xml               | cast(variable as xml)         |                                                      | ConvertFrom-Xml                            |                                                 |
-| from yaml              | N/A                           |                                                      | N/A                                        |                                                 |
+| format                 | format                        |                                                      | Text.Printf.printf                         |                                                 |
+| from bson              |                               |                                                      |                                            |                                                 |
+| from csv               |                               |                                                      |                                            |                                                 |
+| from eml               |                               |                                                      |                                            |                                                 |
+| from ics               |                               |                                                      |                                            |                                                 |
+| from ini               |                               |                                                      |                                            |                                                 |
+| from json              |                               |                                                      |                                            |                                                 |
+| from ods               |                               |                                                      |                                            |                                                 |
+| from sqlite            |                               |                                                      |                                            |                                                 |
+| from ssv               |                               |                                                      |                                            |                                                 |
+| from toml              |                               |                                                      |                                            |                                                 |
+| from tsv               |                               |                                                      |                                            |                                                 |
+| from url               |                               |                                                      |                                            |                                                 |
+| from vcf               |                               |                                                      |                                            |                                                 |
+| from xlsx              |                               |                                                      |                                            |                                                 |
+| from xml               |                               |                                                      |                                            |                                                 |
+| from yaml              |                               |                                                      |                                            |                                                 |
 | get                    |                               |                                                      | (cmd).column                               |                                                 |
 | grep                   | filter                        |                                                      | filter                                     |                                                 |
 | group_by               | group by                      |                                                      | Group-Object, group                        |                                                 |
@@ -67,11 +67,11 @@ Note: this table assumes Nushell 0.13.1 or later.
 | inc(`*`)               | N/A                           |                                                      | N/A                                        | N/A                                             |
 | insert                 |                               |                                                      | Add-Member                                 |                                                 |
 | is_empty               | is null                       |                                                      | String.InNullOrEmpty()                     |                                                 |
-| keep                   | take                          |                                                      | Select-Object -First                       | head                                            |
+| keep                   | take, drop-last, pop          |                                                      | init, take                                 | head                                            |
 | keep_until             |                               |                                                      |                                            |                                                 |
 | keep_while             |                               |                                                      |                                            |                                                 |
 | kill                   | N/A                           |                                                      | Stop-Process, kill                         | kill                                            |
-| last                   | last                          |                                                      | last                                       |                                                 |
+| last                   | last, peek                    |                                                      | last                                       |                                                 |
 | lines                  | N/A                           |                                                      | File.ReadAllLines()                        |                                                 |
 | ls                     | N/A                           |                                                      | Get-ChildItem, dir, ls                     | ls                                              |
 | map_max_by             |                               |                                                      |                                            |                                                 |
@@ -100,7 +100,7 @@ Note: this table assumes Nushell 0.13.1 or later.
 | shells                 | N/A                           |                                                      | N/A                                        |                                                 |
 | shuffle                |                               |                                                      | $var                                       | Sort-Object {Get-Random}                        |
 | size                   |                               |                                                      | Measure-Object, measure                    | wc                                              |
-| skip                   | where row_number()            |                                                      | Select-Object -Skip                        |                                                 |
+| skip                   | rest                          |                                                      | tail                                       |                                                 |
 | skip_until             |                               |                                                      |                                            |                                                 |
 | skip_while             |                               |                                                      |                                            |                                                 |
 | sort-by                | order by                      |                                                      | Sort-Object, sort                          |                                                 |
