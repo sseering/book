@@ -30,6 +30,7 @@ Note: this table assumes Nushell 0.13.1 or later.
 | cp                     |                               |                                                      |                                            |                                                 |
 | date                   | java.time.LocalDate/now       |                                                      | Get-Date                                   |                                                 |
 | debug                  |                               |                                                      |                                            |                                                 |
+| = dec                  | dec                           |                                                      | pred                                       |                                                 |
 | default                |                               |                                                      |                                            |                                                 |
 | drop                   |                               |                                                      |                                            |                                                 |
 | du                     |                               |                                                      |                                            |                                                 |
@@ -64,7 +65,7 @@ Note: this table assumes Nushell 0.13.1 or later.
 | help                   | sp_help                       |                                                      | Get-Help, help, man                        | man                                             |
 | histogram              | N/A                           |                                                      |                                            |                                                 |
 | history                | N/A                           |                                                      | Get-History, history                       | history                                         |
-| inc(`*`)               | N/A                           |                                                      | N/A                                        | N/A                                             |
+| inc(`*`)               | inc                           |                                                      | succ                                       | N/A                                             |
 | insert                 |                               |                                                      | Add-Member                                 |                                                 |
 | is_empty               | is null                       |                                                      | String.InNullOrEmpty()                     |                                                 |
 | keep                   | take, drop-last, pop          |                                                      | init, take                                 | head                                            |

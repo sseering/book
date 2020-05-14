@@ -30,6 +30,7 @@ Note: this table assumes Nushell 0.13.1 or later.
 | cp                     | N/A                           | N/A                                                  | Copy-Item, cp, copy                        | cp                                              |
 | date                   | NOW() / getdate()             | DateTime class                                       | Get-Date                                   | date                                            |
 | debug                  |                               |                                                      |                                            |                                                 |
+| = dec                  |                               | x--                                                  |                                            |                                                 |
 | default                |                               |                                                      |                                            |                                                 |
 | drop                   |                               |                                                      |                                            |                                                 |
 | du                     | N/A                           | N/A                                                  |                                            | du                                              |

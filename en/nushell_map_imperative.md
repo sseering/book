@@ -19,7 +19,7 @@ Note: this table assumes Nushell 0.13.1 or later.
 | args                   |                               |                                                      |                                            |                                                 |
 | autoview               |                               |                                                      |                                            |                                                 |
 | average(`*`)           | statistics.mean               |                                                      |                                            |                                                 |
-| binaryview(`*`)        | "{:x}".format                 | Integer.toHexString                                  |                                            |                                                 |
+| binaryview(`*`)        | \"{:x}\".format               | Integer.toHexString                                  |                                            |                                                 |
 | calc, = math           | math operators                | math operators                                       | math operators                             | math operators                                  |
 | cd                     |                               |                                                      |                                            |                                                 |
 | clear                  |                               |                                                      |                                            |                                                 |
@@ -30,9 +30,10 @@ Note: this table assumes Nushell 0.13.1 or later.
 | cp                     | shutil.copy                   |                                                      |                                            |                                                 |
 | date                   | datetime.date.today           | java.time.LocalDate.now                              |                                            |                                                 |
 | debug                  |                               |                                                      |                                            |                                                 |
+| = dec                  | x -= 1                        |  x--                                                 | x--                                        | x -= 1                                          |
 | default                |                               |                                                      |                                            |                                                 |
 | drop                   |                               |                                                      |                                            |                                                 |
-| du                     | shutil.disk_usage             | N/A                                                  |                                            |                                                 |
+| du                     | shutil.disk_usage             |                                                      |                                            |                                                 |
 | each                   | for                           | for                                                  | for                                        | for                                             |
 | echo                   | print                         | println                                              | printf                                     | println!                                        |
 | enter                  |                               |                                                      |                                            |                                                 |
@@ -57,14 +58,14 @@ Note: this table assumes Nushell 0.13.1 or later.
 | from xlsx              |                               |                                                      |                                            |                                                 |
 | from xml               |                               |                                                      |                                            |                                                 |
 | from yaml              |                               |                                                      |                                            |                                                 |
-| get                    |                               | Select                                               | (cmd).column                               |                                                 |
+| get                    | dict[\"key\"]                 | Map[\"key\"]                                         | map[\"key\"]                               |                                                 |
 | grep                   | filter                        | filter                                               | filter                                     | filter                                          |
 | group_by               | group by                      | GroupBy, group                                       | Group-Object, group                        |                                                 |
 | headers                |                               |                                                      |                                            |                                                 |
 | help                   | help                          |                                                      |                                            |                                                 |
 | histogram              |                               |                                                      |                                            |                                                 |
 | history                |                               |                                                      |                                            |                                                 |
-| inc(`*`)               | N/A                           |                                                      | N/A                                        | N/A                                             |
+| inc(`*`)               | x += 1                        | x++                                                  | x++                                        | += 1                                            |
 | insert                 |                               |                                                      | Add-Member                                 |                                                 |
 | is_empty               | is null                       | String.InNullOrEmpty()                               | String.InNullOrEmpty()                     |                                                 |
 | keep                   | list[:x]                      |                                                      |                                            | head                                            |
