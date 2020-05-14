@@ -14,7 +14,7 @@ Note: this table assumes Nushell 0.13.1 or later.
 
 | NuShell  | SQL      | Python              | .Net LINQ (C#)       | PowerShell             | Bash               |
 | -------- | -------- | --------------------| -------------------- | ---------------------- | ------------------ |
-| =        | =        | ==                  | ==                   | -eq, -is               | -eq                |
+| ==       | =        | ==                  | ==                   | -eq, -is               | -eq                |
 | !=       | !=, <>   | !=                  | !=                   | -ne, -isnot            | -ne                |
 | <        | <        | <                   | <                    | -lt                    | -lt                |
 | <=       | <=       | <=                  | <=                   | -le                    | -le                |
