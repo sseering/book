@@ -30,7 +30,6 @@ Note: this table assumes Nushell 0.13.1 or later.
 | cp                     | shutil.copy                   |                                                      |                                            |                                                 |
 | date                   | datetime.date.today           | java.time.LocalDate.now                              |                                            |                                                 |
 | debug                  |                               |                                                      |                                            |                                                 |
-| = dec                  | x -= 1                        |  x--                                                 | x--                                        | x -= 1                                          |
 | default                |                               |                                                      |                                            |                                                 |
 | drop                   |                               |                                                      |                                            |                                                 |
 | du                     | shutil.disk_usage             |                                                      |                                            |                                                 |
