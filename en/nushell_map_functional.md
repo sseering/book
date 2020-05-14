@@ -30,7 +30,6 @@ Note: this table assumes Nushell 0.13.1 or later.
 | cp                     |                               |                                                      |                                            |                                                 |
 | date                   | java.time.LocalDate/now       |                                                      | Get-Date                                   |                                                 |
 | debug                  |                               |                                                      |                                            |                                                 |
-| = dec                  | dec                           |                                                      | pred                                       |                                                 |
 | default                |                               |                                                      |                                            |                                                 |
 | drop                   |                               |                                                      |                                            |                                                 |
 | du                     |                               |                                                      |                                            |                                                 |
