@@ -1,0 +1,141 @@
+---
+layout: content
+title: NuShell map from imperative languages
+prev: Shells/DSL map
+next: Functional map
+link_prev: /en/nushell_map.html
+link_next: /en/nushell_map_functional.html
+---
+
+The idea behind this table is to help you understand how NuShell built-ins and plug-ins relate to imperative languages. We've tried to produce a map of all the nushell commands and what their equivalents are in other languages. Contributions are welcome.
+
+Note: this table assumes Nushell 0.13.1 or later.
+
+
+| NuShell                | Python                        | Kotlin (Java)                                        | C++                                        | Rust                                            |
+| ---------------------- | ----------------------------- | ---------------------------------------------------- | ------------------------------------------ | ----------------------------------------------- |
+| alias                  |                               |                                                      |                                            |                                                 |
+| append                 | list.append, set.add          | add                                                  | push_back, emplace_back                    | push, push_back                                 |
+| args                   |                               |                                                      |                                            |                                                 |
+| autoview               |                               |                                                      |                                            |                                                 |
+| average(`*`)           | statistics.mean               |                                                      |                                            |                                                 |
+| binaryview(`*`)        | \"{:x}\".format               | Integer.toHexString                                  |                                            |                                                 |
+| calc, = math           | math operators                | math operators                                       | math operators                             | math operators                                  |
+| cd                     |                               |                                                      |                                            |                                                 |
+| clear                  |                               |                                                      |                                            |                                                 |
+| clip                   |                               |                                                      |                                            |                                                 |
+| compact                |                               |                                                      |                                            |                                                 |
+| config                 |                               |                                                      |                                            |                                                 |
+| count                  | len                           | size, length                                         | length                                     | len                                             |
+| cp                     | shutil.copy                   |                                                      |                                            |                                                 |
+| date                   | datetime.date.today           | java.time.LocalDate.now                              |                                            |                                                 |
+| debug                  |                               |                                                      |                                            |                                                 |
+| = dec                  | x -= 1                        |  x--                                                 | x--                                        | x -= 1                                          |
+| default                |                               |                                                      |                                            |                                                 |
+| drop                   |                               |                                                      |                                            |                                                 |
+| du                     | shutil.disk_usage             |                                                      |                                            |                                                 |
+| each                   | for                           | for                                                  | for                                        | for                                             |
+| echo                   | print                         | println                                              | printf                                     | println!                                        |
+| enter                  |                               |                                                      |                                            |                                                 |
+| evaluate_by            |                               |                                                      |                                            |                                                 |
+| exit                   | exit                          | System.exit, kotlin.system.exitProcess               | exit                                       | exit                                            |
+| fetch(`*`)             | urllib.request.urlopen        |                                                      |                                            |                                                 |
+| first                  | list[0]                       | List[0], peek                                        | vector[0], top                             | vec[0]                                          |
+| format                 | format                        |                                                      |                                            |                                                 |
+| from bson              |                               |                                                      |                                            |                                                 |
+| from csv               | csv                           |                                                      |                                            |                                                 |
+| from eml               |                               |                                                      |                                            |                                                 |
+| from ics               |                               |                                                      |                                            |                                                 |
+| from ini               |                               |                                                      |                                            |                                                 |
+| from json              | json                          |                                                      |                                            |                                                 |
+| from ods               |                               |                                                      |                                            |                                                 |
+| from sqlite            | sqlite3                       |                                                      |                                            |                                                 |
+| from ssv               |                               |                                                      |                                            |                                                 |
+| from toml              |                               |                                                      |                                            |                                                 |
+| from tsv               |                               |                                                      |                                            |                                                 |
+| from url               |                               |                                                      |                                            |                                                 |
+| from vcf               |                               |                                                      |                                            |                                                 |
+| from xlsx              |                               |                                                      |                                            |                                                 |
+| from xml               |                               |                                                      |                                            |                                                 |
+| from yaml              |                               |                                                      |                                            |                                                 |
+| get                    | dict[\"key\"]                 | Map[\"key\"]                                         | map[\"key\"]                               |                                                 |
+| grep                   | filter                        | filter                                               | filter                                     | filter                                          |
+| group_by               | itertools.groupby             |                                                      |                                            |                                                 |
+| headers                |                               |                                                      |                                            |                                                 |
+| help                   | help                          |                                                      |                                            |                                                 |
+| histogram              |                               |                                                      |                                            |                                                 |
+| history                |                               |                                                      |                                            |                                                 |
+| inc(`*`)               | x += 1                        | x++                                                  | x++                                        | += 1                                            |
+| insert                 | list.insert                   |                                                      |                                            |                                                 |
+| is_empty               | is None                       | isEmpty                                              | empty                                      |                                                 |
+| keep                   | list[:x]                      |                                                      |                                            |                                                 |
+| keep_until             |                               |                                                      |                                            |                                                 |
+| keep_while             | itertools.takewhile           |                                                      |                                            |                                                 |
+| kill                   | os.kill                       |                                                      |                                            |                                                 |
+| last                   | list[-1]                      |                                                      |                                            |                                                 |
+| lines                  | split, splitlines             | split                                                | views::split                               |                                                 |
+| ls                     | os.listdir                    |                                                      |                                            |                                                 |
+| map_max_by             |                               |                                                      |                                            |                                                 |
+| match(`*`)             | re                            |                                                      |                                            |                                                 |
+| merge                  |                               |                                                      |                                            |                                                 |
+| mkdir                  | os.mkdir                      |                                                      |                                            |                                                 |
+| mv                     | shutil.move                   |                                                      |                                            |                                                 |
+| next                   |                               |                                                      |                                            |                                                 |
+| nth                    | list[x]                       |                                                      |                                            |                                                 |
+| open                   | open                          |                                                      |                                            |                                                 |
+| parse                  |                               |                                                      |                                            |                                                 |
+| pivot                  | zip(*matrix)                  |                                                      |                                            |                                                 |
+| post(`*`)              | urllib.request.urlopen        |                                                      |                                            |                                                 |
+| prepend                | deque.appendleft              |                                                      |                                            |                                                 |
+| prev                   |                               |                                                      |                                            |                                                 |
+| ps(`*`)                | os.listdir('/proc')           |                                                      |                                            |                                                 |
+| pwd                    | os.getcwd                     |                                                      |                                            |                                                 |
+| range                  | range                         |                                                      |                                            |                                                 |
+| reduce_by              | functools.reduce              |                                                      |                                            |                                                 |
+| reject                 |                               |                                                      |                                            |                                                 |
+| rename                 | shutil.move                   |                                                      |                                            |                                                 |
+| reverse                | reversed, list.reverse        |                                                      |                                            |                                                 |
+| rm                     | os.remove                     |                                                      |                                            |                                                 |
+| save                   | io.TextIOWrapper.write        |                                                      |                                            |                                                 |
+| select(`***`)          | {k:dict[k] for k in keylist}  |                                                      |                                            |                                                 |
+| shells                 |                               |                                                      |                                            |                                                 |
+| shuffle                | random.shuffle                |                                                      |                                            |                                                 |
+| size                   | len                           |                                                      |                                            |                                                 |
+| skip                   | list[x:]                      |                                                      |                                            |                                                 |
+| skip_until             |                               |                                                      |                                            |                                                 |
+| skip_while             | itertools.dropwhile           |                                                      |                                            |                                                 |
+| sort-by                | sorted, list.sort             |                                                      |                                            |                                                 |
+| split_by               | re.split                      |                                                      |                                            |                                                 |
+| split_column           |                               |                                                      |                                            |                                                 |
+| split_row              |                               |                                                      |                                            |                                                 |
+| str(`*`)               | str functions                 |                                                      |                                            |                                                 |
+| sum                    | sum                           |                                                      |                                            |                                                 |
+| sys(`*`)               | sys                           |                                                      |                                            |                                                 |
+| table                  |                               |                                                      |                                            |                                                 |
+| tags                   |                               |                                                      |                                            |                                                 |
+| textview(`*`)          |                               |                                                      |                                            |                                                 |
+| tree(`*`)              |                               |                                                      |                                            |                                                 |
+| to bson                |                               |                                                      |                                            |                                                 |
+| to csv                 |                               |                                                      |                                            |                                                 |
+| to html                |                               |                                                      |                                            |                                                 |
+| to json                |                               |                                                      |                                            |                                                 |
+| to md                  |                               |                                                      |                                            |                                                 |
+| to sqlite              |                               |                                                      |                                            |                                                 |
+| to toml                |                               |                                                      |                                            |                                                 |
+| to tsv                 |                               |                                                      |                                            |                                                 |
+| to url                 |                               |                                                      |                                            |                                                 |
+| to yaml                |                               |                                                      |                                            |                                                 |
+| touch                  | open(path, 'a').close()       |                                                      |                                            |                                                 |
+| trim                   | strip, rstrip, lstrip         |                                                      |                                            |                                                 |
+| uniq                   | set                           |                                                      |                                            |                                                 |
+| update(`**`)           |                               |                                                      |                                            |                                                 |
+| version                | sys.version, sys.version_info |                                                      |                                            |                                                 |
+| with_env               | os.environ                    |                                                      |                                            |                                                 |
+| what                   |                               |                                                      |                                            |                                                 |
+| where                  | filter                        | filter                                               | filter                                     | filter                                          |
+| which                  | shutil.which                  |                                                      |                                            |                                                 |
+| wrap                   |                               |                                                      |                                            |                                                 |
+
+* `*` - these commands are part of the standard plugins
+* `**` - renamed from `edit` to `update` in 0.13.1
+* `***` - renamed from `pick` to `select` in 0.13.1

@@ -1,9 +1,9 @@
 ---
 layout: content
-title: NuShell Operator Map
-prev: NuShell Map To Other Languages
+title: NuShell operator map
+prev: Functional map
 next: END
-link_prev: /en/nushell_map.html
+link_prev: /en/nushell_map_functional.html
 link_next: /
 ---
 
@@ -12,21 +12,21 @@ The idea behind this table is to help you understand how NuShell operators relat
 Note: this table assumes Nushell 0.13.1 or later.
 
 
-| NuShell  | SQL      | .Net LINQ (C#)       | PowerShell             | Bash               |
-| -------- | -------- | -------------------- | ---------------------- | ------------------ |
-| =        | =        | ==                   | -eq, -is               | -eq                |
-| !=       | !=, <>   | !=                   | -ne, -isnot            | -ne                |
-| <        | <        | <                    | -lt                    | -lt                |
-| <=       | <=       | <=                   | -le                    | -le                |
-| >        | >        | >                    | -gt                    | -gt                |
-| >=       | >=       | >=                   | -ge                    | -ge                |
-| =~       | like     | Contains, StartsWith | -like, -contains       | =~                 |
-| !~       | not like | Except               | -notlike, -notcontains | ! <str1> =~ <str2> |
-| +        | +        | +                    | +                      | +                  |
-| -        | -        | -                    | -                      | -                  |
-| *        | *        | *                    | *                      | *                  |
-| /        | /        | /                    | /                      | /                  |
-| in:      | in       | Contains, StartsWith | -In                    | case in            |
-| not-in:  | not in   | Except               | -NotIn                 |                    |
-| &&       | and      | &&                   | -And                   | -a, &&             |
-| \|\|     | or       | \|\|                 | -Or                    | -o, \|\|           |
+| NuShell  | SQL      | Python              | .Net LINQ (C#)       | PowerShell             | Bash               |
+| -------- | -------- | --------------------| -------------------- | ---------------------- | ------------------ |
+| =        | =        | ==                  | ==                   | -eq, -is               | -eq                |
+| !=       | !=, <>   | !=                  | !=                   | -ne, -isnot            | -ne                |
+| <        | <        | <                   | <                    | -lt                    | -lt                |
+| <=       | <=       | <=                  | <=                   | -le                    | -le                |
+| >        | >        | >                   | >                    | -gt                    | -gt                |
+| >=       | >=       | >=                  | >=                   | -ge                    | -ge                |
+| =~       | like     | re, in, startswith  | Contains, StartsWith | -like, -contains       | =~                 |
+| !~       | not like | not in              | Except               | -notlike, -notcontains | ! <str1> =~ <str2> |
+| +        | +        | +                   | +                    | +                      | +                  |
+| -        | -        | -                   | -                    | -                      | -                  |
+| *        | *        | *                   | *                    | *                      | *                  |
+| /        | /        | /                   | /                    | /                      | /                  |
+| in:      | in       | re, in, startswith  | Contains, StartsWith | -In                    | case in            |
+| not-in:  | not in   | not in              | Except               | -NotIn                 |                    |
+| &&       | and      | and                 | &&                   | -And                   | -a, &&             |
+| \|\|     | or       | or                  | \|\|                 | -Or                    | -o, \|\|           |

@@ -2,7 +2,7 @@
 layout: content
 title: Coming from Bash
 prev: Plugins
-next: NuShell Map To Other Languages
+next: NuShell Map From Shells and DSLs Languages
 link_prev: /en/plugins.html
 link_next: /en/nushell_map.html
 ---

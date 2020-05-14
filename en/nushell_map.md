@@ -1,13 +1,13 @@
 ---
 layout: content
-title: NuShell Map To Other Languages
-prev: Coming from Bash
-next: NuShell Operator Map
+title: NuShell map from other shells and domain specific languages
+prev: Coming from bash
+next: Imperative map
 link_prev: /en/coming_from_bash.html
-link_next: /en/nushell_operator_map.html
+link_next: /en/nushell_map_imperative.html 
 ---
 
-The idea behind this table is to help you understand how NuShell built-ins and plug-ins relate to other known languages. We've tried to produce a map of all the nushell commands and what their equivalents are in other languages. Contributions are welcome.
+The idea behind this table is to help you understand how NuShell built-ins and plug-ins relate to other known shells and domain specific languages. We've tried to produce a map of all the nushell commands and what their equivalents are in other languages. Contributions are welcome.
 
 Note: this table assumes Nushell 0.13.1 or later.
 
@@ -15,21 +15,22 @@ Note: this table assumes Nushell 0.13.1 or later.
 | NuShell                | SQL                           | .Net LINQ (C#)                                       | PowerShell (without external modules)      | Bash                                            |
 | ---------------------- | ----------------------------- | ---------------------------------------------------- | ------------------------------------------ | ----------------------------------------------- |
 | alias                  | N/A                           | N/A                                                  | alias                                      | alias                                           |
-| append                 | N/A                           | N/A                                                  | -Append                                    |                                                 |
+| append                 | N/A                           | Append()                                             | -Append                                    |                                                 |
 | args                   | N/A                           | N/A                                                  |                                            |                                                 |
 | autoview               | N/A                           | N/A                                                  |                                            |                                                 |
 | average(`*`)           | avg                           | Average()                                            | Measure-Object, measure                    |                                                 |
 | binaryview(`*`)        | N/A                           |                                                      | Format-Hex                                 |                                                 |
-| calc, = math         | math operators                | Aggregate, Average, Count, Max, Min, Sum             |                                            | bc                                              |
+| calc, = math           | math operators                | Aggregate, Average, Count, Max, Min, Sum             |                                            | bc                                              |
 | cd                     | N/A                           | N/A                                                  | Set-Location, cd                           | cd                                              |
 | clear                  | N/A                           | N/A                                                  | Clear-Host                                 | clear                                           |
 | clip                   | N/A                           | N/A                                                  | Set-Clipboard, scb                         | clip, clipboard, xclip, pbcopy                  |
-| compact                |                                |                                                      |                                            |                                                 |
+| compact                |                               |                                                      |                                            |                                                 |
 | config                 | N/A                           | N/A                                                  | $Profile                                   | vi .bashrc, .profile                            |
-| count                  | count                         | Count                                                | Measure-Object, measure                    |                                                 |
+| count                  | count                         | Count                                                | Measure-Object, measure                    | wc                                              |
 | cp                     | N/A                           | N/A                                                  | Copy-Item, cp, copy                        | cp                                              |
 | date                   | NOW() / getdate()             | DateTime class                                       | Get-Date                                   | date                                            |
 | debug                  |                               |                                                      |                                            |                                                 |
+| = dec                  |                               | x--                                                  |                                            |                                                 |
 | default                |                               |                                                      |                                            |                                                 |
 | drop                   |                               |                                                      |                                            |                                                 |
 | du                     | N/A                           | N/A                                                  |                                            | du                                              |
@@ -58,6 +59,7 @@ Note: this table assumes Nushell 0.13.1 or later.
 | from xml               | cast(variable as xml)         | N/A                                                  | ConvertFrom-Xml                            |                                                 |
 | from yaml              | N/A                           | N/A                                                  | N/A                                        |                                                 |
 | get                    |                               | Select                                               | (cmd).column                               |                                                 |
+| grep                   | filter                        | filter                                               | filter                                     | filter                                          |
 | group_by               | group by                      | GroupBy, group                                       | Group-Object, group                        |                                                 |
 | headers                |                               |                                                      |                                            |                                                 |
 | help                   | sp_help                       | N/A                                                  | Get-Help, help, man                        | man                                             |
@@ -91,7 +93,7 @@ Note: this table assumes Nushell 0.13.1 or later.
 | range                  |                               | Range                                                | 1..10, 'a'..'f'                            |                                                 |
 | reduce_by              |                               |                                                      |                                            |                                                 |
 | reject                 |                               |                                                      |                                            |                                                 |
-| rename                 | N/A                           | N/A                                                  | Rename-Item, ren, rni                      | mv?                                             |
+| rename                 | N/A                           | N/A                                                  | Rename-Item, ren, rni                      | mv                                              |
 | reverse                |                               | Reverse                                              | [Array]::Reverse($var)                     |                                                 |
 | rm                     | N/A                           | N/A                                                  | Remove-Item, del, erase, rd, ri, rm, rmdir | rm                                              |
 | save                   | N/A                           | N/A                                                  | Write-Output, Out-File                     | > foo.txt                                       |
@@ -102,14 +104,13 @@ Note: this table assumes Nushell 0.13.1 or later.
 | skip                   | where row_number()            | Skip                                                 | Select-Object -Skip                        |                                                 |
 | skip_until             |                               |                                                      |                                            |                                                 |
 | skip_while             |                               | SkipWhile                                            |                                            |                                                 |
-| sort_by                | order by                      | OrderBy, OrderByDescending, ThenBy, ThenByDescending | Sort-Object, sort                          |                                                 |
+| sort-by                | order by                      | OrderBy, OrderByDescending, ThenBy, ThenByDescending | Sort-Object, sort                          |                                                 |
 | split_by               |                               | String.Split()                                       | String.Split()                             |                                                 |
 | split_column           |                               | N/A                                                  |                                            |                                                 |
 | split_row              |                               | N/A                                                  |                                            |                                                 |
 | str(`*`)               | string functions              | String class                                         | String class                               |                                                 |
 | sum                    | sum                           | Sum()                                                | Measure-Object, measure                    |                                                 |
 | sys(`*`)               | N/A                           | N/A                                                  | Get-ComputerInfo                           | uname, lshw, lsblk, lscpu, lsusb, hdparam, free |
-| t_sort_by              |                               |                                                      |                                            |                                                 |
 | table                  |                               |                                                      | Format-Table, ft, Format-List, fl          |                                                 |
 | tags                   | N/A                           | N/A                                                  | N/A                                        |                                                 |
 | textview(`*`)          | N/A                           | N/A                                                  | Get-Content, cat                           |                                                 |
@@ -125,7 +126,7 @@ Note: this table assumes Nushell 0.13.1 or later.
 | to url                 | N/A                           | N/A                                                  | N/A                                        |                                                 |
 | to yaml                | N/A                           | N/A                                                  | N/A                                        |                                                 |
 | touch                  | N/A                           | N/A                                                  | Set-Content                                | touch                                           |
-| trim                   | rtrim,ltrim                   | String.Trim()                                        | String.Trim()                              |                                                 |
+| trim                   | rtrim, ltrim                  | String.Trim()                                        | String.Trim()                              |                                                 |
 | uniq                   | distinct                      | Distinct                                             | Get-Unique, gu                             | uniq                                            |
 | update(`**`)           | As                            | N/A                                                  |                                            |                                                 |
 | version                | select @@version              | N/A                                                  | $PSVersionTable                            |                                                 |
