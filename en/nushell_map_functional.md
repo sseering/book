@@ -60,20 +60,20 @@ Note: this table assumes Nushell 0.13.1 or later.
 | from yaml              |                               |                                                      |                                            |                                                 |
 | get                    |                               |                                                      | (cmd).column                               |                                                 |
 | grep                   | filter                        |                                                      | filter                                     |                                                 |
-| group_by               | group by                      |                                                      | Group-Object, group                        |                                                 |
+| group_by               | group-by                      |                                                      |                                            |                                                 |
 | headers                |                               |                                                      |                                            |                                                 |
 | help                   | sp_help                       |                                                      | Get-Help, help, man                        | man                                             |
 | histogram              | N/A                           |                                                      |                                            |                                                 |
 | history                | N/A                           |                                                      | Get-History, history                       | history                                         |
 | inc(`*`)               | inc                           |                                                      | succ                                       | N/A                                             |
 | insert                 |                               |                                                      | Add-Member                                 |                                                 |
-| is_empty               | is null                       |                                                      | String.InNullOrEmpty()                     |                                                 |
+| is_empty               | empty?                        |                                                      | String.InNullOrEmpty()                     |                                                 |
 | keep                   | take, drop-last, pop          |                                                      | init, take                                 | head                                            |
 | keep_until             |                               |                                                      |                                            |                                                 |
 | keep_while             |                               |                                                      |                                            |                                                 |
 | kill                   | N/A                           |                                                      | Stop-Process, kill                         | kill                                            |
 | last                   | last, peek                    |                                                      | last                                       |                                                 |
-| lines                  | N/A                           |                                                      | File.ReadAllLines()                        |                                                 |
+| lines                  | N/A                           |                                                      | lines, words, split-with                   |                                                 |
 | ls                     | N/A                           |                                                      | Get-ChildItem, dir, ls                     | ls                                              |
 | map_max_by             |                               |                                                      |                                            |                                                 |
 | match(`*`)             | case when                     |                                                      | [regex]                                    |                                                 |
@@ -81,12 +81,12 @@ Note: this table assumes Nushell 0.13.1 or later.
 | mkdir                  | N/A                           |                                                      | mkdir, md                                  | mkdir                                           |
 | mv                     | N/A                           |                                                      | Move-Item, mv, move, mi                    | mv                                              |
 | next                   |                               |                                                      |                                            |                                                 |
-| nth                    | limit x offset y, rownumber = |                                                      | [x], indexing operator, ElementAt(x)       |                                                 |
+| nth                    | nth                           |                                                      | [x], indexing operator, ElementAt(x)       |                                                 |
 | open                   |                               |                                                      | Get-Content, gc, cat, type                 | cat                                             |
 | parse                  |                               |                                                      |                                            |                                                 |
-| pivot                  | pivot                         |                                                      |                                            |                                                 |
+| pivot                  | (apply mapv vector matrix)    |                                                      | transpose                                  |                                                 |
 | post(`*`)              | N/A                           |                                                      | Invoke-WebRequest                          |                                                 |
-| prepend                |                               |                                                      |                                            |                                                 |
+| prepend                | cons                          |                                                      |                                            |                                                 |
 | prev                   |                               |                                                      |                                            |                                                 |
 | ps(`*`)                | N/A                           |                                                      | Get-Process, ps, gps                       | ps                                              |
 | pwd                    | N/A                           |                                                      | Get-Location, pwd                          | pwd                                             |
@@ -97,10 +97,10 @@ Note: this table assumes Nushell 0.13.1 or later.
 | reverse                |                               |                                                      | [Array]::Reverse($var)                     |                                                 |
 | rm                     | N/A                           |                                                      | Remove-Item, del, erase, rd, ri, rm, rmdir | rm                                              |
 | save                   | N/A                           |                                                      | Write-Output, Out-File                     | > foo.txt                                       |
-| select(`***`)          | select                        |                                                      | Select-Object, select                      |                                                 |
-| shells                 | N/A                           |                                                      | N/A                                        |                                                 |
-| shuffle                |                               |                                                      | $var                                       | Sort-Object {Get-Random}                        |
-| size                   |                               |                                                      | Measure-Object, measure                    | wc                                              |
+| select(`***`)          | select-keys                   |                                                      | Select-Object, select                      |                                                 |
+| shells                 |                               |                                                      | N/A                                        |                                                 |
+| shuffle                | shuffle                       |                                                      | $var                                       | Sort-Object {Get-Random}                        |
+| size                   | count                         |                                                      | Measure-Object, measure                    | wc                                              |
 | skip                   | rest                          |                                                      | tail                                       |                                                 |
 | skip_until             |                               |                                                      |                                            |                                                 |
 | skip_while             |                               |                                                      |                                            |                                                 |
@@ -132,7 +132,7 @@ Note: this table assumes Nushell 0.13.1 or later.
 | version                | select @@version              |                                                      | $PSVersionTable                            |                                                 |
 | with_env               | N/A                           |                                                      | $env:FOO = 'bar'                           | export foo = "bar"                              |
 | what                   |                               |                                                      |                                            |                                                 |
-| where                  | where                         |                                                      | Where-Object, where, "?" operator          |                                                 |
+| where                  | filter                        |                                                      | filter                                     |                                                 |
 | which                  | N/A                           |                                                      | N/A                                        | which                                           |
 | wrap                   |                               |                                                      |                                            |                                                 |
 

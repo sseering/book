@@ -93,7 +93,7 @@ Note: this table assumes Nushell 0.13.1 or later.
 | range                  |                               | Range                                                | 1..10, 'a'..'f'                            |                                                 |
 | reduce_by              |                               |                                                      |                                            |                                                 |
 | reject                 |                               |                                                      |                                            |                                                 |
-| rename                 | N/A                           | N/A                                                  | Rename-Item, ren, rni                      | mv?                                             |
+| rename                 | N/A                           | N/A                                                  | Rename-Item, ren, rni                      | mv                                              |
 | reverse                |                               | Reverse                                              | [Array]::Reverse($var)                     |                                                 |
 | rm                     | N/A                           | N/A                                                  | Remove-Item, del, erase, rd, ri, rm, rmdir | rm                                              |
 | save                   | N/A                           | N/A                                                  | Write-Output, Out-File                     | > foo.txt                                       |
