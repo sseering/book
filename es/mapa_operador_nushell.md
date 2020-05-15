@@ -3,11 +3,9 @@ layout: content
 title: Mapa de operadores en Nushell
 prev: Mapa nushell de lenguajes funcionales
 next: FIN
-link_prev: /en/nushell_map_functional.html
+link_prev: /mapa_functional_nushell.html
 link_next: /
 ---
-
-The idea behind this table is to help you understand how NuShell operators relate to other language operators. We've tried to produce a map of all the nushell operators and what their equivalents are in other languages. Contributions are welcome.
 
 La idea detrás de esta tabla is ayudarte a entender como los operadores en Nu se relacionan con operadores de otros lenguajes. Hemos intentado producir un mapa de los operadores y sus equivalentes en otros lenguajes. Contribuciones son bienvenidas.
 
