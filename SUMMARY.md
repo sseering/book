@@ -12,8 +12,11 @@
   * [Escaping commands](en/escaping.md) - Escaping to native commands of the same name 
   * [Plugins](en/plugins.md) - Enhancing nushell with more features using plugins
   * [Coming from Bash](en/coming_from_bash.md) - Guide for coming to nushell from bash
-  * [Nushell Map To SQL, Linq, PowerShell, Bash](nushell_map.md) - A guide to help understand how nushell compares with others. Contributions welcome.
-  * [Nushell Operator Map](nushell_operator_map.md) - A guide to help understand operators.
+  * [Coming from bash](coming_from_bash.md) - Guide for those coming to nushell from bash
+  * [NuShell map from shells/DSL](nushell_map.md) - A guide to help understand how nushell compares with SQL, Linq, PowerShell and Bash.
+  * [NuShell map from imperative languages](nushell_map_imperative.md) - A guide to help understand how nushell compares with Python, Kotlin, C++, C# and Rust.
+  * [NuShell map from functional languages](nushell_map_functional.md) - A guide to help understand how nushell compares with Clojure, Tablecloth (Ocaml / Elm) and Haskell.
+  * [NuShell operator map](nushell_operator_map.md) - A guide to help understand operators.
 * [Español](es/README.md)
   * [Instalación](es/instalacion.md) - Instalando nushell
   * [Introducción](es/introduccion.md) - Empezando
@@ -27,7 +30,9 @@
   * [Escapando](es/escapando.md) - Escapando a comandos nativos de mismo nombre
   * [Plugins](es/plugins.md) - Mejorando nushell con más funcionalidades usando complementos
   * [Llegando de Bash](es/llegando_de_bash.md) - Guía para aquellos llegando a nushell desde bash
-  * [Mapa Nushell a SQL, Linq, PowerShell, Bash](mapa_nushell.md) - Guía para ayudar como nushell se compara a otros. Contribucions bienvenidas.
+  * [Mapa Nushell de shells/DSLs](mapa_nushell.md) - Guía de ayuda para comprender como nushell se compara con SQL, Linq, PowerShell y Bash.
+  * [Mapa Nushell de lenguajes imperativos](mapa_imperativo_nushell.md) - Guía de ayuda para comprender como nushell se compara con Python, Kotlin, C++, C# y Rust.
+  * [Mapa Nushell de lenguajes funcionales](mapa_funcional_nushell.md) - Guía de ayuda para comprender como nushell se compara con Clojure, Tablecloth (Ocaml / Elm), y Haskell.
   * [Mapa Nushell de operadores](mapa_nushell_operador_map.md) - Guía para ayudar a entender los operadores.
 * [日本語](ja/README.md)
   * [インストール](ja/installation.md) - nushellのインストール

@@ -17,5 +17,7 @@ Actualmente disponible hay:
 * [Escapando commandos](escapando.md) - Escapando a comandos nativos de mismo nombre
 * [Plugins](plugins.md) - Mejorando nushell con más funcionalidades usando complementos
 * [Llegando de Bash](llegando_de_bash.md) - Guía para aquellos llegando a nushell desde bash
-* [Mapa Nushell a SQL, Linq, PowerShell, Bash](mapa_nushell.md) - Guía para ayudar como nushell se compara a otros. Contribucions bienvenidas.
+* [Mapa Nushell de shells/DSLs](mapa_nushell.md) - Guía de ayuda para comprender como nushell se compara con SQL, Linq, PowerShell y Bash.
+* [Mapa Nushell de lenguajes imperativos](mapa_imperativo_nushell.md) - Guía de ayuda para comprender como nushell se compara con Python, Kotlin, C++, C# y Rust.
+* [Mapa Nushell de lenguajes funcionales](mapa_funcional_nushell.md) - Guía de ayuda para comprender como nushell se compara con Clojure, Tablecloth (Ocaml / Elm), y Haskell.
 * [Mapa Nushell de operadores](mapa_nushell_operador_map.md) - Guía para ayudar a entender los operadores.
