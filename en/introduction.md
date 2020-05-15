@@ -35,7 +35,7 @@ The first thing you'll notice when you run a command like `ls` is that instead o
 
 The table is more than just showing the directory in a different way. Just like tables in a spreadsheet, this table allows us to work with the data more interactively.
 
-The first thing we'll do is to sort our table by the name. To do this, we'll take the output from `ls` and feed it into a command that can sort tables based on the contents of a column.
+The first thing we'll do is to sort our table by the size. To do this, we'll take the output from `ls` and feed it into a command that can sort tables based on the contents of a column.
 
 ```
 > ls | sort-by size | reverse
