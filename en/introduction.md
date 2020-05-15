@@ -56,14 +56,14 @@ You can see that to make this work we didn't pass commandline arguments to `ls`.
 Nu provides many commands that can work on tables. For example, we could filter the contents of the `ls` table so that it only shows files over 4 kilobytes:
 
 ```
-> ls | where size > 1kb
+> ls | where size > 4kb
 ───┬──────────────┬──────┬────────┬────────────
  # │ name         │ type │ size   │ modified
 ───┼──────────────┼──────┼────────┼────────────
- 0 │ Gemfile      │ File │ 1.1 KB │ 3 days ago
+ 0 │ Gemfile      │ File │ 4.1 KB │ 3 days ago
  1 │ Gemfile.lock │ File │ 6.9 KB │ 3 days ago
- 2 │ LICENSE      │ File │ 1.1 KB │ 3 days ago
- 3 │ SUMMARY.md   │ File │ 3.7 KB │ 3 days ago
+ 2 │ LICENSE      │ File │ 6.1 KB │ 3 days ago
+ 3 │ SUMMARY.md   │ File │ 7.7 KB │ 3 days ago
 ───┴──────────────┴──────┴────────┴────────────
 ```
 
