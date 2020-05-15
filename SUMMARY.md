@@ -31,8 +31,8 @@
   * [Plugins](es/plugins.md) - Mejorando nushell con más funcionalidades usando complementos
   * [Llegando de Bash](es/llegando_de_bash.md) - Guía para aquellos llegando a nushell desde bash
   * [Mapa Nushell de shells/DSLs](mapa_nushell.md) - Guía de ayuda para comprender como nushell se compara con SQL, Linq, PowerShell y Bash.
-  * [Mapa nushell de lenguajes imperativos](mapa_imperativo_nushell.md) - Guía de ayuda para comprender como nushell se compara con Python, Kotlin, C++, C# y Rust.
-  * [Mapa nushell de lenguajes funcionales](mapa_funcional_nushell.md) - Guía de ayuda para comprender como nushell se compara con Clojure, Tablecloth (Ocaml / Elm), y Haskell.
+  * [Mapa Nushell de lenguajes imperativos](mapa_imperativo_nushell.md) - Guía de ayuda para comprender como nushell se compara con Python, Kotlin, C++, C# y Rust.
+  * [Mapa Nushell de lenguajes funcionales](mapa_funcional_nushell.md) - Guía de ayuda para comprender como nushell se compara con Clojure, Tablecloth (Ocaml / Elm), y Haskell.
   * [Mapa Nushell de operadores](mapa_nushell_operador_map.md) - Guía para ayudar a entender los operadores.
 * [日本語](ja/README.md)
   * [インストール](ja/installation.md) - nushellのインストール
