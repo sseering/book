@@ -1,15 +1,15 @@
 ---
 layout: content
-title: Nushell map from other shells and domain specific languages
-prev: Coming from bash
-next: Imperative map
-link_prev: /en/coming_from_bash.html
-link_next: /en/nushell_map_imperative.html 
+title: Mapa nushell de otras shells y lenguajes DSLs
+prev: Llegando de Bash
+next: Mapa Imperativo
+link_prev: /es/llegand_de_bash.html
+link_next: /es/mapa_imperativo_nushell.html 
 ---
 
-The idea behind this table is to help you understand how Nu built-ins and plug-ins relate to other known shells and domain specific languages. We've tried to produce a map of all the nushell commands and what their equivalents are in other languages. Contributions are welcome.
+La idea detrás de esta tabla is ayudarte a entender como los comandos internos y plugins en Nu se relacionan con otras shells conocidas y lenguajes de dominio específicos. Hemos intentado producir un mapa de los comandos internos y sus equivalentes en otros lenguajes. Contribuciones son bienvenidas.
 
-Note: this table assumes Nu 0.14.1 or later.
+Nota: Esta tabla asume Nu 0.14.1 o posterior.
 
 
 | NuShell                | SQL                           | .Net LINQ (C#)                                       | PowerShell (without external modules)      | Bash                                            |
