@@ -1,15 +1,15 @@
 ---
 layout: content
-title: Nushell map from functional languages
-prev: Imperative map 
-next: Operator map
-link_prev: /en/nushell_map_imperative.html
-link_next: /en/nushell_operator_map.html 
+title: Mapa nushell de lenguajes funcionales
+prev: Mapa imperativo
+next: Mapa de Operadores
+link_prev: /es/mapa_nushell_imperativo.html
+link_next: /es/mapa_nushell_operador.html 
 ---
 
-The idea behind this table is to help you understand how Nu built-ins and plug-ins relate to functional languages. We've tried to produce a map of all the nushell commands and what their equivalents are in other languages. Contributions are welcome.
+La idea detrás de esta tabla is ayudarte a entender como los comandos internos y plugins en Nu se relacionan con lenguajes funcionales. Hemos intentado producir un mapa de los comandos internos y sus equivalentes en otros lenguajes. Contribuciones son bienvenidas.
 
-Note: this table assumes Nu 0.14.1 or later.
+Nota: Esta tabla asume Nu 0.14.1 o posterior.
 
 
 | NuShell                | Clojure                       | Tablecloth (Ocaml / Elm)                             | Haskell                                    |

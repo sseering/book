@@ -1,15 +1,15 @@
 ---
 layout: content
-title: Nushell map from imperative languages
-prev: Shells/DSL map
-next: Functional map
-link_prev: /en/nushell_map.html
-link_next: /en/nushell_map_functional.html
+title: Mapa nushell de lenguajes imperativos
+prev: Mapa Shells/DSLs
+next: Mapa funcional
+link_prev: /es/mapa_nushell.html
+link_next: /es/mapa_funcional_nushell.html
 ---
 
-The idea behind this table is to help you understand how Nu built-ins and plug-ins relate to imperative languages. We've tried to produce a map of all the nushell commands and what their equivalents are in other languages. Contributions are welcome.
+La idea detrás de esta tabla is ayudarte a entender como los comandos internos y plugins en Nu se relacionan con lenguajes imperativos. Hemos intentado producir un mapa de los comandos internos y sus equivalentes en otros lenguajes. Contribuciones son bienvenidas.
 
-Note: this table assumes Nu 0.14.1 or later.
+Nota: esta tabla asume Nu 0.14.1 o posterior.
 
 
 | NuShell                | Python                        | Kotlin (Java)                                        | C++                                        | Rust                                            |
